@@ -5,8 +5,8 @@
     <description>Numbers, Graphs, and Apple Strudels</description>
     <link>http://www.curiousgnu.com///</link>
     <atom:link href="http://www.curiousgnu.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 27 Feb 2016 21:07:05 +0100</pubDate>
-    <lastBuildDate>Sat, 27 Feb 2016 21:07:05 +0100</lastBuildDate>
+    <pubDate>Sat, 27 Feb 2016 21:20:11 +0100</pubDate>
+    <lastBuildDate>Sat, 27 Feb 2016 21:20:11 +0100</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
     
       <item>
@@ -48,13 +48,13 @@
 
 &lt;h5 id=&quot;how-to-analyse-the-alphabay-market&quot;&gt;How to analyse the AlphaBay Market?&lt;/h5&gt;
 
-&lt;p&gt;If you access one of the larger cryptomarkets, you will probably see thousands of different offerings ranging from prescription drugs to illegal weapons. The fact that anonymous users claim to sell those products, of course, does not say anything about the actual demand and volume of the sales. This is the point where it gets interesting because the &lt;em&gt;AlphaBay Market&lt;/em&gt; has a revealing feedback system which not only lists all products sold but also their prices, and purchase dates.&lt;/p&gt;
+&lt;p&gt;If you access one of the larger cryptomarkets, you will probably see thousands of different offerings ranging from prescription drugs to illegal weapons. The fact that anonymous users claim to sell those products, of course, does not say anything about the actual demand and volume of the sales. This is the point where it gets interesting because the &lt;em&gt;AlphaBay Market&lt;/em&gt; has a revealing feedback system which lists not only lists all products sold but also their prices, and purchase dates.&lt;/p&gt;
 
 &lt;p&gt;Assuming a constant feedback ratio, we can use this data to observe the early development of the market from only one snapshot. To automatically download the customer feedbacks I wrote a scraper in Python, which provided me with the dataset for the further analysis.&lt;/p&gt;
 
 &lt;h5 id=&quot;how-much-lsd-is-sold&quot;&gt;How much LSD is sold?&lt;/h5&gt;
 
-&lt;p&gt;Unfortunately the scraping process of a website hidden in the Tor network is a quite slow. Therefore, I decided only to download information related to LSD sales. The diagram below shows last year’s LSD sales for the weeks 13 to 50:&lt;/p&gt;
+&lt;p&gt;Unfortunately, the scraping process of a website hidden in the Tor network is a quite slow. Therefore, I decided only to download information related to LSD sales. The diagram below shows last year’s LSD sales for the weeks 13 to 50:&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;/assets/images/darknet-lsd/plot_hd.png&quot;&gt;&lt;img src=&quot;/assets/images/darknet-lsd/plot.png&quot; alt=&quot;LSD Sales&quot; title=&quot;LSD Sales&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -62,7 +62,7 @@
 
 &lt;h5 id=&quot;who-are-the-dealers&quot;&gt;Who are the dealers?&lt;/h5&gt;
 
-&lt;p&gt;To better get a better understanding about who those LSD vendors are, we need to look at their other sales also:&lt;/p&gt;
+&lt;p&gt;To better get a better understanding of who those LSD vendors are, we need to look at their other sales also:&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;/assets/images/darknet-lsd/table_hd.png&quot;&gt;&lt;img src=&quot;/assets/images/darknet-lsd/table.png&quot; alt=&quot;LSD Vendors&quot; title=&quot;LSD Vendors&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
