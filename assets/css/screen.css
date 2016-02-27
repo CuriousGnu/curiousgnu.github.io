@@ -528,6 +528,8 @@ body.nav-opened .site-wrapper {
     margin-top: 45px!important;
     padding-top: 4px;
     padding-bottom: 12px;
+    padding-left: 15px;
+    padding-right: 15px;
     border: 1px solid #f3f3f3;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
