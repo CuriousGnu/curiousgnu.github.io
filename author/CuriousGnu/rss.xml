@@ -12,7 +12,7 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
-	  <title>What are the most common words in TV shows?</title>
+	  <title>What are the most frequent words in TV shows?</title>
 	  <link>//tv-show-word-clouds</link>
 	  <author>CuriousGnu</author>
 	  <pubDate>2016-02-27T13:21:00+01:00</pubDate>

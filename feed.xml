@@ -5,12 +5,12 @@
     <description>Numbers, Graphs, and Apple Strudels</description>
     <link>http://www.curiousgnu.com/</link>
     <atom:link href="http://www.curiousgnu.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 27 Feb 2016 21:35:31 +0100</pubDate>
-    <lastBuildDate>Sat, 27 Feb 2016 21:35:31 +0100</lastBuildDate>
+    <pubDate>Sat, 27 Feb 2016 21:58:55 +0100</pubDate>
+    <lastBuildDate>Sat, 27 Feb 2016 21:58:55 +0100</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
     
       <item>
-        <title>What are the most common words in TV shows?</title>
+        <title>What are the most frequent words in TV shows?</title>
         <description>&lt;p&gt;Nowadays, there are some many great shows on television or available for streaming. After binge-watching the first season of Jessica Jones, I knew that I had to post something about this topic. I have to admit that I never spend much time on text analysis, so I decided to start with the basics. The first thing I did was to create simple word clouds based on the subtitles of &lt;em&gt;Jessica Jones&lt;/em&gt;, &lt;em&gt;The Blacklist&lt;/em&gt;, and &lt;em&gt;TBBT&lt;/em&gt;. They are an easy way to visualize how frequently certain words are used in a text or TV show.&lt;/p&gt;
 
 &lt;p&gt;Besides this basic type of word cloud, I also created a slightly different version of it. For this, I did not just count the words but also looked how close they are to a character’s name. This means that the more frequent a word is used in combination with a character’s name, the bigger it is in the word cloud.&lt;/p&gt;
