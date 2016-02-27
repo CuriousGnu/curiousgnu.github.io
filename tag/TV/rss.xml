@@ -15,7 +15,7 @@
 	  <title>What are the most frequent words in TV shows?</title>
 	  <link>//tv-show-word-clouds</link>
 	  <author>CuriousGnu</author>
-	  <pubDate>2016-02-27T13:21:00+01:00</pubDate>
+	  <pubDate>2016-02-27T13:42:00+01:00</pubDate>
 	  <guid>//tv-show-word-clouds</guid>
 	  <description><![CDATA[
 	     <p>Nowadays, there are some many great shows on television or available for streaming. After binge-watching the first season of Jessica Jones, I knew that I had to post something about this topic. I have to admit that I never spend much time on text analysis, so I decided to start with the basics. The first thing I did was to create simple word clouds based on the subtitles of <em>Jessica Jones</em>, <em>The Blacklist</em>, and <em>TBBT</em>. They are an easy way to visualize how frequently certain words are used in a text or TV show.</p>
