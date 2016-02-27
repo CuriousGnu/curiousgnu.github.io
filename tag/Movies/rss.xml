@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>www.curiousgnu.com</title>
+   
+   <link>http://www.curiousgnu.com/</link>
+   <description>Numbers, Graphs, and Apple Strudels</description>
+   <language>en-uk</language>
+   <managingEditor> CuriousGnu</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>What's the age difference in movies?</title>
+	  <link>//imdb-age-gap</link>
+	  <author>CuriousGnu</author>
+	  <pubDate>2015-11-04T13:21:00+01:00</pubDate>
+	  <guid>//imdb-age-gap</guid>
+	  <description><![CDATA[
+	     <p>In response to my <a href="/imdb-age-distribution">last post</a> about the distribution of ages of actresses and actors, a Reddit user suggested investigating further the age difference between female and male movie stars. In my first simple analysis, I only compared the average ages of both groups in the overall sample. Now, the next step is to check on a movie basis if there is an age difference between the leading actress and her co-star.</p>
+
+<h5 id="methods">Methods</h5>
+<p>First I needed to identify the two leads of each film (2000-2015, with 10,000+ votes) to calculate the age difference. Unfortunately, there is no direct way to get this information from the IMDb dataset. I, therefore, used a quick-and-dirty approve and chose the first actress and actor in the IMDb cast credits as leads. If I did not find both an actress and an actor in the first three entries (in credits order), I removed the whole movie from the sample. With this method, I was able to get the leading actresses and actors of 1,201 movies. Note that they are not necessarily movie couples. I am aware that a manually selected sample would have been better but considering the simplicity of my approach; I think that the results are acceptable for this analysis. Feel free to check it yourself <a href="/assets/data/age_gap_2015.csv">here</a>.</p>
+
+<h5 id="results">Results</h5>
+<p>When we look at the box-plot of the age differences, we can see that on average the leading actor is <strong>five years older</strong> than his female co-star. It also tells us that in approximately 75% of all movies in our sample have an older male lead. Based on this data, the answer to the question from the title is <em>“Yes”</em> even though the age gap might be not as big as expected.</p>
+
+<p><a href="/assets/images/age-gap/plot_2.png"><img src="/assets/images/age-gap/plot_2.png" alt="Age Gap Boxplot" title="Age Gap Boxplot" /></a></p>
+
+<p>Finally, I also created a density plot which summarizes all data points in a nice looking, colorful graph. The area below the gray dashed line stands for all the movies in which the leading actor is older :</p>
+
+<p><a href="/assets/images/age-gap/plot_1_hd.png"><img src="/assets/images/age-gap/plot_1.png" alt="Age Gap Plot" title="Age Gap Plot" /></a></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Actresses Are on Average 7 Years Younger</title>
+	  <link>//imdb-age-distribution</link>
+	  <author>CuriousGnu</author>
+	  <pubDate>2015-11-02T21:10:00+01:00</pubDate>
+	  <guid>//imdb-age-distribution</guid>
+	  <description><![CDATA[
+	     <p>The IMDb dataset is a great source for everyone loves movies and numbers. After I had figured out how to <a href="http://imdbpy.sourceforge.net/support.html" target="_blank">import the data</a> into a local SQL database, the first thing I did was to look at the age of the actresses and actors during filming.</p>
+
+<p>It turns out that the average actress is, with a median age of 32, <strong>seven years younger</strong> than her male counterpart who is on average 39 years old. The diagram below shows that the distribution of ages of actresses is more skewed to the right (γ1=.912) than those of ages of actors (γ1=.483). This suggests that there is a relatively higher demand for actresses under the age of 35. Interestingly we do not see such an apparent age preference in the casting of actors.</p>
+
+<p><a href="/assets/images/age-dist/plot_hd.png"><img src="/assets/images/age-dist/plot.png" alt="Age Distribution Plot" title="Age Distribution Plot" /></a></p>
+
+<p>The sample consists of all roles played by actresses (n=21,551) and actors (n=50,165) in U.S. movie released between 2000 and 2015, with more than 10,000 IMDb-Votes. By the way, in the United States, the median age of females and males is 39.2 years and 36.5 years respectively (<a href="https://www.cia.gov/library/publications/the-world-factbook/geos/us.html">The World Factbook, 2015</a>).</p>
+
+<p><small>Photo: “California Movie Theater Berkeley” by <a href="https://flic.kr/p/aM4GwX">Russell Mondy</a> is licensed under CC BY-NC 2.0</small></p>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

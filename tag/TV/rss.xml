@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>www.curiousgnu.com</title>
+   
+   <link>http://www.curiousgnu.com/</link>
+   <description>Numbers, Graphs, and Apple Strudels</description>
+   <language>en-uk</language>
+   <managingEditor> CuriousGnu</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>What are the most common words in TV shows?</title>
+	  <link>//tv-show-wordclouds</link>
+	  <author>CuriousGnu</author>
+	  <pubDate>2016-02-27T13:21:00+01:00</pubDate>
+	  <guid>//tv-show-wordclouds</guid>
+	  <description><![CDATA[
+	     <p>Nowadays, there are some many great shows on television or available for streaming. After binge-watching the first season of Jessica Jones, I knew that I had to post something about this topic. I have to admit that I never spend much time on text analysis, so I decided to start with the basics. The first thing I did was to create simple word clouds based on the subtitles of <em>Jessica Jones</em>, <em>The Blacklist</em>, and <em>TBBT</em>. They are an easy way to visualize how frequently certain words are used in a text or TV show.</p>
+
+<p>Besides this basic type of word cloud, I also created a slightly different version of it. For this, I did not just count the words but also looked how close they are to a character’s name. This means that the more frequent a word is used in combination with a character’s name, the bigger it is in the word cloud.</p>
+
+<p><a href="/assets/images/tv-wordcloud/wordcloud_jessicajones_hd.png"><img src="/assets/images/tv-wordcloud/wordcloud_jessicajones.png" alt="Jessica Jones Wordcloud" title="Jessica Jones Wordcloud" /></a></p>
+
+<p><a href="/assets/images/tv-wordcloud/wordcloud_blacklist_hd.png"><img src="/assets/images/tv-wordcloud/wordcloud_blacklist.png" alt="The Blacklist Wordcloud" title="The Blacklist Wordcloud" /></a></p>
+
+<p><a href="/assets/images/tv-wordcloud/wordcloud_tbbt_hd.png"><img src="/assets/images/tv-wordcloud/wordcloud_tbbt.png" alt="TBBT Wordcloud" title="TBBT Wordcloud" /></a></p>
+
+<p>I created all those word clouds with the R package <a href="https://cran.r-project.org/web/packages/wordcloud/index.html"><em>wordcloud</em></a> which makes this job so easy. Besides that, the <em>findAssocs()</em> function from the <a href="https://cran.r-project.org/web/packages/tm/index.html"><em>tm</em></a> package was used calculate the often a word is used close to a character’s name. For the second type of word clouds, I used the correlation coefficients from this function as a weighting factor.</p>
+
+<p>Before doing that, I replaced all the different versions of a name (e.g., Lizzy, Liz, Keen) with the name you can see in the center of the word clouds. In case you are wondering why there are not always complete words in the clouds, it is because of a process called <em>stemming</em> which reduces words to their word stem. The idea behind it is to group the different forms of a word together instead of treating every single form as an own term.</p>
+
+<p>I hope you like this post. Please feel free to contact me if you have any questions or suggestions.</p>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

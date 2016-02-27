@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>Numbers, Graphs, and Apple Strudels</title>
+    <title>Author</title>
     <meta name="description" content="CuriousGnu - Numbers, Graphs, and Apple Strudels" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -68,7 +68,7 @@
     <link rel="alternate" type="application/rss+xml" title="CuriousGnu" href="/feed.xml" />
 
 </head>
-<body class="home-template nav-closed">
+<body class="author-template nav-closed">
 
     <div class="nav">
     <h3 class="nav-title">Menu</h3>
@@ -76,9 +76,9 @@
         <span class="hidden">Close</span>
     </a>
     <ul>
-        <li class="nav-home  nav-current" role="presentation"><a href="/">Home</a></li>
-        <li class="nav-author " role="presentation"><a href="/author/CuriousGnu">Author</a></li>
-        <li class="nav-home  nav-current" role="presentation"><a href="mailto:contact@curiousgnu.com">Contact</a></li>
+        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
+        <li class="nav-author  nav-current" role="presentation"><a href="/author/CuriousGnu">Author</a></li>
+        <li class="nav-home " role="presentation"><a href="mailto:contact@curiousgnu.com">Contact</a></li>
     </ul>
     <a class="subscribe-button icon-feed" href="http://eepurl.com/bRB1cL">Subscribe</a>
 </div>
@@ -87,29 +87,45 @@
     <div class="site-wrapper">
 
         <!-- [[! Everything else gets inserted here ]] -->
-        <!-- < default -->
+        <!-- < default}} -->
 <!-- The tag above means - insert everything in this file into the [body] of the default.hbs template -->
 
-<!-- The big featured header  -->
-<header class="main-header "
-        style="box-shadow: 0 2px 3px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); background-image: url(/assets/images/main-bg.jpg) ">
-    <nav class="main-nav overlay clearfix">
+<!-- The big featured header -->
+
+<!-- Everything inside the #author tags pulls data from the author -->
+<!-- #author  -->
+    <header class="main-header author-head no-cover">
+        <nav class="main-nav overlay clearfix">
+            <a class="blog-logo" href="/"><img src="/assets/images/logo.png" alt="Blog Logo" /></a>
+            
+                <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+            
+        </nav>
+    </header>
+
+    <section class="author-profile inner">
         
-            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        <figure class="author-image">
+            <div class="img" style="background-image: url(/assets/images/casper.png)"><span class="hidden">CuriousGnu's Picture</span></div>
+        </figure>
         
-    </nav>
-    <div class="vertical">
-        <div class="main-header-content inner">
-            <a href="/"><h1 class="page-title">CuriousGnu</h1></a>
-            <h2 class="page-description">Numbers, Graphs, and Apple Strudels</h2>
+        <h1 class="author-title">CuriousGnu</h1>
+        
+            <h2 class="author-bio">I have a broad range of interests, but the one thing that connects them all is my love for numbers. I find it fascinating how playing around with data can open up new perspectives on all kinds of topics.</h2>
+        
+        <div class="author-meta">
+            
+            <span class="author-link icon-link"><a href="http://www.curiousgnu.com/">www.curiousgnu.com</a></span>
+            <!-- <span class="author-stats"><i class="icon-stats"></i> [[plural ../pagination.total empty='No posts' singular='% post' plural='% posts']]</span> -->
+            <span class="author-stats"><i class="icon-stats"></i>4 posts</span>
         </div>
-    </div>
-</header>
+    </section>
+<!-- /author -->
 
 <!-- The main content area on the homepage -->
 <main id="content" class="content" role="main">
 
-    <!-- The tag below includes the post loop - partials/loop.hbs -->
+    <!-- The tag below includes the post loop - partials/loop.hbs  -->
         <!-- Previous/next page links - only displayed on page 2+ -->
     <div class="extra-pagination inner">
         
