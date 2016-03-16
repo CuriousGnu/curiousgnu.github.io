@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>www.curiousgnu.com</title>
+   
+   <link>http://www.curiousgnu.com/</link>
+   <description>Numbers, Graphs, and Apple Strudels</description>
+   <language>en-uk</language>
+   <managingEditor> CuriousGnu</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>How positive are your tweets?</title>
+	  <link>//tweetanalyzer</link>
+	  <author>CuriousGnu</author>
+	  <pubDate>2016-03-16T22:42:00+01:00</pubDate>
+	  <guid>//tweetanalyzer</guid>
+	  <description><![CDATA[
+	     <p>In this blog post, I would like to present you <a href="(https://tweetanalyzer.net)">tweetanalyzer.net</a>, a small weekend project of mine, where you can do a sentiment analysis of your tweets or the ones of any other Twitter user. The goal was to create a fun website which uses text analysis to determine how positive someone’s tweets are.</p>
+
+<p><a href="https://tweetanalyzer.net"><img src="/assets/images/tweetanalyzer/screen.png" alt="TweetAnalyzer.net" /></a></p>
+
+<p>After you signed in with your Twitter account, you can type in any username and the website will automatically download the latest 200-300 tweets and calculate a positivity and vulgarity score for each of them. The method used to do this is very simple. The backend uses the AFINN word list from <a href="http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010">Finn Årup Nielsen</a>, which contains nearly 2,500 words rated for their positivity from -5 (negative) to +5 (positive). After removing stop words, hashtags, and URLs the script looks up every word in this list and calculates the sum for each tweet. If this sum is over zero, the tweet will be marked as positive if it’s under zero as negative. The overall positivity score for a user is then calculated as follows:</p>
+
+<p><img src="/assets/images/tweetanalyzer/positivity_score.gif" alt="PSF" /></p>
+
+<p>Admintingly this approach has its weakness and is not as sophisticated as many other methods classification technique out there. For example, it can not understand the context of a tweet and how a specific word (e.g., <em>sick</em>) is used. I experimented more complex Python libraries for text analysis, but unfortunately they did not run well on the Google App Engine platform if you plan to analyse thousands of tweets but only have a limited budget. I am sure that it can be done without a problem but since I never used it before and did not want to spend too much time on it, I decided to use the simple solution which I believe is sufficient for such a task.</p>
+
+<p>The determine how vulgar a tweet is, the software uses a similar word list based method. If a tweet contains a word which is in this list, it will be marked as <em>vulgar</em>. The lack of content-awareness will, of course, lead to some mistakes. For example, news articles about <em>sex trafficking</em> or <em>rape</em> will be falsely classified as <em>vulgar</em>. So please do not take the results too seriously and rather tweet something positive about it! Feel free to <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#099;&#117;&#114;&#105;&#111;&#117;&#115;&#103;&#110;&#117;&#046;&#099;&#111;&#109;">contact me</a> if you suggestions or questions.</p>
+
+<p>You can find the project here: <a href="https://tweetanalyzer.net">https://tweetanalyzer.net</a></p>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>
