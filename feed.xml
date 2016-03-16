@@ -5,8 +5,8 @@
     <description>Numbers, Graphs, and Apple Strudels</description>
     <link>http://www.curiousgnu.com/</link>
     <atom:link href="http://www.curiousgnu.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 16 Mar 2016 23:21:59 +0100</pubDate>
-    <lastBuildDate>Wed, 16 Mar 2016 23:21:59 +0100</lastBuildDate>
+    <pubDate>Wed, 16 Mar 2016 23:24:56 +0100</pubDate>
+    <lastBuildDate>Wed, 16 Mar 2016 23:24:56 +0100</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
     
       <item>
@@ -19,9 +19,9 @@
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/tweetanalyzer/positivity_score.gif&quot; alt=&quot;PSF&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Admintingly this approach has its weakness and is not as sophisticated as many other methods classification technique out there. For example, it can not understand the context of a tweet and how a specific word (e.g., &lt;em&gt;sick&lt;/em&gt;) is used. I experimented more complex Python libraries for text analysis, but unfortunately they did not run well on the Google App Engine platform if you plan to analyse thousands of tweets but only have a limited budget. I am sure that it can be done without a problem but since I never used it before and did not want to spend too much time on it, I decided to use the simple solution which I believe is sufficient for such a task.&lt;/p&gt;
+&lt;p&gt;Admintingly this approach has its weakness and is not as sophisticated as many other methods classification technique out there. For example, it can not understand the context of a tweet and how a specific word (e.g., &lt;em&gt;sick&lt;/em&gt;) is used. I experimented more complex Python libraries for text analysis, but unfortunately they did not run well on the Google App Engine platform if you plan to analyse thousands of tweets but only have a limited budget. I am sure that it can be done without a problem but since I never used it before and did not want to spend too much time on it, I decided to use the simple solution which I believe is still sufficient for such a task.&lt;/p&gt;
 
-&lt;p&gt;The determine how vulgar a tweet is, the software uses a similar word list based method. If a tweet contains a word which is in this list, it will be marked as &lt;em&gt;vulgar&lt;/em&gt;. The lack of content-awareness will, of course, lead to some mistakes. For example, news articles about &lt;em&gt;sex trafficking&lt;/em&gt; or &lt;em&gt;rape&lt;/em&gt; will be falsely classified as &lt;em&gt;vulgar&lt;/em&gt;. So please do not take the results too seriously and rather tweet something positive about it! Feel free to &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#097;&amp;#099;&amp;#116;&amp;#064;&amp;#099;&amp;#117;&amp;#114;&amp;#105;&amp;#111;&amp;#117;&amp;#115;&amp;#103;&amp;#110;&amp;#117;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;contact me&lt;/a&gt; if you suggestions or questions.&lt;/p&gt;
+&lt;p&gt;To determine how vulgar a tweet is, the software uses a similar word list based method. If a tweet contains a word which is in this list, it will be marked as &lt;em&gt;vulgar&lt;/em&gt;. The lack of content-awareness will, of course, lead to some mistakes. For example, news articles about &lt;em&gt;sex trafficking&lt;/em&gt; or &lt;em&gt;rape&lt;/em&gt; will be falsely classified as &lt;em&gt;vulgar&lt;/em&gt;. So please do not take the results too seriously and rather tweet something positive about it! Feel free to &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#097;&amp;#099;&amp;#116;&amp;#064;&amp;#099;&amp;#117;&amp;#114;&amp;#105;&amp;#111;&amp;#117;&amp;#115;&amp;#103;&amp;#110;&amp;#117;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;contact me&lt;/a&gt; if you suggestions or questions.&lt;/p&gt;
 
 &lt;p&gt;You can find the project here: &lt;a href=&quot;https://tweetanalyzer.net&quot;&gt;https://tweetanalyzer.net&lt;/a&gt;&lt;/p&gt;
 </description>
