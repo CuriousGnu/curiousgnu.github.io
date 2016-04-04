@@ -5,9 +5,51 @@
     <description>Numbers, Graphs, and Apple Strudels</description>
     <link>http://www.curiousgnu.com/</link>
     <atom:link href="http://www.curiousgnu.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 16 Mar 2016 23:24:56 +0100</pubDate>
-    <lastBuildDate>Wed, 16 Mar 2016 23:24:56 +0100</lastBuildDate>
+    <pubDate>Mon, 04 Apr 2016 20:34:39 +0200</pubDate>
+    <lastBuildDate>Mon, 04 Apr 2016 20:34:39 +0200</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
+    
+      <item>
+        <title>Penny Auctions - How to sell a $180 tablet for $7,264</title>
+        <description>&lt;p&gt;Unless you use an ad blocker, you probably notice ads for penny auction sites from time to time. They usually advertise with sketchy messages like &lt;em&gt;“iPhone sold for $14.21.”&lt;/em&gt; They can sell iPhones such low prices because of their unusual auction system where each bid increases the auction price by only one cent. This works because unlike eBay each bid costs money (e.g., $0.40) no matter if you end up winning the auction or not. You have to be the highest bidder when the clock runs out to win the auction. The problem is that each bid adds ten seconds to the countdown which gives other bidders the time to counter your bid.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/penny-auctions/mockup_paad.jpg&quot; alt=&quot;Penny Auction&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Penny auction sites are not something new and have been criticized a lot, which makes you wonder how they are still in business. Even though there are many news articles about online penny auctions, I did not find any numbers or statistics which would support the criticism. So I started to collect information on my own, to get a better understanding how these auctions work in reality. What I found exceeded all my expectations.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/penny-auctions/beezid_screenshot_hd.png&quot;&gt;&lt;img src=&quot;/assets/images/penny-auctions/beezid_screenshot.png&quot; alt=&quot;Beezid.com Screenshot&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;On &lt;a href=&quot;https://en.wikipedia.org/wiki/Beezid&quot;&gt;beezid.com&lt;/a&gt;, one of the bigger penny auction sites, a single $180 tablet generated 18,160 bids, worth of over &lt;strong&gt;$7,200&lt;/strong&gt;, from 56 users. Shockingly nearly half of those bids came from just one person who lost approximately lost &lt;strong&gt;$3,500&lt;/strong&gt; in just two hours (see graph below). The winner of this auction only spent 80 cents on his or her two bids. In the second half of this blog post, I will outline the data collection process. To protect the users’ privacy, I replaced the real usernames with chemical elements.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/penny-auctions/money_spent_hd.png&quot;&gt;&lt;img src=&quot;/assets/images/penny-auctions/money_spent.png&quot; alt=&quot;Money Spent on Bids&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;why-are-penny-auctions-even-popular&quot;&gt;Why are penny auctions even popular?&lt;/h4&gt;
+&lt;p&gt;The big ‘achievement’ of penny auction sites is that they successfully turned an unappealing type of an all-pay auction into an online game which makes people believe that they could make a profit.  The way beezid.com does this is actually quite clever. First, they give their users many different options how they can make a bid. Users can, for example, use automatic bidding bots, take advantage of price limits above which the auction price will not rise, and purchase a wide variety of other supposedly useful add-ons. Second, they try to hide all information that could reveal how many people are participating in the auction and how much they already spent in total.&lt;/p&gt;
+
+&lt;p&gt;One way how they do this is by their default 10% price limit, which means the auction price will never rise above 10% of the retail price, no matter how many people bid on it. Another strange rule is that bids do not always increase the auction price by one cent but can also lower it by some amount. These modifications of the system make the auction price more or less meaningless because you can no longer assume that, for example, a price of $1.10 is a result of 110 unique bids. Many articles about penny auctions (e.g., &lt;a href=&quot;http://www.consumerreports.org/cro/2011/12/with-penny-auctions-you-can-spend-a-bundle-but-still-leave-empty-handed/index.htm&quot;&gt;consumerreports.org&lt;/a&gt;) do not account for these rules and falsely assume a fixed price increase. The graph below shows the development of the auction price of the $180 tablet over time. If we assume, that each bid would have increased the price by always one cent, the final auction price would have been &lt;strong&gt;$181.60&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/penny-auctions/auction_price_hd.png&quot;&gt;&lt;img src=&quot;/assets/images/penny-auctions/auction_price.png&quot; alt=&quot;Auction Price&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This lack of transparency combined with the many different bidding options creates a system which gives users the illusion that they could make a profit with the right strategies.&lt;/p&gt;
+
+&lt;h4 id=&quot;how-to-monitor-penny-auctions&quot;&gt;How to monitor penny auctions?&lt;/h4&gt;
+&lt;p&gt;Despite the site’s efforts to keep their users in the dark, it is possible to archive the complete bidding history of an auction, if you monitor it from its start. To collect the data for this blog post, I wrote a simple &lt;a href=&quot;https://gist.github.com/CuriousGnu/cf558e8ca8cbbd491619a9e1940682c3&quot;&gt;script&lt;/a&gt; in Python which automatically saves the all bidding information of a &lt;a href=&quot;https://en.wikipedia.org/wiki/Beezid&quot;&gt;beezid.com&lt;/a&gt; auction. If you want to try it out yourself, you only have to change the auction id and update the request header. You can easily get this information with the Chrome DevTools. In case, you have a slow or unstable internet connection I highly recommend running the script on a server (e.g., &lt;a href=&quot;https://www.digitalocean.com/pricing/&quot;&gt;Digital Ocean&lt;/a&gt;). It should be noted that the script behaves like a regular browser and does not bypass any server-side security or content protection mechanisms.&lt;/p&gt;
+
+&lt;h4 id=&quot;arent-penny-auctions-unregulated-gambling&quot;&gt;Aren’t penny auctions unregulated gambling?&lt;/h4&gt;
+&lt;p&gt;One of the most important parts of the business models of penny auction sites is that what they are doing is not considered gambling. I am not a lawyer, so I will not attempt to question the legality of their operations. Their central argument is that penny auctions require skill and are therefore exempt from the &lt;a href=&quot;https://en.wikipedia.org/wiki/Unlawful_Internet_Gambling_Enforcement_Act_of_2006&quot;&gt;Unlawful Internet Gambling Enforcement Act&lt;/a&gt;, which is the same legal loophole daily fantasy sports sites like &lt;a href=&quot;https://en.wikipedia.org/wiki/FanDuel&quot;&gt;FanDuel&lt;/a&gt; or &lt;a href=&quot;https://en.wikipedia.org/wiki/DraftKings&quot;&gt;DraftKings&lt;/a&gt; use. Personally, I cannot see how any skill could increase your chances of winning an auction. The data clearly shows that you are bidding against an unknown number of users who sometimes act extremely irrational. Even if you had a comprehensive database of previous auctions, you probably would not be able to predict how far a specific user will go. If someone has already spent over $3,000 on a $180 tablet, what could stop them aside from his or her credit card limit? It would be really interesting to hear an official explanation of how skill is even a factor in this game.&lt;/p&gt;
+
+&lt;p&gt;If you have any questions about this blog post or are interested in the raw (anonymized) data, feel free to contact me by &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#097;&amp;#099;&amp;#116;&amp;#064;&amp;#099;&amp;#117;&amp;#114;&amp;#105;&amp;#111;&amp;#117;&amp;#115;&amp;#103;&amp;#110;&amp;#117;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 04 Apr 2016 20:00:00 +0200</pubDate>
+        <link>http://www.curiousgnu.com///penny-auctions</link>
+        <guid isPermaLink="true">http://www.curiousgnu.com///penny-auctions</guid>
+        
+        <category>Gambling</category>
+        
+        
+        <category>CuriousGnu</category>
+        
+      </item>
     
       <item>
         <title>How positive are your tweets?</title>

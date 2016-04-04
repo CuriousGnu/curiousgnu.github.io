@@ -963,6 +963,10 @@ body:not(.post-template) .post-title {
     text-align: center;
 }
 
+.title-sm > a {
+    font-size: 80%;
+}
+
 .post-title a {
     text-decoration: none;
 }
@@ -1452,11 +1456,17 @@ body:not(.post-template) .post-title {
 
 .read-next-story h2 {
     margin-top: 1rem;
+    font-size: 2.6rem;
     color: #fff;
+}
+
+.read-next-story > .post > .title-sm {
+    font-size: 2.1rem;
 }
 
 .read-next-story p {
     margin: 0;
+    font-size: 1.8rem;
     color: rgba(255,255,255,0.8);
 }
 

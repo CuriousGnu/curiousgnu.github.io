@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>CuriousGnu</title>
+    <title>Author</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -64,7 +64,7 @@
     <link rel="alternate" type="application/rss+xml" title="CuriousGnu" href="/feed.xml" />
 
 </head>
-<body class="tag-template nav-closed">
+<body class="paged archive-template nav-closed">
 
     <div class="nav">
     <h3 class="nav-title">Menu</h3>
@@ -73,7 +73,7 @@
     </a>
     <ul>
         <li class="nav-home " role="presentation"><a href="/">Home</a></li>
-        <li class="nav-author " role="presentation"><a href="/author/CuriousGnu">Author</a></li>
+        <li class="nav-author  nav-current" role="presentation"><a href="/author/CuriousGnu">Author</a></li>
         <li class="nav-home" role="presentation"><a href="mailto:contact@curiousgnu.com">Contact</a></li>
     </ul>
     <a class="subscribe-button icon-feed" href="http://eepurl.com/bRB1cL">Subscribe</a>
@@ -86,65 +86,58 @@
         <!-- < default}} -->
 <!-- The tag above means - insert everything in this file into the [body] of the default.hbs template -->
 
-<!-- If we have a tag cover, display that - else blog cover - else nothing -->
-<header class="main-header tag-head " style="box-shadow: 0 2px 3px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); background-image: url(/assets/images/main-bg.jpg) ">
-    <nav class="main-nav overlay clearfix">
+<!-- The big featured header -->
+
+<!-- Everything inside the #author tags pulls data from the author -->
+<!-- #author  -->
+    <header class="main-header author-head no-cover">
+        <nav class="main-nav overlay clearfix">
+            <a class="blog-logo" href="/"><img src="/assets/images/logo.png" alt="Blog Logo" /></a>
+            
+                <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+            
+        </nav>
+    </header>
+
+    <section class="author-profile inner">
         
-            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        <figure class="author-image">
+            <div class="img" style="background-image: url(/assets/images/casper.png)"><span class="hidden">CuriousGnu's Picture</span></div>
+        </figure>
         
-    </nav>
-    <div class="vertical">
-        <div class="main-header-content inner">
-            <a href="/"><h1 class="page-title">CuriousGnu</h1></a>
-            <h2 class="page-description">&middot; Movies &middot;</h2>
+        <h1 class="author-title">CuriousGnu</h1>
+        
+            <h2 class="author-bio">I have a broad range of interests, but the one thing that connects them all is my love for numbers. I find it fascinating how playing around with data can open up new perspectives on all kinds of topics.</h2>
+        
+        <div class="author-meta">
+            
+            <span class="author-link icon-link"><a href="http://www.curiousgnu.com/">www.curiousgnu.com</a></span>
+            <!-- <span class="author-stats"><i class="icon-stats"></i> [[plural ../pagination.total empty='No posts' singular='% post' plural='% posts']]</span> -->
+            <span class="author-stats"><i class="icon-stats"></i>6 posts</span>
         </div>
-    </div>
-</header>
+    </section>
+<!-- /author -->
 
 <!-- The main content area on the homepage -->
 <main id="content" class="content" role="main">
 
-    <!-- The tag below includes the post loop - partials/loop.hbs -->
+    <!-- The tag below includes the post loop - partials/loop.hbs  -->
         <!-- Previous/next page links - only displayed on page 2+ -->
     <div class="extra-pagination inner">
         
             <nav class="pagination" role="pagination">
     
-    <span class="page-number"> Page 1 of 1 </span>
+        
+            <a class="newer-posts" href="/author/CuriousGnu" title="Previous Page">&laquo; Newer Posts</a>
+        
+    
+    <span class="page-number"> Page 2 of 2 </span>
      
 </nav>
         
     </div>
 
     <!-- This is the post loop - each post will be output using this markup -->
-    
-    <article class="post">
-        
-        <a href="/imdb-age-gap">
-            <div class="post-header-img" style="background-image: url('/assets/images/age-gap/cover.jpg')"></div>
-        <a>
-        
-        <header class="post-header">
-            <h2 class="post-title"><a href="/imdb-age-gap">What's the age difference in movies?</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>In response to my last post about the distribution of ages of actresses and actors, a Reddit user suggested investigating further the age difference between female and male movie stars. In my first simple analysis, I only compared the average... <a class="read-more" href="/imdb-age-gap">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <!-- author -->
-            <a href='/author/CuriousGnu'>CuriousGnu</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/Movies'>Movies</a>
-                       
-                
-            
-            <time class="post-date" datetime="2015-11-04">04 Nov 2015</time>
-        </footer>
-    </article>
     
     <article class="post">
         
@@ -179,13 +172,18 @@
     
         <nav class="pagination" role="pagination">
     
-    <span class="page-number"> Page 1 of 1 </span>
+        
+            <a class="newer-posts" href="/author/CuriousGnu" title="Previous Page">&laquo; Newer Posts</a>
+        
+    
+    <span class="page-number"> Page 2 of 2 </span>
      
 </nav>
     
 
 
 </main>
+
 
         <footer class="site-footer clearfix">
           <section class="copyright"><a href="/">CuriousGnu</a> &copy; 2016</section>
