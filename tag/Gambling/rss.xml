@@ -24,8 +24,6 @@
 
 <p>Penny auction sites are not something new and have been criticized a lot, which makes you wonder how they are still in business. Even though there are many news articles about online penny auctions, I did not find any numbers or statistics which would support the criticism. So I started to collect information on my own, to get a better understanding how these auctions work in reality. What I found exceeded all my expectations.</p>
 
-<p><a href="/assets/images/penny-auctions/beezid_screenshot_hd.png"><img src="/assets/images/penny-auctions/beezid_screenshot.png" alt="Beezid.com Screenshot" /></a></p>
-
 <p>On <a href="https://en.wikipedia.org/wiki/Beezid">beezid.com</a>, one of the bigger penny auction sites, a single $180 tablet generated 18,160 bids, worth of over <strong>$7,200</strong>, from 56 users. Shockingly nearly half of those bids came from just one person who lost approximately lost <strong>$3,500</strong> in just two hours (see graph below). The winner of this auction only spent 80 cents on his or her two bids. In the second half of this blog post, I will outline the data collection process. To protect the users’ privacy, I replaced the real usernames with chemical elements.</p>
 
 <p><a href="/assets/images/penny-auctions/money_spent_hd.png"><img src="/assets/images/penny-auctions/money_spent.png" alt="Money Spent on Bids" /></a></p>

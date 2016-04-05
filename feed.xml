@@ -5,8 +5,8 @@
     <description>Numbers, Graphs, and Apple Strudels</description>
     <link>http://www.curiousgnu.com/</link>
     <atom:link href="http://www.curiousgnu.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 04 Apr 2016 20:34:39 +0200</pubDate>
-    <lastBuildDate>Mon, 04 Apr 2016 20:34:39 +0200</lastBuildDate>
+    <pubDate>Tue, 05 Apr 2016 20:32:50 +0200</pubDate>
+    <lastBuildDate>Tue, 05 Apr 2016 20:32:50 +0200</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
     
       <item>
@@ -16,8 +16,6 @@
 &lt;p&gt;&lt;img src=&quot;/assets/images/penny-auctions/mockup_paad.jpg&quot; alt=&quot;Penny Auction&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Penny auction sites are not something new and have been criticized a lot, which makes you wonder how they are still in business. Even though there are many news articles about online penny auctions, I did not find any numbers or statistics which would support the criticism. So I started to collect information on my own, to get a better understanding how these auctions work in reality. What I found exceeded all my expectations.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/assets/images/penny-auctions/beezid_screenshot_hd.png&quot;&gt;&lt;img src=&quot;/assets/images/penny-auctions/beezid_screenshot.png&quot; alt=&quot;Beezid.com Screenshot&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;On &lt;a href=&quot;https://en.wikipedia.org/wiki/Beezid&quot;&gt;beezid.com&lt;/a&gt;, one of the bigger penny auction sites, a single $180 tablet generated 18,160 bids, worth of over &lt;strong&gt;$7,200&lt;/strong&gt;, from 56 users. Shockingly nearly half of those bids came from just one person who lost approximately lost &lt;strong&gt;$3,500&lt;/strong&gt; in just two hours (see graph below). The winner of this auction only spent 80 cents on his or her two bids. In the second half of this blog post, I will outline the data collection process. To protect the users’ privacy, I replaced the real usernames with chemical elements.&lt;/p&gt;
 
