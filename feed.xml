@@ -5,8 +5,8 @@
     <description>Numbers, Graphs, and Apple Strudels</description>
     <link>http://www.curiousgnu.com/</link>
     <atom:link href="http://www.curiousgnu.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 05 Apr 2016 21:53:49 +0200</pubDate>
-    <lastBuildDate>Tue, 05 Apr 2016 21:53:49 +0200</lastBuildDate>
+    <pubDate>Tue, 05 Apr 2016 22:17:31 +0200</pubDate>
+    <lastBuildDate>Tue, 05 Apr 2016 22:17:31 +0200</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
     
       <item>
@@ -24,7 +24,7 @@
 &lt;h4 id=&quot;why-are-penny-auctions-even-popular&quot;&gt;Why are penny auctions even popular?&lt;/h4&gt;
 &lt;p&gt;The big ‘achievement’ of penny auction sites is that they successfully turned an unappealing type of an all-pay auction into an online game which makes people believe that they could make a profit.  The way beezid.com does this is actually quite clever. First, they give their users many different options how they can make a bid. Users can, for example, use automatic bidding bots, take advantage of price limits above which the auction price will not rise, and purchase a wide variety of other supposedly useful add-ons. Second, they try to hide all information that could reveal how many people are participating in the auction and how much they already spent in total.&lt;/p&gt;
 
-&lt;p&gt;One way how they do this is by their default 10% price limit, which means the auction price will never rise above 10% of the retail price, no matter how many people bid on it. Another strange rule is that bids do not always increase the auction price by one cent but can also lower it by some amount. These modifications of the system make the auction price more or less meaningless because you can no longer assume that, for example, a price of $1.10 is a result of 110 unique bids. Many articles about penny auctions (e.g., &lt;a href=&quot;http://www.consumerreports.org/cro/2011/12/with-penny-auctions-you-can-spend-a-bundle-but-still-leave-empty-handed/index.htm&quot;&gt;consumerreports.org&lt;/a&gt;) do not account for these rules and falsely assume a fixed price increase. The graph below shows the development of the auction price of the $180 tablet over time. If we assume, that each bid would have increased the price by always one cent, the final auction price would have been &lt;strong&gt;$181.60&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;One way they do this is by their default 10% price limit, which means the auction price will never rise above 10% of the retail price, no matter how many people bid on it. Another strange rule is that bids do not always increase the auction price by one cent but can also lower it by some amount. These modifications of the system make the auction price more or less meaningless because you can no longer assume that, for example, a price of $1.10 is a result of 110 unique bids. Many articles about penny auctions (e.g., &lt;a href=&quot;http://www.consumerreports.org/cro/2011/12/with-penny-auctions-you-can-spend-a-bundle-but-still-leave-empty-handed/index.htm&quot;&gt;consumerreports.org&lt;/a&gt;) do not account for these rules and falsely assume a fixed price increase. The graph below shows the development of the auction price of the $180 tablet over time. If we assume, that each bid would have increased the price by always one cent, the final auction price would have been &lt;strong&gt;$181.60&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;/assets/images/penny-auctions/auction_price_hd.png&quot;&gt;&lt;img src=&quot;/assets/images/penny-auctions/auction_price.png&quot; alt=&quot;Auction Price&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
