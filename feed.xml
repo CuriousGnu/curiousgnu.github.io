@@ -5,8 +5,8 @@
     <description>Numbers, Graphs, and Apple Strudels</description>
     <link>http://www.curiousgnu.com/</link>
     <atom:link href="http://www.curiousgnu.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 20 Apr 2016 22:59:07 +0200</pubDate>
-    <lastBuildDate>Wed, 20 Apr 2016 22:59:07 +0200</lastBuildDate>
+    <pubDate>Wed, 20 Apr 2016 23:10:40 +0200</pubDate>
+    <lastBuildDate>Wed, 20 Apr 2016 23:10:40 +0200</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
     
       <item>
@@ -15,7 +15,7 @@
 
 &lt;p&gt;But Reddit can also be fascinating to people who are interested in data research because the user generated data is easily accessible via the official API and through &lt;a href=&quot;https://bigquery.cloud.google.com/table/fh-bigquery:reddit_comments.2016_01&quot;&gt;Google BigQuery&lt;/a&gt; where you can find an SQL database which you can use for little to no cost. For this article, I decided to start with something simple. My goal is to find out how the 50 most popular subreddits are related to each other. The idea behind it is that users usually write comments in subreddits which are close to their personal interests, meaning that a user who is active in the &lt;a href=&quot;http://www.reddit.com/r/StarWars&quot;&gt;/r/StarWars&lt;/a&gt; subreddit is probably also active in the &lt;a href=&quot;http://www.reddit.com/r/firefly&quot;&gt;/r/firefly&lt;/a&gt; subreddit because both categories fit his or her interest in science fiction.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/assets/images/rd-comments/rd_comments_net_hd.png&quot;&gt;&lt;img src=&quot;/assets/images/rd-comments/rd_comments_net.png&quot; alt=&quot;Penny Auction&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/images/rd-comments/rd_comments_net_hd.png&quot;&gt;&lt;img src=&quot;/assets/images/rd-comments/rd_comments_net_hd.png&quot; alt=&quot;Subreddit Network&quot; style=&quot;max-height:640px; max-width:640px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Based on this assumption, my approach was to look at all 1.2 million unique users who posted a comment in at least one of the top 50 subreddits during January 2016. To calculate the strength of the relationship between the subreddits, I used multiple logistic regression models which for example can tell us how much the probability of a Redditor posting a comment in &lt;a href=&quot;http://www.reddit.com/r/StarWars&quot;&gt;/r/StarWars&lt;/a&gt; increases if he or she also posted a comment in &lt;a href=&quot;http://www.reddit.com/r/firefly&quot;&gt;/r/firefly&lt;/a&gt;. The bigger this number is, the more closely related those subreddits are to each other. The network graph above is a visualization of these results. A larger dot stands for a stronger relationship with its neighbors.&lt;/p&gt;
 
@@ -32,7 +32,7 @@
 
 &lt;p&gt;Additionally, I also made a table from the same data. The software programs I used to create both graphs are &lt;a href=&quot;https://gephi.org/&quot;&gt;Gephi&lt;/a&gt; and &lt;a href=&quot;https://public.tableau.com/s/&quot;&gt;Tableau&lt;/a&gt; respectively. A blue square stands for a positive correlation coefficient whereas a red square represents the opposite.  You can open the full table by clicking on the graph below:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://public.tableau.com/profile/curious.gnu#!/vizhome/RedditComments-LogitRegressioncuriousgnu_com/Sheet1&quot;&gt;&lt;img src=&quot;/assets/images/rd-comments/rd_table.png&quot; alt=&quot;Penny Auction&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://public.tableau.com/profile/curious.gnu#!/vizhome/RedditComments-LogitRegressioncuriousgnu_com/Sheet1&quot;&gt;&lt;img src=&quot;/assets/images/rd-comments/rd_table.png&quot; alt=&quot;Subreddit Table&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Admittedly, these aren’t exactly groundbreaking results, but it was real fun to try out some statistical methods on this huge amount of data. I’m currently testing how I can use this data source for an article about text analysis.&lt;/p&gt;
 </description>
