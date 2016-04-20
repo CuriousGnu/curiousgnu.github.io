@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>Numbers, Graphs, and Apple Strudels</title>
+    <title>CuriousGnu</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -64,7 +64,7 @@
     <link rel="alternate" type="application/rss+xml" title="CuriousGnu" href="/feed.xml" />
 
 </head>
-<body class="paged archive-template nav-closed">
+<body class="tag-template nav-closed">
 
     <div class="nav">
     <h3 class="nav-title">Menu</h3>
@@ -72,7 +72,7 @@
         <span class="hidden">Close</span>
     </a>
     <ul>
-        <li class="nav-home  nav-current" role="presentation"><a href="/">Home</a></li>
+        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
         <li class="nav-author " role="presentation"><a href="/author/CuriousGnu">Author</a></li>
         <li class="nav-home" role="presentation"><a href="mailto:contact@curiousgnu.com">Contact</a></li>
     </ul>
@@ -83,12 +83,11 @@
     <div class="site-wrapper">
 
         <!-- [[! Everything else gets inserted here ]] -->
-        <!-- < default -->
+        <!-- < default}} -->
 <!-- The tag above means - insert everything in this file into the [body] of the default.hbs template -->
 
-<!-- The big featured header  -->
-<header class="main-header "
-        style="box-shadow: 0 2px 3px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); background-image: url(/assets/images/main-bg.jpg) ">
+<!-- If we have a tag cover, display that - else blog cover - else nothing -->
+<header class="main-header tag-head " style="box-shadow: 0 2px 3px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); background-image: url(/assets/images/main-bg.jpg) ">
     <nav class="main-nav overlay clearfix">
         
             <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
@@ -97,7 +96,7 @@
     <div class="vertical">
         <div class="main-header-content inner">
             <a href="/"><h1 class="page-title">CuriousGnu</h1></a>
-            <h2 class="page-description">Numbers, Graphs, and Apple Strudels</h2>
+            <h2 class="page-description">&middot; Reddit &middot;</h2>
         </div>
     </div>
 </header>
@@ -111,11 +110,7 @@
         
             <nav class="pagination" role="pagination">
     
-        
-            <a class="newer-posts" href="/" title="Previous Page">&laquo; Newer Posts</a>
-        
-    
-    <span class="page-number"> Page 2 of 2 </span>
+    <span class="page-number"> Page 1 of 1 </span>
      
 </nav>
         
@@ -125,15 +120,15 @@
     
     <article class="post">
         
-        <a href="/imdb-age-gap">
-            <div class="post-header-img" style="background-image: url('/assets/images/age-gap/cover.jpg')"></div>
+        <a href="/reddit-comments">
+            <div class="post-header-img" style="background-image: url('/assets/images/reddit-comments/cover.png')"></div>
         <a>
         
         <header class="post-header">
-            <h2 class="post-title"><a href="/imdb-age-gap">What's the age difference in movies?</a></h2>
+            <h2 class="post-title title-sm"><a href="/reddit-comments">Redditors who commented in /r/X also commented in /r/Y</a></h2>
         </header>
         <section class="post-excerpt">
-            <p>In response to my last post about the distribution of ages of actresses and actors, a Reddit user suggested investigating further the age difference between female and male movie stars. In my first simple analysis, I only compared the average... <a class="read-more" href="/imdb-age-gap">&raquo;</a></p>
+            <p>This blog article is about reddit.com, a website where people can post links to interesting websites and discuss a wide variety of different topics. According to Alexa, a company who analyzes web traffic, Reddit is the ninth most popular site... <a class="read-more" href="/reddit-comments">&raquo;</a></p>
         </section>
         <footer class="post-meta">
             <!-- author -->
@@ -143,39 +138,11 @@
                 on 
                 
                     
-                       <a href='/tag/Movies'>Movies</a>
+                       <a href='/tag/Reddit'>Reddit</a>
                        
                 
             
-            <time class="post-date" datetime="2015-11-04">04 Nov 2015</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        
-        <a href="/imdb-age-distribution">
-            <div class="post-header-img" style="background-image: url('/assets/images/age-dist/cover.jpg')"></div>
-        <a>
-        
-        <header class="post-header">
-            <h2 class="post-title"><a href="/imdb-age-distribution">Actresses Are on Average 7 Years Younger</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>The IMDb dataset is a great source for everyone loves movies and numbers. After I had figured out how to import the data into a local SQL database, the first thing I did was to look at the age of... <a class="read-more" href="/imdb-age-distribution">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <!-- author -->
-            <a href='/author/CuriousGnu'>CuriousGnu</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/Movies'>Movies</a>
-                       
-                
-            
-            <time class="post-date" datetime="2015-11-02">02 Nov 2015</time>
+            <time class="post-date" datetime="2016-04-20">20 Apr 2016</time>
         </footer>
     </article>
     
@@ -184,18 +151,13 @@
     
         <nav class="pagination" role="pagination">
     
-        
-            <a class="newer-posts" href="/" title="Previous Page">&laquo; Newer Posts</a>
-        
-    
-    <span class="page-number"> Page 2 of 2 </span>
+    <span class="page-number"> Page 1 of 1 </span>
      
 </nav>
     
 
 
 </main>
-
 
         <footer class="site-footer clearfix">
           <section class="copyright"><a href="/">CuriousGnu</a> &copy; 2016</section>

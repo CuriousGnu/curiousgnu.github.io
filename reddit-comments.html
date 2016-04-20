@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>Actresses Are on Average 7 Years Younger</title>
+    <title>Redditors who commented in /r/X also commented in /r/Y</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -30,7 +30,7 @@
     <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
     <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-    
+    <meta property="og:image" content="http://s3.amazonaws.com/cgcdn-static/penny-auction_ogimg.png" />
     <!-- [[! Styles'n'Scripts ]] -->
     <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
@@ -105,16 +105,16 @@
     <article class="post post-template">
 
         <header class="post-header">
-            <h1 class="post-title">Actresses Are on Average 7 Years Younger</h1>
+            <h1 class="post-title">Redditors who commented in /r/X also commented in /r/Y</h1>
             <section class="post-meta">
             <!-- <a href='/'>CuriousGnu</a> -->
-            <time class="post-date" datetime="2015-11-02">02 Nov 2015</time>
+            <time class="post-date" datetime="2016-04-20">20 Apr 2016</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
                 
                     
-                       <a href='/tag/Movies'>Movies</a>
+                       <a href='/tag/Reddit'>Reddit</a>
                        
                 
                 
@@ -122,15 +122,30 @@
         </header>
 
         <section class="post-content">
-            <p>The IMDb dataset is a great source for everyone loves movies and numbers. After I had figured out how to <a href="http://imdbpy.sourceforge.net/support.html" target="_blank">import the data</a> into a local SQL database, the first thing I did was to look at the age of the actresses and actors during filming.</p>
+            <p>This blog article is about <a href="http://www.reddit.com">reddit.com</a>, a website where people can post links to interesting websites and discuss a wide variety of different topics. According to <a href="http://www.alexa.com/topsites/countries/US">Alexa</a>, a company who analyzes web traffic, Reddit is the ninth most popular site in the United States. Reddit has thousands of different subcategories, called subreddits, which are usually moderated by volunteers. There are subreddits for nearly every topic you can imagine; for example, on <a href="http://www.reddit.com/r/movies">/r/movies</a> people can discuss the latest blockbuster whereas the users over at <a href="http://www.reddit.com/r/sloths">/r/sloths</a> are passionately committed to collecting cute pictures of sloths.</p>
 
-<p>It turns out that the average actress is, with a median age of 32, <strong>seven years younger</strong> than her male counterpart who is on average 39 years old. The diagram below shows that the distribution of ages of actresses is more skewed to the right (γ1=.912) than those of ages of actors (γ1=.483). This suggests that there is a relatively higher demand for actresses under the age of 35. Interestingly we do not see such an apparent age preference in the casting of actors.</p>
+<p>But Reddit can also be fascinating to people who are interested in data research because the user generated data is easily accessible via the official API and through <a href="https://bigquery.cloud.google.com/table/fh-bigquery:reddit_comments.2016_01">Google BigQuery</a> where you can find an SQL database which you can use for little to no cost. For this article, I decided to start with something simple. My goal is to find out how the 50 most popular subreddits are related to each other. The idea behind it is that users usually write comments in subreddits which are close to their personal interests, meaning that a user who is active in the <a href="http://www.reddit.com/r/StarWars">/r/StarWars</a> subreddit is probably also active in the <a href="http://www.reddit.com/r/firefly">/r/firefly</a> subreddit because both categories fit his or her interest in science fiction.</p>
 
-<p><a href="/assets/images/age-dist/plot_hd.png"><img src="/assets/images/age-dist/plot.png" alt="Age Distribution Plot" title="Age Distribution Plot" /></a></p>
+<p><a href="/assets/images/reddit-comments/reddit_comments_net_hd.png"><img src="/assets/images/reddit-comments/reddit_comments_net.png" alt="Penny Auction" /></a></p>
 
-<p>The sample consists of all roles played by actresses (n=21,551) and actors (n=50,165) in U.S. movie released between 2000 and 2015, with more than 10,000 IMDb-Votes. By the way, in the United States, the median age of females and males is 39.2 years and 36.5 years respectively (<a href="https://www.cia.gov/library/publications/the-world-factbook/geos/us.html">The World Factbook, 2015</a>).</p>
+<p>Based on this assumption, my approach was to look at all 1.2 million unique users who posted a comment in at least one of the top 50 subreddits during January 2016. To calculate the strength of the relationship between the subreddits, I used multiple logistic regression models which for example can tell us how much the probability of a Redditor posting a comment in <a href="http://www.reddit.com/r/StarWars">/r/StarWars</a> increases if he or she also posted a comment in <a href="http://www.reddit.com/r/firefly">/r/firefly</a>. The bigger this number is, the more closely related those subreddits are to each other. The network graph above is a visualization of these results. A larger dot stands for a stronger relationship with its neighbors.</p>
 
-<p><small>Photo: “California Movie Theater Berkeley” by <a href="https://flic.kr/p/aM4GwX">Russell Mondy</a> is licensed under CC BY-NC 2.0</small></p>
+<p>Looking at the graph, we can identify four major groups of subreddits:</p>
+
+<ol>
+  <li><strong>News &amp; Science</strong>: <a href="http://www.reddit.com/r/worldnews">/r/worldnews</a>, <a href="http://www.reddit.com/r/science">/r/science</a>, <a href="http://www.reddit.com/r/space">/r/space</a>, <a href="http://www.reddit.com/r/futurology">/r/futurology</a>, …</li>
+  <li><strong>Entertainment</strong>: <a href="http://www.reddit.com/r/movies">/r/movies</a>, <a href="http://www.reddit.com/r/television">/r/television</a>, <a href="http://www.reddit.com/r/music">/r/music</a>, <a href="http://www.reddit.com/r/books">/r/books</a>, …</li>
+  <li><strong>Visual Content</strong>: <a href="http://www.reddit.com/r/funny">/r/funny</a>, <a href="http://www.reddit.com/r/pics">/r/pics</a>, <a href="http://www.reddit.com/r/aww">/r/aww</a>, <a href="http://www.reddit.com/r/creepy">/r/creepy</a>, …</li>
+  <li><strong>Textual Content</strong>: <a href="http://www.reddit.com/r/showerthought">/r/showerthought</a>, <a href="http://www.reddit.com/r/askreddit">/r/askreddit</a>, <a href="http://www.reddit.com/r/tifu">/r/tifu</a>, <a href="http://www.reddit.com/r/lifeprotips">/r/lifeprotips</a>, …</li>
+</ol>
+
+<p>The subreddit <a href="http://www.reddit.com/r/todayilearned">/r/todayilearned</a> doesn’t belong to any particular group because it’s somewhat popular among all users. This analysis doesn’t go into great detail, but I think it’s nevertheless interesting to see that the groups of subreddit seem to make sense and can be interpreted. For example, it doesn’t sound wrong that users who enjoy commenting on topics about space are also interested in science.</p>
+
+<p>Additionally, I also made a table from the same data. The software programs I used to create both graphs are <a href="https://gephi.org/">Gephi</a> and <a href="https://public.tableau.com/s/">Tableau</a> respectively. A blue square stands for a positive correlation coefficient whereas a red square represents the opposite.  You can open the full table by clicking on the graph below:</p>
+
+<p><a href="https://public.tableau.com/profile/curious.gnu#!/vizhome/RedditComments-LogitRegressioncuriousgnu_com/Sheet1"><img src="/assets/images/reddit-comments/reddit_table.png" alt="Penny Auction" /></a></p>
+
+<p>Admittedly, these aren’t exactly groundbreaking results, but it was real fun to try out some statistical methods on this huge amount of data. I’m currently testing how I can use this data source for an article about text analysis.</p>
 
             <!-- Begin MailChimp Signup Form -->
             <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
@@ -175,15 +190,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=Actresses Are on Average 7 Years Younger&amp;url=http://www.curiousgnu.com/imdb-age-distribution"
+                <a class="icon-twitter" href="http://twitter.com/share?text=Redditors who commented in /r/X also commented in /r/Y&amp;url=http://www.curiousgnu.com/reddit-comments"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.curiousgnu.com/imdb-age-distribution"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.curiousgnu.com/reddit-comments"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.curiousgnu.com/imdb-age-distribution"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.curiousgnu.com/reddit-comments"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -199,15 +214,15 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/age-gap/cover.jpg)" href="/imdb-age-gap">
-            <section class="post">
-                <h2>What's the age difference in movies?</h2>
-                <p>In response to my last post about the distribution of ages of actresses and actors,...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
+    
+        <a class="read-next-story prev " style="background-image: url(/assets/images/penny-auctions/cover.png)" href="/penny-auctions">
+            <section class="post">
+                <h2 class="title-sm">Penny Auctions - How to sell a $180 tablet for $7,264</h2>
+                <p>Unless you use an ad blocker, you probably notice ads for penny auction sites from...</p>
+            </section>
+        </a>
     
     <!-- [[! /prev_post ]] -->
 </aside>
