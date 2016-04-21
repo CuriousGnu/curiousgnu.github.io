@@ -5,8 +5,8 @@
     <description>Numbers, Graphs, and Apple Strudels</description>
     <link>http://www.curiousgnu.com/</link>
     <atom:link href="http://www.curiousgnu.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 20 Apr 2016 23:10:40 +0200</pubDate>
-    <lastBuildDate>Wed, 20 Apr 2016 23:10:40 +0200</lastBuildDate>
+    <pubDate>Thu, 21 Apr 2016 19:57:48 +0200</pubDate>
+    <lastBuildDate>Thu, 21 Apr 2016 19:57:48 +0200</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
     
       <item>
@@ -17,7 +17,7 @@
 
 &lt;p&gt;&lt;a href=&quot;/assets/images/rd-comments/rd_comments_net_hd.png&quot;&gt;&lt;img src=&quot;/assets/images/rd-comments/rd_comments_net_hd.png&quot; alt=&quot;Subreddit Network&quot; style=&quot;max-height:640px; max-width:640px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Based on this assumption, my approach was to look at all 1.2 million unique users who posted a comment in at least one of the top 50 subreddits during January 2016. To calculate the strength of the relationship between the subreddits, I used multiple logistic regression models which for example can tell us how much the probability of a Redditor posting a comment in &lt;a href=&quot;http://www.reddit.com/r/StarWars&quot;&gt;/r/StarWars&lt;/a&gt; increases if he or she also posted a comment in &lt;a href=&quot;http://www.reddit.com/r/firefly&quot;&gt;/r/firefly&lt;/a&gt;. The bigger this number is, the more closely related those subreddits are to each other. The network graph above is a visualization of these results. A larger dot stands for a stronger relationship with its neighbors.&lt;/p&gt;
+&lt;p&gt;Based on this assumption, my approach was to look at all 1.2 million unique users who posted a comment in at least one of the top 50 subreddits during January 2016. To calculate the strength of the relationship between the subreddits, I used multiple logistic regression models which for example can tell us how much the probability of a Redditor posting a comment in &lt;a href=&quot;http://www.reddit.com/r/StarWars&quot;&gt;/r/StarWars&lt;/a&gt; increases if he or she also posted a comment in &lt;a href=&quot;http://www.reddit.com/r/firefly&quot;&gt;/r/firefly&lt;/a&gt;. The bigger this number is, the more closely related those subreddits are to each other. The network graph above is a visualization of these results. A bigger dot stands for a larger number of connections to its neighbors.&lt;/p&gt;
 
 &lt;p&gt;Looking at the graph, we can identify four major groups of subreddits:&lt;/p&gt;
 
