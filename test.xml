@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:webfeeds="http://webfeeds.org/rss/1.0">
+  <channel>
+    <title>CuriousGnu.com - Articles</title>
+    <webfeeds:analytics id="UA-74290781-1" engine="GoogleAnalytics"/>
+    <description>Numbers, Graphs, and Apple Strudels</description>
+    <link>http://www.curiousgnu.com/</link>
+      <item>
+        <title>Redditors who commented in /r/X also commented in /r/Y</title>
+          <description>
+            &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;http://www.curiousgnu.com/assets/images/rd-comments/cover.png&quot;  alt=&quot;Cover Image&quot; /&gt;
+            &lt;p&gt;This blog article is about &lt;a href=&quot;http://www.reddit.com&quot;&gt;reddit.com&lt;/a&gt;, a website where people can post links to interesting websites and discuss a wide variety of different topics. According to &lt;a href=&quot;http://www.alexa.com/topsites/countries/US&quot;&gt;Alexa&lt;/a&gt;, a company who analyzes web traffic, Reddit is the ninth most popular site in the United States. Reddit has thousands of different subcategories, called subreddits, which are usually moderated by volunteers. There are subreddits for nearly every topic you can imagine; for example, on &lt;a href=&quot;http://www.reddit.com/r/movies&quot;&gt;/r/movies&lt;/a&gt; people can discuss the latest blockbuster whereas the users over at &lt;a href=&quot;http://www.reddit.com/r/sloths&quot;&gt;/r/sloths&lt;/a&gt; are passionately committed to collecting cute pictures of sloths.&lt;/p&gt;
+
+&lt;p&gt;But Reddit can also be fascinating to people who are interested in data research because the user generated data is easily accessible via the official API and through &lt;a href=&quot;https://bigquery.cloud.google.com/table/fh-bigquery:reddit_comments.2016_01&quot;&gt;Google BigQuery&lt;/a&gt; where you can find an SQL database which you can use for little to no cost. For this article, I decided to start with something simple. My goal is to find out how the 50 most popular subreddits are related to each other. The idea behind it is that users usually write comments in subreddits which are close to their personal interests, meaning that a user who is active in the &lt;a href=&quot;http://www.reddit.com/r/StarWars&quot;&gt;/r/StarWars&lt;/a&gt; subreddit is probably also active in the &lt;a href=&quot;http://www.reddit.com/r/firefly&quot;&gt;/r/firefly&lt;/a&gt; subreddit because both categories fit his or her interest in science fiction.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/rd-comments/rd_comments_net_hd.png&quot;&gt;&lt;img src=&quot;/assets/images/rd-comments/rd_comments_net_hd.png&quot; alt=&quot;Subreddit Network&quot; style=&quot;max-height:640px; max-width:640px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Based on this assumption, my approach was to look at all 1.2 million unique users who posted a comment in at least one of the top 50 subreddits during January 2016. To calculate the strength of the relationship between the subreddits, I used multiple logistic regression models which for example can tell us how much the probability of a Redditor posting a comment in &lt;a href=&quot;http://www.reddit.com/r/StarWars&quot;&gt;/r/StarWars&lt;/a&gt; increases if he or she also posted a comment in &lt;a href=&quot;http://www.reddit.com/r/firefly&quot;&gt;/r/firefly&lt;/a&gt;. The bigger this number is, the more closely related those subreddits are to each other. The network graph above is a visualization of these results. A bigger dot stands for a larger number of connections to its neighbors.&lt;/p&gt;
+
+&lt;p&gt;Looking at the graph, we can identify four major groups of subreddits:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;News &amp;amp; Science&lt;/strong&gt;: &lt;a href=&quot;http://www.reddit.com/r/worldnews&quot;&gt;/r/worldnews&lt;/a&gt;, &lt;a href=&quot;http://www.reddit.com/r/science&quot;&gt;/r/science&lt;/a&gt;, &lt;a href=&quot;http://www.reddit.com/r/space&quot;&gt;/r/space&lt;/a&gt;, &lt;a href=&quot;http://www.reddit.com/r/futurology&quot;&gt;/r/futurology&lt;/a&gt;, …&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Entertainment&lt;/strong&gt;: &lt;a href=&quot;http://www.reddit.com/r/movies&quot;&gt;/r/movies&lt;/a&gt;, &lt;a href=&quot;http://www.reddit.com/r/television&quot;&gt;/r/television&lt;/a&gt;, &lt;a href=&quot;http://www.reddit.com/r/music&quot;&gt;/r/music&lt;/a&gt;, &lt;a href=&quot;http://www.reddit.com/r/books&quot;&gt;/r/books&lt;/a&gt;, …&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Visual Content&lt;/strong&gt;: &lt;a href=&quot;http://www.reddit.com/r/funny&quot;&gt;/r/funny&lt;/a&gt;, &lt;a href=&quot;http://www.reddit.com/r/pics&quot;&gt;/r/pics&lt;/a&gt;, &lt;a href=&quot;http://www.reddit.com/r/aww&quot;&gt;/r/aww&lt;/a&gt;, &lt;a href=&quot;http://www.reddit.com/r/creepy&quot;&gt;/r/creepy&lt;/a&gt;, …&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Textual Content&lt;/strong&gt;: &lt;a href=&quot;http://www.reddit.com/r/showerthought&quot;&gt;/r/showerthought&lt;/a&gt;, &lt;a href=&quot;http://www.reddit.com/r/askreddit&quot;&gt;/r/askreddit&lt;/a&gt;, &lt;a href=&quot;http://www.reddit.com/r/tifu&quot;&gt;/r/tifu&lt;/a&gt;, &lt;a href=&quot;http://www.reddit.com/r/lifeprotips&quot;&gt;/r/lifeprotips&lt;/a&gt;, …&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The subreddit &lt;a href=&quot;http://www.reddit.com/r/todayilearned&quot;&gt;/r/todayilearned&lt;/a&gt; doesn’t belong to any particular group because it’s somewhat popular among all users. This analysis doesn’t go into great detail, but I think it’s nevertheless interesting to see that the groups of subreddit seem to make sense and can be interpreted. For example, it doesn’t sound wrong that users who enjoy commenting on topics about space are also interested in science.&lt;/p&gt;
+
+&lt;p&gt;Additionally, I also made a table from the same data. The software programs I used to create both graphs are &lt;a href=&quot;https://gephi.org/&quot;&gt;Gephi&lt;/a&gt; and &lt;a href=&quot;https://public.tableau.com/s/&quot;&gt;Tableau&lt;/a&gt; respectively. A blue square stands for a positive correlation coefficient whereas a red square represents the opposite.  You can open the full table by clicking on the graph below:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://public.tableau.com/profile/curious.gnu#!/vizhome/RedditComments-LogitRegressioncuriousgnu_com/Sheet1&quot;&gt;&lt;img src=&quot;/assets/images/rd-comments/rd_table.png&quot; alt=&quot;Subreddit Table&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Admittedly, these aren’t exactly groundbreaking results, but it was real fun to try out some statistical methods on this huge amount of data. I’m currently testing how I can use this data source for an article about text analysis.&lt;/p&gt;
+
+          </description>
+        <pubDate>Wed, 20 Apr 2016 14:14:00 +0200</pubDate>
+        <link>http://www.curiousgnu.com/reddit-comments</link>
+        <guid isPermaLink="true">http://www.curiousgnu.com/reddit-comments</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Penny Auctions - How to sell a $180 tablet for $7,264</title>
+          <description>
+            &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;http://www.curiousgnu.com/assets/images/penny-auctions/cover.png&quot;  alt=&quot;Cover Image&quot; /&gt;
+            &lt;p&gt;Unless you use an ad blocker, you probably notice ads for penny auction sites from time to time. They usually advertise with sketchy messages like &lt;em&gt;“iPhone sold for $14.21.”&lt;/em&gt; They can sell iPhones such low prices because of their unusual auction system where each bid increases the auction price by only one cent. This works because unlike eBay each bid costs money (e.g., $0.40) no matter if you end up winning the auction or not. You have to be the highest bidder when the clock runs out to win the auction. The problem is that each bid adds ten seconds to the countdown which gives other bidders the time to counter your bid.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/penny-auctions/mockup_paad.jpg&quot; alt=&quot;Penny Auction&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Penny auction sites are not something new and have been criticized a lot, which makes you wonder how they are still in business. Even though there are many news articles about online penny auctions, I did not find any numbers or statistics which would support the criticism. So I started to collect information on my own, to get a better understanding how these auctions work in reality. What I found exceeded all my expectations.&lt;/p&gt;
+
+&lt;p&gt;On &lt;a href=&quot;https://en.wikipedia.org/wiki/Beezid&quot;&gt;beezid.com&lt;/a&gt;, one of the bigger penny auction sites, a single $180 tablet generated 18,160 bids, worth of over &lt;strong&gt;$7,200&lt;/strong&gt;, from 56 users. Shockingly nearly half of those bids came from just one person who lost approximately lost &lt;strong&gt;$3,500&lt;/strong&gt; in just two hours (see graph below). The winner of this auction only spent 80 cents on his or her two bids. In the second half of this blog post, I will outline the data collection process. To protect the users’ privacy, I replaced the real usernames with chemical elements.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/penny-auctions/money_spent_hd.png&quot;&gt;&lt;img src=&quot;/assets/images/penny-auctions/money_spent.png&quot; alt=&quot;Money Spent on Bids&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;why-are-penny-auctions-even-popular&quot;&gt;Why are penny auctions even popular?&lt;/h4&gt;
+&lt;p&gt;The big ‘achievement’ of penny auction sites is that they successfully turned an unappealing type of an all-pay auction into an online game which makes people believe that they could make a profit.  The way beezid.com does this is actually quite clever. First, they give their users many different options how they can make a bid. Users can, for example, use automatic bidding bots, take advantage of price limits above which the auction price will not rise, and purchase a wide variety of other supposedly useful add-ons. Second, they try to hide all information that could reveal how many people are participating in the auction and how much they already spent in total.&lt;/p&gt;
+
+&lt;p&gt;One way they do this is by their default 10% price limit, which means the auction price will never rise above 10% of the retail price, no matter how many people bid on it. Another strange rule is that bids do not always increase the auction price by one cent but can also lower it by some amount. These modifications of the system make the auction price more or less meaningless because you can no longer assume that, for example, a price of $1.10 is a result of 110 unique bids. Many articles about penny auctions (e.g., &lt;a href=&quot;http://www.consumerreports.org/cro/2011/12/with-penny-auctions-you-can-spend-a-bundle-but-still-leave-empty-handed/index.htm&quot;&gt;consumerreports.org&lt;/a&gt;) do not account for these rules and falsely assume a fixed price increase. The graph below shows the development of the auction price of the $180 tablet over time. If we assume, that each bid would have increased the price by always one cent, the final auction price would have been &lt;strong&gt;$181.60&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/penny-auctions/auction_price_hd.png&quot;&gt;&lt;img src=&quot;/assets/images/penny-auctions/auction_price.png&quot; alt=&quot;Auction Price&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This lack of transparency combined with the many different bidding options creates a system which gives users the illusion that they could make a profit with the right strategies.&lt;/p&gt;
+
+&lt;h4 id=&quot;how-to-monitor-penny-auctions&quot;&gt;How to monitor penny auctions?&lt;/h4&gt;
+&lt;p&gt;Despite the site’s efforts to keep their users in the dark, it is possible to archive the complete bidding history of an auction, if you monitor it from its start. To collect the data for this blog post, I wrote a simple &lt;a href=&quot;https://gist.github.com/CuriousGnu/cf558e8ca8cbbd491619a9e1940682c3&quot;&gt;script&lt;/a&gt; in Python which automatically saves the all bidding information of a &lt;a href=&quot;https://en.wikipedia.org/wiki/Beezid&quot;&gt;beezid.com&lt;/a&gt; auction. If you want to try it out yourself, you only have to change the auction id and update the request header. You can easily get this information with the Chrome DevTools. In case, you have a slow or unstable internet connection I highly recommend running the script on a server (e.g., &lt;a href=&quot;https://www.digitalocean.com/pricing/&quot;&gt;Digital Ocean&lt;/a&gt;). It should be noted that the script behaves like a regular browser and does not bypass any server-side security or content protection mechanisms.&lt;/p&gt;
+
+&lt;h4 id=&quot;arent-penny-auctions-unregulated-gambling&quot;&gt;Aren’t penny auctions unregulated gambling?&lt;/h4&gt;
+&lt;p&gt;One of the most important parts of the business models of penny auction sites is that what they are doing is not considered gambling. I am not a lawyer, so I will not attempt to question the legality of their operations. Their central argument is that penny auctions require skill and are therefore exempt from the &lt;a href=&quot;https://en.wikipedia.org/wiki/Unlawful_Internet_Gambling_Enforcement_Act_of_2006&quot;&gt;Unlawful Internet Gambling Enforcement Act&lt;/a&gt;, which is the same legal loophole daily fantasy sports sites like &lt;a href=&quot;https://en.wikipedia.org/wiki/FanDuel&quot;&gt;FanDuel&lt;/a&gt; or &lt;a href=&quot;https://en.wikipedia.org/wiki/DraftKings&quot;&gt;DraftKings&lt;/a&gt; use. Personally, I cannot see how any skill could increase your chances of winning an auction. The data clearly shows that you are bidding against an unknown number of users who sometimes act extremely irrational. Even if you had a comprehensive database of previous auctions, you probably would not be able to predict how far a specific user will go. If someone has already spent over $3,000 on a $180 tablet, what could stop them aside from his or her credit card limit? It would be really interesting to hear an official explanation of how skill is even a factor in this game.&lt;/p&gt;
+
+&lt;p&gt;If you have any questions about this blog post, feel free to contact me by &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#097;&amp;#099;&amp;#116;&amp;#064;&amp;#099;&amp;#117;&amp;#114;&amp;#105;&amp;#111;&amp;#117;&amp;#115;&amp;#103;&amp;#110;&amp;#117;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
+
+          </description>
+        <pubDate>Mon, 04 Apr 2016 20:00:00 +0200</pubDate>
+        <link>http://www.curiousgnu.com/penny-auctions</link>
+        <guid isPermaLink="true">http://www.curiousgnu.com/penny-auctions</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>How positive are your tweets?</title>
+          <description>
+            &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;http://www.curiousgnu.com/assets/images/tweetanalyzer/cover.jpg&quot;  alt=&quot;Cover Image&quot; /&gt;
+            &lt;p&gt;In this blog post, I would like to present you &lt;a href=&quot;https://tweetanalyzer.net&quot;&gt;tweetanalyzer.net&lt;/a&gt;, a small project of mine, where you can do a sentiment analysis of your tweets or the ones of any other Twitter user. The goal was to create a fun website which uses text analysis to determine how positive someone’s tweets are.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://tweetanalyzer.net&quot;&gt;&lt;img src=&quot;/assets/images/tweetanalyzer/screen.png&quot; alt=&quot;TweetAnalyzer.net&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;After you signed in with your Twitter account, you can type in any username and the website will automatically download the latest 200-300 tweets and calculate a positivity and vulgarity score for each of them. The method used to do this is very simple. The backend uses the AFINN word list from &lt;a href=&quot;http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010&quot;&gt;Finn Årup Nielsen&lt;/a&gt;, which contains nearly 2,500 words rated for their positivity from -5 (negative) to +5 (positive). After removing stop words, hashtags, and URLs the script looks up every word in this list and calculates the sum for each tweet. If this sum is over zero, the tweet will be marked as positive if it’s under zero as negative. The overall positivity score for a user is then calculated as follows:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/tweetanalyzer/positivity_score.gif&quot; alt=&quot;PSF&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Admintingly this approach has its weakness and is not as sophisticated as many other methods classification technique out there. For example, it can not understand the context of a tweet and how a specific word (e.g., &lt;em&gt;sick&lt;/em&gt;) is used. I experimented more complex Python libraries for text analysis, but unfortunately they did not run well on the Google App Engine platform if you plan to analyse thousands of tweets but only have a limited budget. I am sure that it can be done without a problem but since I never used it before and did not want to spend too much time on it, I decided to use the simple solution which I believe is still sufficient for such a task.&lt;/p&gt;
+
+&lt;p&gt;To determine how vulgar a tweet is, the software uses a similar word list based method. If a tweet contains a word which is in this list, it will be marked as &lt;em&gt;vulgar&lt;/em&gt;. The lack of content-awareness will, of course, lead to some mistakes. For example, news articles about &lt;em&gt;sex trafficking&lt;/em&gt; or &lt;em&gt;rape&lt;/em&gt; will be falsely classified as &lt;em&gt;vulgar&lt;/em&gt;. So please do not take the results too seriously and rather tweet something positive about it! Feel free to &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#097;&amp;#099;&amp;#116;&amp;#064;&amp;#099;&amp;#117;&amp;#114;&amp;#105;&amp;#111;&amp;#117;&amp;#115;&amp;#103;&amp;#110;&amp;#117;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;contact me&lt;/a&gt; if you suggestions or questions.&lt;/p&gt;
+
+&lt;p&gt;You can find the project here: &lt;a href=&quot;https://tweetanalyzer.net&quot;&gt;https://tweetanalyzer.net&lt;/a&gt;&lt;/p&gt;
+
+          </description>
+        <pubDate>Wed, 16 Mar 2016 22:42:00 +0100</pubDate>
+        <link>http://www.curiousgnu.com/tweetanalyzer</link>
+        <guid isPermaLink="true">http://www.curiousgnu.com/tweetanalyzer</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>What are the most common words in TV shows?</title>
+          <description>
+            &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;http://www.curiousgnu.com/assets/images/tv-wordcloud/cover.jpg&quot;  alt=&quot;Cover Image&quot; /&gt;
+            &lt;p&gt;Nowadays, there are some many great shows on television or available for streaming. After binge-watching the first season of Jessica Jones, I knew that I had to post something about this topic. I have to admit that I never spend much time on text analysis, so I decided to start with the basics. The first thing I did was to create simple word clouds based on the subtitles of &lt;em&gt;Jessica Jones&lt;/em&gt;, &lt;em&gt;The Blacklist&lt;/em&gt;, and &lt;em&gt;TBBT&lt;/em&gt;. They are an easy way to visualize how frequently certain words are used in a text or TV show.&lt;/p&gt;
+
+&lt;p&gt;Besides this basic type of word cloud, I also created a slightly different version of it. For this, I did not just count the words but also looked how close they are to a character’s name. This means that the more frequent a word is used in combination with a character’s name, the bigger it is in the word cloud.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/tv-wordcloud/wordcloud_jessicajones_hd.png&quot;&gt;&lt;img src=&quot;/assets/images/tv-wordcloud/wordcloud_jessicajones.png&quot; alt=&quot;Jessica Jones Wordcloud&quot; title=&quot;Jessica Jones Wordcloud&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/tv-wordcloud/wordcloud_blacklist_hd.png&quot;&gt;&lt;img src=&quot;/assets/images/tv-wordcloud/wordcloud_blacklist.png&quot; alt=&quot;The Blacklist Wordcloud&quot; title=&quot;The Blacklist Wordcloud&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/tv-wordcloud/wordcloud_tbbt_hd.png&quot;&gt;&lt;img src=&quot;/assets/images/tv-wordcloud/wordcloud_tbbt.png&quot; alt=&quot;TBBT Wordcloud&quot; title=&quot;TBBT Wordcloud&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I created all those word clouds with the R package &lt;a href=&quot;https://cran.r-project.org/web/packages/wordcloud/index.html&quot;&gt;&lt;em&gt;wordcloud&lt;/em&gt;&lt;/a&gt; which makes this job so easy. Besides that, the &lt;em&gt;findAssocs()&lt;/em&gt; function from the &lt;a href=&quot;https://cran.r-project.org/web/packages/tm/index.html&quot;&gt;&lt;em&gt;tm&lt;/em&gt;&lt;/a&gt; package was used calculate the often a word is used close to a character’s name. For the second type of word clouds, I used the correlation coefficients from this function as a weighting factor.&lt;/p&gt;
+
+&lt;p&gt;Before doing that, I replaced all the different versions of a name (e.g., Lizzy, Liz, Keen) with the name you can see in the center of the word clouds. In case you are wondering why there are not always complete words in the clouds, it is because of a process called &lt;em&gt;stemming&lt;/em&gt; which reduces words to their word stem. The idea behind it is to group the different forms of a word together instead of treating every single form as an own term.&lt;/p&gt;
+
+&lt;p&gt;I hope you like this post. Please feel free to contact me if you have any questions or suggestions.&lt;/p&gt;
+
+          </description>
+        <pubDate>Sat, 27 Feb 2016 13:42:00 +0100</pubDate>
+        <link>http://www.curiousgnu.com/tv-show-word-clouds</link>
+        <guid isPermaLink="true">http://www.curiousgnu.com/tv-show-word-clouds</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Who sells LSD on the Darktnet?</title>
+          <description>
+            &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;http://www.curiousgnu.com/assets/images/darknet-lsd/cover.jpg&quot;  alt=&quot;Cover Image&quot; /&gt;
+            &lt;p&gt;I recently got my hands on Diana S. Dolliver’s &lt;a href=&quot;http://dx.doi.org/10.1016/j.drugpo.2015.01.008&quot; target=&quot;_blank&quot;&gt;paper&lt;/a&gt; about drug dealing on the Tor network, a hidden, uncensored network which can only be accessed by &lt;a href=&quot;https://www.torproject.org/&quot; target=&quot;_blank&quot;&gt;special software&lt;/a&gt;. I got interested this topic because it allows us to analyse transactions which used to be hidden and nearly impossible to observe.&lt;/p&gt;
+
+&lt;p&gt;Besides the many legitimate use cases of the Tor network, it also provides together with Bitcoin the technology most &lt;em&gt;cryptomarkets&lt;/em&gt; use. Tor allows the side administrators to host their sites anonymously without the fear of getting arrested immediately by the FBI. Cryptomarkets function similar to eBay, in the sense that they do not sell drugs directly but provide a platform where other vendors can sell their products for a small fee. The screenshot below shows how such a site looks from a buyers perspective. I chose to take a close look at the &lt;em&gt;AlphaBay Market&lt;/em&gt;, one of the biggest platforms in December 2015.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/darknet-lsd/screenshot.png&quot;&gt;&lt;img src=&quot;/assets/images/darknet-lsd/screenshot.png&quot; alt=&quot;AlphaBay Market Screenshot&quot; title=&quot;AlphaBay Market Screenshot&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;how-to-analyse-the-alphabay-market&quot;&gt;How to analyse the AlphaBay Market?&lt;/h5&gt;
+
+&lt;p&gt;If you access one of the larger cryptomarkets, you will probably see thousands of different offerings ranging from prescription drugs to illegal weapons. The fact that anonymous users claim to sell those products, of course, does not say anything about the actual demand and volume of the sales. This is the point where it gets interesting because the &lt;em&gt;AlphaBay Market&lt;/em&gt; has a revealing feedback system which lists not only lists all products sold but also their prices, and purchase dates.&lt;/p&gt;
+
+&lt;p&gt;Assuming a constant feedback ratio, we can use this data to observe the early development of the market from only one snapshot. To automatically download the customer feedbacks I wrote a scraper in Python, which provided me with the dataset for the further analysis.&lt;/p&gt;
+
+&lt;h5 id=&quot;how-much-lsd-is-sold&quot;&gt;How much LSD is sold?&lt;/h5&gt;
+
+&lt;p&gt;Unfortunately, the scraping process of a website hidden in the Tor network is a quite slow. Therefore, I decided only to download information related to LSD sales. The diagram below shows last year’s LSD sales for the weeks 13 to 50:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/darknet-lsd/plot_hd.png&quot;&gt;&lt;img src=&quot;/assets/images/darknet-lsd/plot.png&quot; alt=&quot;LSD Sales&quot; title=&quot;LSD Sales&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;During November 2015, approximately &lt;strong&gt;$215,000&lt;/strong&gt; worth of LSD was sold on the AlphaBay Market. I do not have a definitive explanation for the sales increase following week 44, but my guess is that problems with competing cryptomarkets drove new sellers to this platform and their existing customers followed. This theory is supported by the fact that already established vendors like &lt;em&gt;Lyseric025&lt;/em&gt; were not able to significantly increase their revenue during this time.&lt;/p&gt;
+
+&lt;h5 id=&quot;who-are-the-dealers&quot;&gt;Who are the dealers?&lt;/h5&gt;
+
+&lt;p&gt;To better get a better understanding of who those LSD vendors are, we need to look at their other sales also:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/darknet-lsd/table_hd.png&quot;&gt;&lt;img src=&quot;/assets/images/darknet-lsd/table.png&quot; alt=&quot;LSD Vendors&quot; title=&quot;LSD Vendors&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We can see in the table above that the leading LSD seller on the AlphaBay Market was &lt;em&gt;Lyseric025&lt;/em&gt;, who had a market share of 29% in November 2015 and generated a revenue of $65,438. Only 3% of it came from B2B sales (sale over $200) which suggest a strong focus on the end customer.&lt;/p&gt;
+
+&lt;p&gt;Interestingly most sellers on this list made the majority of their revenue with LSD. One of the reasons for this could be that the LSD is supposedly produced by only a &lt;a href=&quot;http://www.justice.gov/archive/ndic/pubs25/25921/25921p.pdf&quot; target=&quot;_blank&quot;&gt;few producers&lt;/a&gt; which wholesalers are probably only interested in selling in large volumes. This would mean that a specialized vendor could increase its profit by using economies of scale. I wonder if there is a similar specialization in other more decentralized drug markets.&lt;/p&gt;
+
+          </description>
+        <pubDate>Sat, 16 Jan 2016 12:10:00 +0100</pubDate>
+        <link>http://www.curiousgnu.com/cryptomarkets-lsd-sales</link>
+        <guid isPermaLink="true">http://www.curiousgnu.com/cryptomarkets-lsd-sales</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>What&#39;s the age difference in movies?</title>
+          <description>
+            &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;http://www.curiousgnu.com/assets/images/age-gap/cover.jpg&quot;  alt=&quot;Cover Image&quot; /&gt;
+            &lt;p&gt;In response to my &lt;a href=&quot;/imdb-age-distribution&quot;&gt;last post&lt;/a&gt; about the distribution of ages of actresses and actors, a Reddit user suggested investigating further the age difference between female and male movie stars. In my first simple analysis, I only compared the average ages of both groups in the overall sample. Now, the next step is to check on a movie basis if there is an age difference between the leading actress and her co-star.&lt;/p&gt;
+
+&lt;h5 id=&quot;methods&quot;&gt;Methods&lt;/h5&gt;
+&lt;p&gt;First I needed to identify the two leads of each film (2000-2015, with 10,000+ votes) to calculate the age difference. Unfortunately, there is no direct way to get this information from the IMDb dataset. I, therefore, used a quick-and-dirty approve and chose the first actress and actor in the IMDb cast credits as leads. If I did not find both an actress and an actor in the first three entries (in credits order), I removed the whole movie from the sample. With this method, I was able to get the leading actresses and actors of 1,201 movies. Note that they are not necessarily movie couples. I am aware that a manually selected sample would have been better but considering the simplicity of my approach; I think that the results are acceptable for this analysis. Feel free to check it yourself &lt;a href=&quot;/assets/data/age_gap_2015.csv&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h5 id=&quot;results&quot;&gt;Results&lt;/h5&gt;
+&lt;p&gt;When we look at the box-plot of the age differences, we can see that on average the leading actor is &lt;strong&gt;five years older&lt;/strong&gt; than his female co-star. It also tells us that in approximately 75% of all movies in our sample have an older male lead. Based on this data, the answer to the question from the title is &lt;em&gt;“Yes”&lt;/em&gt; even though the age gap might be not as big as expected.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/age-gap/plot_2.png&quot;&gt;&lt;img src=&quot;/assets/images/age-gap/plot_2.png&quot; alt=&quot;Age Gap Boxplot&quot; title=&quot;Age Gap Boxplot&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Finally, I also created a density plot which summarizes all data points in a nice looking, colorful graph. The area below the gray dashed line stands for all the movies in which the leading actor is older :&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/age-gap/plot_1_hd.png&quot;&gt;&lt;img src=&quot;/assets/images/age-gap/plot_1.png&quot; alt=&quot;Age Gap Plot&quot; title=&quot;Age Gap Plot&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+          </description>
+        <pubDate>Wed, 04 Nov 2015 13:21:00 +0100</pubDate>
+        <link>http://www.curiousgnu.com/imdb-age-gap</link>
+        <guid isPermaLink="true">http://www.curiousgnu.com/imdb-age-gap</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Actresses Are on Average 7 Years Younger</title>
+          <description>
+            &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;http://www.curiousgnu.com/assets/images/age-dist/cover.jpg&quot;  alt=&quot;Cover Image&quot; /&gt;
+            &lt;p&gt;The IMDb dataset is a great source for everyone loves movies and numbers. After I had figured out how to &lt;a href=&quot;http://imdbpy.sourceforge.net/support.html&quot; target=&quot;_blank&quot;&gt;import the data&lt;/a&gt; into a local SQL database, the first thing I did was to look at the age of the actresses and actors during filming.&lt;/p&gt;
+
+&lt;p&gt;It turns out that the average actress is, with a median age of 32, &lt;strong&gt;seven years younger&lt;/strong&gt; than her male counterpart who is on average 39 years old. The diagram below shows that the distribution of ages of actresses is more skewed to the right (γ1=.912) than those of ages of actors (γ1=.483). This suggests that there is a relatively higher demand for actresses under the age of 35. Interestingly we do not see such an apparent age preference in the casting of actors.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/age-dist/plot_hd.png&quot;&gt;&lt;img src=&quot;/assets/images/age-dist/plot.png&quot; alt=&quot;Age Distribution Plot&quot; title=&quot;Age Distribution Plot&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The sample consists of all roles played by actresses (n=21,551) and actors (n=50,165) in U.S. movie released between 2000 and 2015, with more than 10,000 IMDb-Votes. By the way, in the United States, the median age of females and males is 39.2 years and 36.5 years respectively (&lt;a href=&quot;https://www.cia.gov/library/publications/the-world-factbook/geos/us.html&quot;&gt;The World Factbook, 2015&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;&lt;small&gt;Photo: “California Movie Theater Berkeley” by &lt;a href=&quot;https://flic.kr/p/aM4GwX&quot;&gt;Russell Mondy&lt;/a&gt; is licensed under CC BY-NC 2.0&lt;/small&gt;&lt;/p&gt;
+
+          </description>
+        <pubDate>Mon, 02 Nov 2015 21:10:00 +0100</pubDate>
+        <link>http://www.curiousgnu.com/imdb-age-distribution</link>
+        <guid isPermaLink="true">http://www.curiousgnu.com/imdb-age-distribution</guid>
+      </item>
+      
+    
+  </channel>
+</rss>
