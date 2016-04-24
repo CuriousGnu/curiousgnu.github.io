@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CuriousGnu.com - Articles</title>
+    <description>Numbers, Graphs, and Apple Strudels</description>
+    <link>http://www.curiousgnu.com/</link>
+      
+      <item>
+        <title>Redditors who commented in /r/X also commented in /r/Y</title>
+        
+          <description><img class="webfeedsFeaturedVisual" src="http://www.curiousgnu.com/assets/images/rd-comments/cover.png" alt="Cover Image" />&lt;p&gt;This blog article is about &lt;a href=&quot;http://www.reddit.com&quot;&gt;reddit.com&lt;/a&gt;, a website where people can post links to interesting websites and discuss a wide variety of different topics. According to &lt;a href=&quot;http://www.alexa.com/topsites/countries/US&quot;&gt;Alexa&lt;/a&gt;, a company who analyzes web traffic, Reddit is the ninth most popular site in the United States. Reddit has thousands of different subcategories, called subreddits, which are usually moderated by volunteers. There are subreddits for nearly every topic you can imagine; for example, on &lt;a href=&quot;http://www.reddit.com/r/movies&quot;&gt;/r/movies&lt;/a&gt; people can discuss the latest blockbuster whereas the users over at &lt;a href=&quot;http://www.reddit.com/r/sloths&quot;&gt;/r/sloths&lt;/a&gt; are passionately committed to collecting cute pictures of sloths.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 20 Apr 2016 14:14:00 +0200</pubDate>
+        <link>http://www.curiousgnu.com/reddit-comments</link>
+        <guid isPermaLink="true">http://www.curiousgnu.com/reddit-comments</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Penny Auctions - How to sell a $180 tablet for $7,264</title>
+        
+          <description><img class="webfeedsFeaturedVisual" src="http://www.curiousgnu.com/assets/images/penny-auctions/cover.png" alt="Cover Image" />&lt;p&gt;Unless you use an ad blocker, you probably notice ads for penny auction sites from time to time. They usually advertise with sketchy messages like &lt;em&gt;“iPhone sold for $14.21.”&lt;/em&gt; They can sell iPhones such low prices because of their unusual auction system where each bid increases the auction price by only one cent. This works because unlike eBay each bid costs money (e.g., $0.40) no matter if you end up winning the auction or not. You have to be the highest bidder when the clock runs out to win the auction. The problem is that each bid adds ten seconds to the countdown which gives other bidders the time to counter your bid.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 04 Apr 2016 20:00:00 +0200</pubDate>
+        <link>http://www.curiousgnu.com/penny-auctions</link>
+        <guid isPermaLink="true">http://www.curiousgnu.com/penny-auctions</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>How positive are your tweets?</title>
+        
+          <description><img class="webfeedsFeaturedVisual" src="http://www.curiousgnu.com/assets/images/tweetanalyzer/cover.jpg" alt="Cover Image" />&lt;p&gt;In this blog post, I would like to present you &lt;a href=&quot;https://tweetanalyzer.net&quot;&gt;tweetanalyzer.net&lt;/a&gt;, a small project of mine, where you can do a sentiment analysis of your tweets or the ones of any other Twitter user. The goal was to create a fun website which uses text analysis to determine how positive someone’s tweets are.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 16 Mar 2016 22:42:00 +0100</pubDate>
+        <link>http://www.curiousgnu.com/tweetanalyzer</link>
+        <guid isPermaLink="true">http://www.curiousgnu.com/tweetanalyzer</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>What are the most common words in TV shows?</title>
+        
+          <description><img class="webfeedsFeaturedVisual" src="http://www.curiousgnu.com/assets/images/tv-wordcloud/cover.jpg" alt="Cover Image" />&lt;p&gt;Nowadays, there are some many great shows on television or available for streaming. After binge-watching the first season of Jessica Jones, I knew that I had to post something about this topic. I have to admit that I never spend much time on text analysis, so I decided to start with the basics. The first thing I did was to create simple word clouds based on the subtitles of &lt;em&gt;Jessica Jones&lt;/em&gt;, &lt;em&gt;The Blacklist&lt;/em&gt;, and &lt;em&gt;TBBT&lt;/em&gt;. They are an easy way to visualize how frequently certain words are used in a text or TV show.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sat, 27 Feb 2016 13:42:00 +0100</pubDate>
+        <link>http://www.curiousgnu.com/tv-show-word-clouds</link>
+        <guid isPermaLink="true">http://www.curiousgnu.com/tv-show-word-clouds</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Who sells LSD on the Darktnet?</title>
+        
+          <description><img class="webfeedsFeaturedVisual" src="http://www.curiousgnu.com/assets/images/darknet-lsd/cover.jpg" alt="Cover Image" />&lt;p&gt;I recently got my hands on Diana S. Dolliver’s &lt;a href=&quot;http://dx.doi.org/10.1016/j.drugpo.2015.01.008&quot; target=&quot;_blank&quot;&gt;paper&lt;/a&gt; about drug dealing on the Tor network, a hidden, uncensored network which can only be accessed by &lt;a href=&quot;https://www.torproject.org/&quot; target=&quot;_blank&quot;&gt;special software&lt;/a&gt;. I got interested this topic because it allows us to analyse transactions which used to be hidden and nearly impossible to observe.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sat, 16 Jan 2016 12:10:00 +0100</pubDate>
+        <link>http://www.curiousgnu.com/cryptomarkets-lsd-sales</link>
+        <guid isPermaLink="true">http://www.curiousgnu.com/cryptomarkets-lsd-sales</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>What&#39;s the age difference in movies?</title>
+        
+          <description><img class="webfeedsFeaturedVisual" src="http://www.curiousgnu.com/assets/images/age-gap/cover.jpg" alt="Cover Image" />&lt;p&gt;In response to my &lt;a href=&quot;/imdb-age-distribution&quot;&gt;last post&lt;/a&gt; about the distribution of ages of actresses and actors, a Reddit user suggested investigating further the age difference between female and male movie stars. In my first simple analysis, I only compared the average ages of both groups in the overall sample. Now, the next step is to check on a movie basis if there is an age difference between the leading actress and her co-star.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 04 Nov 2015 13:21:00 +0100</pubDate>
+        <link>http://www.curiousgnu.com/imdb-age-gap</link>
+        <guid isPermaLink="true">http://www.curiousgnu.com/imdb-age-gap</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Actresses Are on Average 7 Years Younger</title>
+        
+          <description><img class="webfeedsFeaturedVisual" src="http://www.curiousgnu.com/assets/images/age-dist/cover.jpg" alt="Cover Image" />&lt;p&gt;The IMDb dataset is a great source for everyone loves movies and numbers. After I had figured out how to &lt;a href=&quot;http://imdbpy.sourceforge.net/support.html&quot; target=&quot;_blank&quot;&gt;import the data&lt;/a&gt; into a local SQL database, the first thing I did was to look at the age of the actresses and actors during filming.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 02 Nov 2015 21:10:00 +0100</pubDate>
+        <link>http://www.curiousgnu.com/imdb-age-distribution</link>
+        <guid isPermaLink="true">http://www.curiousgnu.com/imdb-age-distribution</guid>
+      </item>
+      
+    
+  </channel>
+</rss>
