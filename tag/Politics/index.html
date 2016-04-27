@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- [[! Page Meta ]] -->
-    <title>Author</title>
+    <title>CuriousGnu</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="alternate" type="application/rss+xml" title="CuriousGnu - All Posts" href="http://www.curiousgnu.com/rss/">
@@ -66,7 +66,7 @@
     <link rel="alternate" type="application/rss+xml" title="CuriousGnu" href="/feed.xml" />
 
 </head>
-<body class="author-template nav-closed">
+<body class="tag-template nav-closed">
 
     <div class="nav">
     <h3 class="nav-title">Menu</h3>
@@ -75,7 +75,7 @@
     </a>
     <ul>
         <li class="nav-home " role="presentation"><a href="/">Home</a></li>
-        <li class="nav-author  nav-current" role="presentation"><a href="/author/CuriousGnu">Author</a></li>
+        <li class="nav-author " role="presentation"><a href="/author/CuriousGnu">Author</a></li>
         <li class="nav-home" role="presentation"><a href="mailto:contact@curiousgnu.com">Contact</a></li>
     </ul>
     <a class="subscribe-button icon-feed" href="http://www.curiousgnu.com/rss/">Subscribe</a>
@@ -88,50 +88,31 @@
         <!-- < default}} -->
 <!-- The tag above means - insert everything in this file into the [body] of the default.hbs template -->
 
-<!-- The big featured header -->
-
-<!-- Everything inside the #author tags pulls data from the author -->
-<!-- #author  -->
-    <header class="main-header author-head no-cover">
-        <nav class="main-nav overlay clearfix">
-            <a class="blog-logo" href="/"><img src="/assets/images/logo.png" alt="Blog Logo" /></a>
-            
-                <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
-            
-        </nav>
-    </header>
-
-    <section class="author-profile inner">
+<!-- If we have a tag cover, display that - else blog cover - else nothing -->
+<header class="main-header tag-head " style="box-shadow: 0 2px 3px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); background-image: url(/assets/images/main-bg.jpg) ">
+    <nav class="main-nav overlay clearfix">
         
-        <figure class="author-image">
-            <div class="img" style="background-image: url(/assets/images/casper.png)"><span class="hidden">CuriousGnu's Picture</span></div>
-        </figure>
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
         
-        <h1 class="author-title">CuriousGnu</h1>
-        
-            <h2 class="author-bio">I have a broad range of interests, but the one thing that connects them all is my passion for numbers. I find it fascinating how playing around with data can open up new perspectives on all kinds of topics.</h2>
-        
-        <div class="author-meta">
-            
-            <span class="author-link icon-link"><a href="http://www.curiousgnu.com/">www.curiousgnu.com</a></span>
-            <!-- <span class="author-stats"><i class="icon-stats"></i> [[plural ../pagination.total empty='No posts' singular='% post' plural='% posts']]</span> -->
-            <span class="author-stats"><i class="icon-stats"></i>8 posts</span>
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <a href="/"><h1 class="page-title">CuriousGnu</h1></a>
+            <h2 class="page-description">&middot; Politics &middot;</h2>
         </div>
-    </section>
-<!-- /author -->
+    </div>
+</header>
 
 <!-- The main content area on the homepage -->
 <main id="content" class="content" role="main">
 
-    <!-- The tag below includes the post loop - partials/loop.hbs  -->
+    <!-- The tag below includes the post loop - partials/loop.hbs -->
         <!-- Previous/next page links - only displayed on page 2+ -->
     <div class="extra-pagination inner">
         
             <nav class="pagination" role="pagination">
     
-    <span class="page-number"> Page 1 of 2 </span>
-     
-        <a class="older-posts" href="/author/CuriousGnu/page2/" title="Next Page">Older Posts &raquo;</a>
+    <span class="page-number"> Page 1 of 1 </span>
      
 </nav>
         
@@ -167,133 +148,18 @@
         </footer>
     </article>
     
-    <article class="post">
-        
-        <a href="/reddit-comments">
-            <div class="post-header-img" style="background-image: url('/assets/images/rd-comments/cover.png')"></div>
-        <a>
-        
-        <header class="post-header">
-            <h2 class="post-title title-sm"><a href="/reddit-comments">Redditors who commented in /r/X also commented in /r/Y</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>This blog article is about reddit.com, a website where people can post links to interesting websites and discuss a wide variety of different topics. According to Alexa, a company who analyzes web traffic, Reddit is the ninth most popular site... <a class="read-more" href="/reddit-comments">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <!-- author -->
-            <a href='/author/CuriousGnu'>CuriousGnu</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/Reddit'>Reddit</a>
-                       
-                
-            
-            <time class="post-date" datetime="2016-04-20">20 Apr 2016</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        
-        <a href="/penny-auctions">
-            <div class="post-header-img" style="background-image: url('/assets/images/penny-auctions/cover.png')"></div>
-        <a>
-        
-        <header class="post-header">
-            <h2 class="post-title title-sm"><a href="/penny-auctions">Penny Auctions - How to sell a $180 tablet for $7,264</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>Unless you use an ad blocker, you probably notice ads for penny auction sites from time to time. They usually advertise with sketchy messages like “iPhone sold for $14.21.” They can sell iPhones such low prices because of their unusual... <a class="read-more" href="/penny-auctions">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <!-- author -->
-            <a href='/author/CuriousGnu'>CuriousGnu</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/Gambling'>Gambling</a>
-                       
-                
-            
-            <time class="post-date" datetime="2016-04-04">04 Apr 2016</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        
-        <a href="/tweetanalyzer">
-            <div class="post-header-img" style="background-image: url('/assets/images/tweetanalyzer/cover.jpg')"></div>
-        <a>
-        
-        <header class="post-header">
-            <h2 class="post-title"><a href="/tweetanalyzer">How positive are your tweets?</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>In this blog post, I would like to present you tweetanalyzer.net, a small project of mine, where you can do a sentiment analysis of your tweets or the ones of any other Twitter user. The goal was to create a... <a class="read-more" href="/tweetanalyzer">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <!-- author -->
-            <a href='/author/CuriousGnu'>CuriousGnu</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/Twitter'>Twitter</a>
-                       
-                
-            
-            <time class="post-date" datetime="2016-03-16">16 Mar 2016</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        
-        <a href="/tv-show-word-clouds">
-            <div class="post-header-img" style="background-image: url('/assets/images/tv-wordcloud/cover.jpg')"></div>
-        <a>
-        
-        <header class="post-header">
-            <h2 class="post-title title-sm"><a href="/tv-show-word-clouds">What are the most common words in TV shows?</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>Nowadays, there are some many great shows on television or available for streaming. After binge-watching the first season of Jessica Jones, I knew that I had to post something about this topic. I have to admit that I never spend... <a class="read-more" href="/tv-show-word-clouds">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <!-- author -->
-            <a href='/author/CuriousGnu'>CuriousGnu</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/TV'>TV</a>
-                       
-                
-            
-            <time class="post-date" datetime="2016-02-27">27 Feb 2016</time>
-        </footer>
-    </article>
-    
 
     <!-- Previous/next page links - displayed on every page -->
     
         <nav class="pagination" role="pagination">
     
-    <span class="page-number"> Page 1 of 2 </span>
-     
-        <a class="older-posts" href="/author/CuriousGnu/page2/" title="Next Page">Older Posts &raquo;</a>
+    <span class="page-number"> Page 1 of 1 </span>
      
 </nav>
     
 
 
 </main>
-
 
         <footer class="site-footer clearfix">
           <section class="copyright"><a href="/">CuriousGnu</a> &copy; 2016</section>
