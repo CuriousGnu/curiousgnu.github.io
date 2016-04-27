@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- [[! Page Meta ]] -->
-    <title>Penny Auctions - How to sell a $180 tablet for $7,264</title>
+    <title>How The World Sees Hillary Clinton & Donald Trump</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="alternate" type="application/rss+xml" title="CuriousGnu - All Posts" href="http://www.curiousgnu.com/rss/">
@@ -31,7 +31,7 @@
     <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
     <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-    <meta property="og:image" content="http://s3.amazonaws.com/cgcdn-static/penny-auction_ogimg.png">
+    <meta property="og:image" content="http://s3.amazonaws.com/cgcdn-static/trump-clinton_ogimg.jpg">
     <!-- [[! Styles'n'Scripts ]] -->
     <link rel="stylesheet" type="text/css" href="/assets/css/screen.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400">
@@ -107,16 +107,16 @@
     <article class="post post-template">
 
         <header class="post-header">
-            <h1 class="post-title">Penny Auctions - How to sell a $180 tablet for $7,264</h1>
+            <h1 class="post-title">How The World Sees Hillary Clinton & Donald Trump</h1>
             <section class="post-meta">
             <!-- <a href='/'>CuriousGnu</a> -->
-            <time class="post-date" datetime="2016-04-04">04 Apr 2016</time>
+            <time class="post-date" datetime="2016-04-26">26 Apr 2016</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
                 
                     
-                       <a href='/tag/Gambling'>Gambling</a>
+                       <a href='/tag/Reddit'>Reddit</a>
                        
                 
                 
@@ -124,32 +124,59 @@
         </header>
 
         <section class="post-content">
-            <p>Unless you use an ad blocker, you probably notice ads for penny auction sites from time to time. They usually advertise with sketchy messages like <em>“iPhone sold for $14.21.”</em> They can sell iPhones such low prices because of their unusual auction system where each bid increases the auction price by only one cent. This works because unlike eBay each bid costs money (e.g., $0.40) no matter if you end up winning the auction or not. You have to be the highest bidder when the clock runs out to win the auction. The problem is that each bid adds ten seconds to the countdown which gives other bidders the time to counter your bid.</p>
+            <p>For this week’s blog post, I will try to find out how the international news media writes about Hillary Clinton and Donald Trump; the presidential front-runners of both parties. The plan is to check on several international news sources to derive positive and negative things regarding Hillary Clinton or Donald Trump. Doing this will give us an idea of how the news media in other countries, writes and talks about the two candidates.</p>
 
-<p><img src="/assets/images/penny-auctions/mockup_paad.jpg" alt="Penny Auction" /></p>
+<p>Fortunately, most of the hard work was already done by the <a href="http://gdeltproject.org/">GDELT Project</a>, which monitors news sites from all around the world and makes its work freely available for everyone. They even automatically determine how positive or negative news articles are using sentiment analysis. Based on the <a href="http://gdeltproject.org/data.html">GDELT dataset</a>, I created a map for each candidate which shows how the average tone of the texts compares to American news (Clinton: -1.15; Trump: -1.40). The results are based on a total of over <strong>550,000 articles</strong> published after July 2015 of which 65.3% mentioned <em>Donald Trump</em> at least twice, and 46.1% mentioned <em>Hillary Clinton</em> at least twice.</p>
 
-<p>Penny auction sites are not something new and have been criticized a lot, which makes you wonder how they are still in business. Even though there are many news articles about online penny auctions, I did not find any numbers or statistics which would support the criticism. So I started to collect information on my own, to get a better understanding how these auctions work in reality. What I found exceeded all my expectations.</p>
+<div class="emb-iframe">
+  <iframe height="612" width="980" frameborder="0" src="https://curiousgnu.cartodb.com/viz/5497e1dc-0991-11e6-87dd-0e5db1731f59/embed_map" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" oallowfullscreen="" msallowfullscreen=""></iframe>
+</div>
+<div class="emb-iframe">
+  <iframe height="612" width="980" frameborder="0" src="https://curiousgnu.cartodb.com/viz/676de180-0991-11e6-9940-0e674067d321/embed_map" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" oallowfullscreen="" msallowfullscreen=""></iframe>
+</div>
 
-<p>On <a href="https://en.wikipedia.org/wiki/Beezid">beezid.com</a>, one of the bigger penny auction sites, a single $180 tablet generated 18,160 bids, worth of over <strong>$7,200</strong>, from 56 users. Shockingly nearly half of those bids came from just one person who lost approximately lost <strong>$3,500</strong> in just two hours (see graph below). The winner of this auction only spent 80 cents on his or her two bids. In the second half of this blog post, I will outline the data collection process. To protect the users’ privacy, I replaced the real usernames with chemical elements.</p>
+<p>Compared to the Republican front-runner Donald Trump, international journalists seem to view Hillary Clinton much more positively. Looking at the maps above, we can see that news articles from countries like <em>Mexico</em>, <em>India</em>, or <em>China</em> are clearly more favorable towards Clinton than Trump. One exception is the Russian media which reports 19% more positively about Trump than its American counterpart. I don’t want to get political, but I think the results for some countries aren’t much of a surprise.</p>
 
-<p><a href="/assets/images/penny-auctions/money_spent_hd.png"><img src="/assets/images/penny-auctions/money_spent.png" alt="Money Spent on Bids" /></a></p>
+<h4 id="technical-background">Technical Background</h4>
 
-<h4 id="why-are-penny-auctions-even-popular">Why are penny auctions even popular?</h4>
-<p>The big ‘achievement’ of penny auction sites is that they successfully turned an unappealing type of an all-pay auction into an online game which makes people believe that they could make a profit.  The way beezid.com does this is actually quite clever. First, they give their users many different options how they can make a bid. Users can, for example, use automatic bidding bots, take advantage of price limits above which the auction price will not rise, and purchase a wide variety of other supposedly useful add-ons. Second, they try to hide all information that could reveal how many people are participating in the auction and how much they already spent in total.</p>
+<p>The process of doing this analysis is fairly straightforward and does not require anything except a browser and a Google account. First, I used the <a href="http://gdeltproject.org/">GDELT database</a>, publicly available on <a href="https://bigquery.cloud.google.com/table/gdelt-bq:gdeltv2.gkg">Google BigQuery</a>, to extract the raw data needed to create both maps. I wrote the following SQL query to do this:</p>
 
-<p>One way they do this is by their default 10% price limit, which means the auction price will never rise above 10% of the retail price, no matter how many people bid on it. Another strange rule is that bids do not always increase the auction price by one cent but can also lower it by some amount. These modifications of the system make the auction price more or less meaningless because you can no longer assume that, for example, a price of $1.10 is a result of 110 unique bids. Many articles about penny auctions (e.g., <a href="http://www.consumerreports.org/cro/2011/12/with-penny-auctions-you-can-spend-a-bundle-but-still-leave-empty-handed/index.htm">consumerreports.org</a>) do not account for these rules and falsely assume a fixed price increase. The graph below shows the development of the auction price of the $180 tablet over time. If we assume, that each bid would have increased the price by always one cent, the final auction price would have been <strong>$181.60</strong>.</p>
+<pre class="sql"><code>SELECT	a.country
+	,AVG(CASE WHEN a.trump = 1 
+		THEN a.tone ELSE NULL END) trump_tone
+	,AVG(CASE WHEN a.hillary = 1
+		THEN a.tone ELSE NULL END) hillary_tone
+FROM (SELECT 
+  cc.CountryHumanName country
+  ,CASE WHEN 
+  	LOWER(gkg.AllNames) LIKE '%donald%trump%donald%trump%'
+  	THEN 1 ELSE 0 END trump
+  ,CASE WHEN
+  	LOWER(gkg.AllNames) LIKE '%hillary%clinton%hillary%clinton%'
+  	THEN 1 ELSE 0 END hillary
+  ,FIRST(SPLIT(gkg.V2Tone, ',')) tone
+FROM [gdelt-bq:gdeltv2.gkg] gkg
+INNER JOIN [gdelt-bq:gdeltv2.domainsbycountry_alllangs_april2015] cc
+  ON cc.Domain = gkg.SourceCommonName
+WHERE (
+  	LOWER(gkg.AllNames) LIKE '%donald%trump%donald%trump%'
+  	OR LOWER(gkg.AllNames) LIKE '%hillary%clinton%hillary%clinton%'
+  ) AND gkg.DATE &gt;= 20150801000000
+) a
+GROUP BY a.country
+HAVING	SUM(a.trump) &gt;= 100
+	AND SUM(a.hillary) &gt;= 100
+</code></pre>
 
-<p><a href="/assets/images/penny-auctions/auction_price_hd.png"><img src="/assets/images/penny-auctions/auction_price.png" alt="Auction Price" /></a></p>
+<p>In the second step, I exported the results of the query as a CSV file and uploaded it to <a href="https://cartodb.com/">CartoDB</a>, a free web service where you can create maps based on location-based data. From there on you can follow their documentation and have your maps ready in no time.</p>
 
-<p>This lack of transparency combined with the many different bidding options creates a system which gives users the illusion that they could make a profit with the right strategies.</p>
+<p>From my experience, <a href="https://cartodb.com/">CartoDB</a> is a great tool if you want to create interactive and highly customizable maps. If you only need a basic set of features, you ought to try out <a href="https://www.google.com/sheets/about/">Google Sheets</a>. <a href="http://www.tableau.com/">Tableau</a> is another good alternative that I frequently use, which is also available in the free version <a href="https://public.tableau.com/s/">Tableau Public</a>. I didn’t use Tableau in this project because CartoDB offers much better embedding options for blogs or websites.</p>
 
-<h4 id="how-to-monitor-penny-auctions">How to monitor penny auctions?</h4>
-<p>Despite the site’s efforts to keep their users in the dark, it is possible to archive the complete bidding history of an auction, if you monitor it from its start. To collect the data for this blog post, I wrote a simple <a href="https://gist.github.com/CuriousGnu/cf558e8ca8cbbd491619a9e1940682c3">script</a> in Python which automatically saves the all bidding information of a <a href="https://en.wikipedia.org/wiki/Beezid">beezid.com</a> auction. If you want to try it out yourself, you only have to change the auction id and update the request header. You can easily get this information with the Chrome DevTools. In case, you have a slow or unstable internet connection I highly recommend running the script on a server (e.g., <a href="https://www.digitalocean.com/pricing/">Digital Ocean</a>). It should be noted that the script behaves like a regular browser and does not bypass any server-side security or content protection mechanisms.</p>
+<p>If you have any questions about this blog post, feel free to contact me by <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#099;&#117;&#114;&#105;&#111;&#117;&#115;&#103;&#110;&#117;&#046;&#099;&#111;&#109;">email</a> or write me a PM on Reddit.</p>
 
-<h4 id="arent-penny-auctions-unregulated-gambling">Aren’t penny auctions unregulated gambling?</h4>
-<p>One of the most important parts of the business models of penny auction sites is that what they are doing is not considered gambling. I am not a lawyer, so I will not attempt to question the legality of their operations. Their central argument is that penny auctions require skill and are therefore exempt from the <a href="https://en.wikipedia.org/wiki/Unlawful_Internet_Gambling_Enforcement_Act_of_2006">Unlawful Internet Gambling Enforcement Act</a>, which is the same legal loophole daily fantasy sports sites like <a href="https://en.wikipedia.org/wiki/FanDuel">FanDuel</a> or <a href="https://en.wikipedia.org/wiki/DraftKings">DraftKings</a> use. Personally, I cannot see how any skill could increase your chances of winning an auction. The data clearly shows that you are bidding against an unknown number of users who sometimes act extremely irrational. Even if you had a comprehensive database of previous auctions, you probably would not be able to predict how far a specific user will go. If someone has already spent over $3,000 on a $180 tablet, what could stop them aside from his or her credit card limit? It would be really interesting to hear an official explanation of how skill is even a factor in this game.</p>
+<p> </p>
 
-<p>If you have any questions about this blog post, feel free to contact me by <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#099;&#117;&#114;&#105;&#111;&#117;&#115;&#103;&#110;&#117;&#046;&#099;&#111;&#109;">email</a>.</p>
+<p><small>Photos by <a href="https://www.flickr.com/photos/gageskidmore/">Gage Skidmore</a> is licensed under CC BY-SA 2.0</small></p>
 
         </section>
 
@@ -180,15 +207,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=Penny Auctions - How to sell a $180 tablet for $7,264&amp;url=http://www.curiousgnu.com/penny-auctions"
+                <a class="icon-twitter" href="http://twitter.com/share?text=How The World Sees Hillary Clinton & Donald Trump&amp;url=http://www.curiousgnu.com/how-the-world-sees-clinton-trump"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.curiousgnu.com/penny-auctions"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.curiousgnu.com/how-the-world-sees-clinton-trump"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.curiousgnu.com/penny-auctions"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.curiousgnu.com/how-the-world-sees-clinton-trump"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -205,20 +232,13 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/rd-comments/cover.png)" href="/reddit-comments">
-            <section class="post">
-                <h2 class="title-sm">Redditors who commented in /r/X also commented in /r/Y</h2>
-                <p>This blog article is about reddit.com, a website where people can post links to interesting...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/tweetanalyzer/cover.jpg)" href="/tweetanalyzer">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/rd-comments/cover.png)" href="/reddit-comments">
             <section class="post">
-                <h2>How positive are your tweets?</h2>
-                <p>In this blog post, I would like to present you tweetanalyzer.net, a small project of...</p>
+                <h2 class="title-sm">Redditors who commented in /r/X also commented in /r/Y</h2>
+                <p>This blog article is about reddit.com, a website where people can post links to interesting...</p>
             </section>
         </a>
     

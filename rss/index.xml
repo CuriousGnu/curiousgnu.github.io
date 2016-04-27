@@ -5,6 +5,74 @@
     <webfeeds:analytics id="UA-74290781-1" engine="GoogleAnalytics"/>
     <description>Numbers, Graphs, and Apple Strudels</description>
     <link>http://www.curiousgnu.com/</link>
+    
+      
+      <item>
+        <title>How The World Sees Hillary Clinton &amp; Donald Trump</title>
+          <description>
+            &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;http://www.curiousgnu.com/assets/images/trump-clinton/cover.jpg&quot;  alt=&quot;Cover Image&quot; /&gt;
+            &lt;p&gt;For this week’s blog post, I will try to find out how the international news media writes about Hillary Clinton and Donald Trump; the presidential front-runners of both parties. The plan is to check on several international news sources to derive positive and negative things regarding Hillary Clinton or Donald Trump. Doing this will give us an idea of how the news media in other countries, writes and talks about the two candidates.&lt;/p&gt;
+
+&lt;p&gt;Fortunately, most of the hard work was already done by the &lt;a href=&quot;http://gdeltproject.org/&quot;&gt;GDELT Project&lt;/a&gt;, which monitors news sites from all around the world and makes its work freely available for everyone. They even automatically determine how positive or negative news articles are using sentiment analysis. Based on the &lt;a href=&quot;http://gdeltproject.org/data.html&quot;&gt;GDELT dataset&lt;/a&gt;, I created a map for each candidate which shows how the average tone of the texts compares to American news (Clinton: -1.15; Trump: -1.40). The results are based on a total of over &lt;strong&gt;550,000 articles&lt;/strong&gt; published after July 2015 of which 65.3% mentioned &lt;em&gt;Donald Trump&lt;/em&gt; at least twice, and 46.1% mentioned &lt;em&gt;Hillary Clinton&lt;/em&gt; at least twice.&lt;/p&gt;
+
+&lt;div class=&quot;emb-iframe&quot;&gt;
+  &lt;iframe height=&quot;612&quot; width=&quot;980&quot; frameborder=&quot;0&quot; src=&quot;https://curiousgnu.cartodb.com/viz/5497e1dc-0991-11e6-87dd-0e5db1731f59/embed_map&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; oallowfullscreen=&quot;&quot; msallowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;div class=&quot;emb-iframe&quot;&gt;
+  &lt;iframe height=&quot;612&quot; width=&quot;980&quot; frameborder=&quot;0&quot; src=&quot;https://curiousgnu.cartodb.com/viz/676de180-0991-11e6-9940-0e674067d321/embed_map&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; oallowfullscreen=&quot;&quot; msallowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Compared to the Republican front-runner Donald Trump, international journalists seem to view Hillary Clinton much more positively. Looking at the maps above, we can see that news articles from countries like &lt;em&gt;Mexico&lt;/em&gt;, &lt;em&gt;India&lt;/em&gt;, or &lt;em&gt;China&lt;/em&gt; are clearly more favorable towards Clinton than Trump. One exception is the Russian media which reports 19% more positively about Trump than its American counterpart. I don’t want to get political, but I think the results for some countries aren’t much of a surprise.&lt;/p&gt;
+
+&lt;h4 id=&quot;technical-background&quot;&gt;Technical Background&lt;/h4&gt;
+
+&lt;p&gt;The process of doing this analysis is fairly straightforward and does not require anything except a browser and a Google account. First, I used the &lt;a href=&quot;http://gdeltproject.org/&quot;&gt;GDELT database&lt;/a&gt;, publicly available on &lt;a href=&quot;https://bigquery.cloud.google.com/table/gdelt-bq:gdeltv2.gkg&quot;&gt;Google BigQuery&lt;/a&gt;, to extract the raw data needed to create both maps. I wrote the following SQL query to do this:&lt;/p&gt;
+
+&lt;pre class=&quot;sql&quot;&gt;&lt;code&gt;SELECT	a.country
+	,AVG(CASE WHEN a.trump = 1 
+		THEN a.tone ELSE NULL END) trump_tone
+	,AVG(CASE WHEN a.hillary = 1
+		THEN a.tone ELSE NULL END) hillary_tone
+FROM (SELECT 
+  cc.CountryHumanName country
+  ,CASE WHEN 
+  	LOWER(gkg.AllNames) LIKE &#39;%donald%trump%donald%trump%&#39;
+  	THEN 1 ELSE 0 END trump
+  ,CASE WHEN
+  	LOWER(gkg.AllNames) LIKE &#39;%hillary%clinton%hillary%clinton%&#39;
+  	THEN 1 ELSE 0 END hillary
+  ,FIRST(SPLIT(gkg.V2Tone, &#39;,&#39;)) tone
+FROM [gdelt-bq:gdeltv2.gkg] gkg
+INNER JOIN [gdelt-bq:gdeltv2.domainsbycountry_alllangs_april2015] cc
+  ON cc.Domain = gkg.SourceCommonName
+WHERE (
+  	LOWER(gkg.AllNames) LIKE &#39;%donald%trump%donald%trump%&#39;
+  	OR LOWER(gkg.AllNames) LIKE &#39;%hillary%clinton%hillary%clinton%&#39;
+  ) AND gkg.DATE &amp;gt;= 20150801000000
+) a
+GROUP BY a.country
+HAVING	SUM(a.trump) &amp;gt;= 100
+	AND SUM(a.hillary) &amp;gt;= 100
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In the second step, I exported the results of the query as a CSV file and uploaded it to &lt;a href=&quot;https://cartodb.com/&quot;&gt;CartoDB&lt;/a&gt;, a free web service where you can create maps based on location-based data. From there on you can follow their documentation and have your maps ready in no time.&lt;/p&gt;
+
+&lt;p&gt;From my experience, &lt;a href=&quot;https://cartodb.com/&quot;&gt;CartoDB&lt;/a&gt; is a great tool if you want to create interactive and highly customizable maps. If you only need a basic set of features, you ought to try out &lt;a href=&quot;https://www.google.com/sheets/about/&quot;&gt;Google Sheets&lt;/a&gt;. &lt;a href=&quot;http://www.tableau.com/&quot;&gt;Tableau&lt;/a&gt; is another good alternative that I frequently use, which is also available in the free version &lt;a href=&quot;https://public.tableau.com/s/&quot;&gt;Tableau Public&lt;/a&gt;. I didn’t use Tableau in this project because CartoDB offers much better embedding options for blogs or websites.&lt;/p&gt;
+
+&lt;p&gt;If you have any questions about this blog post, feel free to contact me by &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#097;&amp;#099;&amp;#116;&amp;#064;&amp;#099;&amp;#117;&amp;#114;&amp;#105;&amp;#111;&amp;#117;&amp;#115;&amp;#103;&amp;#110;&amp;#117;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;email&lt;/a&gt; or write me a PM on Reddit.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;&lt;small&gt;Photos by &lt;a href=&quot;https://www.flickr.com/photos/gageskidmore/&quot;&gt;Gage Skidmore&lt;/a&gt; is licensed under CC BY-SA 2.0&lt;/small&gt;&lt;/p&gt;
+
+          </description>
+        <pubDate>Tue, 26 Apr 2016 20:14:00 +0200</pubDate>
+        <link>http://www.curiousgnu.com/how-the-world-sees-clinton-trump</link>
+        <guid isPermaLink="true">http://www.curiousgnu.com/how-the-world-sees-clinton-trump</guid>
+      </item>
+      
+    
+      
       <item>
         <title>Redditors who commented in /r/X also commented in /r/Y</title>
           <description>
@@ -35,7 +103,7 @@
 &lt;p&gt;Admittedly, these aren’t exactly groundbreaking results, but it was real fun to try out some statistical methods on this huge amount of data. I’m currently testing how I can use this data source for an article about text analysis.&lt;/p&gt;
 
           </description>
-        <pubDate>Wed, 21 Apr 2016 14:14:00 +0200</pubDate>
+        <pubDate>Wed, 20 Apr 2016 14:14:00 +0200</pubDate>
         <link>http://www.curiousgnu.com/reddit-comments</link>
         <guid isPermaLink="true">http://www.curiousgnu.com/reddit-comments</guid>
       </item>

@@ -55,5 +55,6 @@
     };
 })(jQuery);
 
-
+hljs.initHighlightingOnLoad();
+$(".emb-iframe").fitVids({ customSelector: "iframe[src^='https://curiousgnu.cartodb.com']"});
 $(".post-content").find("img").parent("a").css("cursor", "zoom-in");

@@ -55,6 +55,7 @@ mark { background: #FF0; color: #000; }
 code, kbd, pre,
 samp { font-family: monospace, serif; font-size: 1em; }
 pre { white-space: pre-wrap; }
+.hljs { background: transparent!important; line-height: 125%; font-size: 90%; }
 q { quotes: "\201C" "\201D" "\2018" "\2019"; }
 small { font-size: 80%; }
 sub, sup {
@@ -474,6 +475,7 @@ margin on the iframe, cause it breaks stuff. */
     background: #fff;
     -webkit-transition: -webkit-transform 0.5s ease;
     transition: transform 0.5s ease;
+    overflow-x: hidden;
 }
 
 body.nav-opened .site-wrapper {
@@ -522,27 +524,6 @@ body.nav-opened .site-wrapper {
     font-family: 'Open Sans', sans-serif;
 }
 
-#mc_embed_signup {
-    font-family: 'Open Sans', sans-serif;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    margin-top: 45px!important;
-    padding-top: 4px;
-    padding-bottom: 12px;
-    padding-left: 15px;
-    padding-right: 15px;
-    border: 1px solid #f3f3f3;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-}
-
-#mc-embedded-subscribe {
-    background-color: #334475!important;
-}
-
-#mc-embedded-subscribe:hover {
-    background-color: #435999!important;
-}
 
 /* Navigation */
 body.nav-opened .nav-cover {
@@ -714,7 +695,7 @@ body.nav-opened .nav {
     right: 30px;
     height: 38px;
     padding: 0 20px;
-    color: #111 !important; /* Overides `.nav a:link, .nav a:visited` colour */
+    color: #111!important;
     text-align: center;
     font-size: 12px;
     font-family: "Open Sans", sans-serif;
@@ -729,8 +710,6 @@ body.nav-opened .nav {
     font-size: 11px;
     margin-right: 6px;
 }
-
-
 /* Create a bouncing scroll-down arrow on homepage with cover image */
 .scroll-down {
     display: block;
@@ -1118,9 +1097,23 @@ body:not(.post-template) .post-title {
     display: none;
 }
 
+.post-content .emb-iframe {
+    display: block;
+    width: 126%;
+    height: auto;
+    padding: 0.6em 0;
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%); /* for Safari and iOS */
+    -ms-transform: translateX(-50%); /* for IE9 */
+    transform: translateX(-50%);
+}
+
+.emb-iframe { padding: 0!important; }
+
 /* Keep images centered, and allow images wider than the main
    text column to break out. */
-.post-content img {
+.post-content img{
     display: block;
     max-width: 126%;
     height: auto;
@@ -1229,7 +1222,7 @@ body:not(.post-template) .post-title {
 .post-footer .share a {
     font-size: 1.8rem;
     display: inline-block;
-    margin: 1rem 1.6rem 1.6rem 0;
+    margin: 1rem 1.6rem 0.6rem 0;
     color: #BBC7CC;
     text-decoration: none;
 }
@@ -1960,6 +1953,12 @@ body:not(.post-template) .post-title {
         margin-top: 0;
     }
 
+    .post-content .emb-iframe {
+        padding: 0;
+        width: calc(100% + 32px); /* expand with to image + margins */
+        min-width: 0;
+        max-width: 112%; /* fallback when calc doesn't work */
+    }
     .post-content img {
         padding: 0;
         width: calc(100% + 32px); /* expand with to image + margins */
