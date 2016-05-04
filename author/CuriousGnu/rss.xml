@@ -12,6 +12,31 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>78% of Reddit Threads With 1,000+ Comments Mention Nazis</title>
+	  <link>//reddit-godwin</link>
+	  <author>CuriousGnu</author>
+	  <pubDate>2016-05-04T03:00:00+02:00</pubDate>
+	  <guid>//reddit-godwin</guid>
+	  <description><![CDATA[
+	     <p>Let me start this post by noting that I will not attempt to test <a href="https://en.wikipedia.org/wiki/Godwin%27s_law">Godwin’s Law</a>, which states that:</p>
+
+<pre><code>As an online discussion grows longer, the probability of a comparison involving Nazis or Hitler approaches 1.
+</code></pre>
+
+<p>In this post, I’ll only try to find out how many Reddit comments mention <em>Nazis</em> or <em>Hitler</em> and ignore the context in which they are made. The data source for this analysis is the <a href="https://bigquery.cloud.google.com/table/fh-bigquery:reddit_comments.2016_03">Reddit dataset</a> which is publicly available on Google BigQuery. The following graph is based on <strong>4.6 million</strong> comments and shows the share of comments mentioning <em>Nazis</em> or <em>Hitler</em> by subreddit.</p>
+
+<p><a href="/assets/images/rd-godwin/subrd.png"><img src="/assets/images/rd-godwin/subrd.png" alt="Hitler Comments by Subreddits" /></a></p>
+
+<p>Then I excluded history subreddits and looked at the probability that a Reddit thread mentions <em>Nazis</em> or <em>Hitler</em> at least once. Unsuprisigly, the probability of a Nazi refrence increases as the threads get bigger. Nevertheless, I didn’t expect that the probability would be <strong>over 70%</strong> for a thread with more than 1,000 comments.</p>
+
+<p><a href="/assets/images/rd-godwin/pbrd.png"><img src="/assets/images/rd-godwin/pbrd.png" alt="Hitler References" style="max-width:780px" /></a></p>
+
+<p>The next step would be to implement sophisticated text mining techniques to identify comments which use Nazi analogies in a way as described by Godwin. Unfortunately due to time constraints and the complexity of this problem, I was not able to try for this blog post.</p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>How The World Sees Hillary Clinton & Donald Trump</title>
 	  <link>//how-the-world-sees-clinton-trump</link>
 	  <author>CuriousGnu</author>

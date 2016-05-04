@@ -8,6 +8,33 @@
     
       
       <item>
+        <title>78% of Reddit Threads With 1,000+ Comments Mention Nazis</title>
+          <description>
+            &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;http://www.curiousgnu.com/assets/images/rd-godwin/cover.jpg&quot;  alt=&quot;Cover Image&quot; /&gt;
+            &lt;p&gt;Let me start this post by noting that I will not attempt to test &lt;a href=&quot;https://en.wikipedia.org/wiki/Godwin%27s_law&quot;&gt;Godwin’s Law&lt;/a&gt;, which states that:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;As an online discussion grows longer, the probability of a comparison involving Nazis or Hitler approaches 1.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this post, I’ll only try to find out how many Reddit comments mention &lt;em&gt;Nazis&lt;/em&gt; or &lt;em&gt;Hitler&lt;/em&gt; and ignore the context in which they are made. The data source for this analysis is the &lt;a href=&quot;https://bigquery.cloud.google.com/table/fh-bigquery:reddit_comments.2016_03&quot;&gt;Reddit dataset&lt;/a&gt; which is publicly available on Google BigQuery. The following graph is based on &lt;strong&gt;4.6 million&lt;/strong&gt; comments and shows the share of comments mentioning &lt;em&gt;Nazis&lt;/em&gt; or &lt;em&gt;Hitler&lt;/em&gt; by subreddit.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/rd-godwin/subrd.png&quot;&gt;&lt;img src=&quot;/assets/images/rd-godwin/subrd.png&quot; alt=&quot;Hitler Comments by Subreddits&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Then I excluded history subreddits and looked at the probability that a Reddit thread mentions &lt;em&gt;Nazis&lt;/em&gt; or &lt;em&gt;Hitler&lt;/em&gt; at least once. Unsuprisigly, the probability of a Nazi refrence increases as the threads get bigger. Nevertheless, I didn’t expect that the probability would be &lt;strong&gt;over 70%&lt;/strong&gt; for a thread with more than 1,000 comments.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/rd-godwin/pbrd.png&quot;&gt;&lt;img src=&quot;/assets/images/rd-godwin/pbrd.png&quot; alt=&quot;Hitler References&quot; style=&quot;max-width:780px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The next step would be to implement sophisticated text mining techniques to identify comments which use Nazi analogies in a way as described by Godwin. Unfortunately due to time constraints and the complexity of this problem, I was not able to try for this blog post.&lt;/p&gt;
+
+          </description>
+        <pubDate>Wed, 04 May 2016 03:00:00 +0200</pubDate>
+        <link>http://www.curiousgnu.com/reddit-godwin</link>
+        <guid isPermaLink="true">http://www.curiousgnu.com/reddit-godwin</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>How The World Sees Hillary Clinton &amp; Donald Trump</title>
           <description>
             &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;http://www.curiousgnu.com/assets/images/trump-clinton/cover.jpg&quot;  alt=&quot;Cover Image&quot; /&gt;
@@ -66,7 +93,7 @@ HAVING	SUM(a.trump) &amp;gt;= 100
 &lt;p&gt;&lt;small&gt;Photos by &lt;a href=&quot;https://www.flickr.com/photos/gageskidmore/&quot;&gt;Gage Skidmore&lt;/a&gt; is licensed under CC BY-SA 2.0&lt;/small&gt;&lt;/p&gt;
 
           </description>
-        <pubDate>Tue, 26 Apr 2016 20:14:00 +0200</pubDate>
+        <pubDate>Wed, 27 Apr 2016 19:14:00 +0200</pubDate>
         <link>http://www.curiousgnu.com/how-the-world-sees-clinton-trump</link>
         <guid isPermaLink="true">http://www.curiousgnu.com/how-the-world-sees-clinton-trump</guid>
       </item>
