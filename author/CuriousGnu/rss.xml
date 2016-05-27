@@ -12,6 +12,42 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>Which illicit drugs do Chicagoans take?</title>
+	  <link>//chicago-drugs</link>
+	  <author>CuriousGnu</author>
+	  <pubDate>2016-05-20T03:00:00+02:00</pubDate>
+	  <guid>//chicago-drugs</guid>
+	  <description><![CDATA[
+	     <p>In one of my <a href="http://www.curiousgnu.com/cryptomarkets-lsd-sales">previous blog articles</a>, I wrote about how drug dealers use the darknet to sell their products. For this post, I will use police reports to show you more about drug possession in the real world. I chose the city of Chicago because they make all reported incidents of crime available through their <a href="https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-present/ijzp-q8t2">open data platform</a> which is the basis for the following analysis.</p>
+
+<h5 id="what-are-the-most-common-drugs">What are the most common drugs?</h5>
+
+<p>First, I took all reported incidents of drug possession since 2001 and checked how the numbers have changed over the past 15 years. The following graph shows the number of reported incidents by year and substance. The number of incidents of <em>cannabis</em> possessions peaked at more than 23k in 2010 and then decreased by nearly 55%, landing at 11k in 2015. Reported incidents related to the possession of <em>crack cocaine</em> continuously declined over the years, making heroin the second most common drug since 2010. It should be noted that these numbers only refer to the reported incidents of drug possession and not the actual drug consumption.</p>
+
+<p><a href="/assets/images/chicago-drugs/possession_15_hd.png"><img src="/assets/images/chicago-drugs/possession_01_15.gif" alt="Drug Possession 2001-2015" style="max-width: 100%" /></a></p>
+
+<p>The map on the right shows hot spots in Chicago where many of the incidents took place. This heat map is based on the density of the incidents. In the recent years, we can see a higher concentration of the reports on the West Side.</p>
+
+<h5 id="do-drug-preferences-differ-between-areas">Do drug preferences differ between areas?</h5>
+
+<p>Next, I wanted to find out if some drugs are more popular in certain areas than the others. To do this, I created three new heat maps for the possession of <em>cocaine</em>, <em>heroin</em>, and <em>cannabis</em>. As we can see below, there seems to be a difference between the three substances:</p>
+
+<p><a href="/assets/images/chicago-drugs/map_grid.jpg"><img src="/assets/images/chicago-drugs/map_grid.jpg" alt="Possession by Community Areas" /></a></p>
+
+<p>To find an explanation for the local differences, I downloaded <a href="https://datahub.cmap.illinois.gov/dataset/community-data-snapshots-raw-data-2015/resource/8c4e096e-c90c-4bef-9cf1-9028d094296e">census data</a> on a community area level. We can use this data to explore how the community areas differ from each other in factors like education, income, race, or unemployment. If we plot this data in a map format and compare them to the previous heat maps, it shows that there could be a connection between them and the possession of certain drugs.</p>
+
+<p>Judging by the looks of graphs is of course, not an appropriate method, which is why I also used a spatial regression to test how education, income, race, and unemployment relates to the reported possession of cocaine, heroin, and cannabis. The depended variables are the percentage of reported incidents based on the total population of the community area in which they occurred.</p>
+
+<p>The results below show that reported cannabis possession is lower in community areas with a higher median income and education. For heroin, we see similar results with the exception that median income is not a significant factor but median age is. For cocaine, the only two significant variables are the relative shares of the Black and Hispanic population. Apparently more incidents of cocaine possession happen in areas with bigger Black and Hispanic populations.</p>
+
+<p><a href="/assets/images/chicago-drugs/regression_table.png"><img src="/assets/images/chicago-drugs/regression_table.png" alt="Regression Results" style="max-width: 640px" /></a></p>
+
+<p>If you have any suggestion or tips for future articles, please feel free to contact me by <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#099;&#117;&#114;&#105;&#111;&#117;&#115;&#103;&#110;&#117;&#046;&#099;&#111;&#109;">email</a> or <a href="https://www.reddit.com/user/CuriousGnu/">Reddit message</a>.</p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>78% of Reddit Threads With 1,000+ Comments Mention Nazis</title>
 	  <link>//reddit-godwin</link>
 	  <author>CuriousGnu</author>
