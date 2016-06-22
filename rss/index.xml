@@ -8,6 +8,73 @@
     
       
       <item>
+        <title>Using Amazon&#39;s X-Ray to Visualize Characters&#39; Screen Time</title>
+          <description>
+            &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;http://www.curiousgnu.com/assets/images/movie-character-screen-time/cover.jpg&quot;  alt=&quot;Cover Image&quot; /&gt;
+            &lt;p&gt;Today’s blog post is once again about the visualization of movie data. As I already experimented with the IMDb dataset to &lt;a href=&quot;http://www.curiousgnu.com/imdb-age-gap&quot;&gt;compare the average age&lt;/a&gt; of actors and actresses, I wanted to try something a bit different. One thing that I have always found cool is the visualization of movie plots (e.g. &lt;a href=&quot;https://xkcd.com/657/&quot;&gt;xkcd&lt;/a&gt;). The reason why I never attempted to do something like this myself was that I had no idea from where I could get the required data. Of course, there is always the possibility to generate the data manually, but that is usually a tedious task that I try to avoid. Fortunately, I found a much more convenient data source, while I was watching a movie on the &lt;a href=&quot;https://www.amazon.com/video&quot;&gt;Amazon Video&lt;/a&gt; app.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/movie-character-screen-time/xray_screenshot.jpg&quot;&gt;&lt;img src=&quot;/assets/images/movie-character-screen-time/xray_screenshot.jpg&quot; alt=&quot;X-Ray Screenshot&quot; style=&quot;max-width: 480px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Its X-Ray feature shows you relevant IMDb information based on which actor is currently in the scene. The app does that based on a single text file which contains the information for when a character appears in a scene. At the end of the post, I will describe how you can extract the file yourself. First, I downloaded the X-Ray file for the latest &lt;a href=&quot;https://www.amazon.com/dp/B019G7X9E6&quot;&gt;Star Wars movie&lt;/a&gt;. Based on this data we can compare the characters by their screen time.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/movie-character-screen-time/barplot.png&quot;&gt;&lt;img src=&quot;/assets/images/movie-character-screen-time/barplot.png&quot; alt=&quot;Characters Screen Time by Minutes&quot; style=&quot;max-width: 647px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I noticed that the numbers are not always 100% accurate because some characters are only visible in parts of a scene. However, it should not be a major problem for which we are using them in this post. Next, I used the &lt;a href=&quot;https://cran.r-project.org/web/packages/ggplot2/&quot;&gt;&lt;em&gt;ggplot2&lt;/em&gt;&lt;/a&gt; package in R to plot the following Gantt chart:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/movie-character-screen-time/tp_starwars.png&quot;&gt;&lt;img src=&quot;/assets/images/movie-character-screen-time/tp_starwars.png&quot; alt=&quot;Star Wars The Force Awakens&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We can use the X-Ray data, not only to identify in which scene a character appears but also with whom else. To visualize this information, I used &lt;a href=&quot;https://gephi.org/&quot;&gt;&lt;em&gt;Gephi&lt;/em&gt;&lt;/a&gt;, an open source tool to plot networks. My assumption is that the longer characters appear on-screen together, the closer their relationship is. The circle size is based on their total screen time.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/movie-character-screen-time/network.png&quot;&gt;&lt;img src=&quot;/assets/images/movie-character-screen-time/network.png&quot; alt=&quot;Star Wars - Network Plot&quot; style=&quot;max-width: 512px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I hope these examples show what you can do with Amazon X-Ray data relatively quickly. The best thing of this approach is that it only requires a minimum manual work. So, here are Gantt charts for three other movies I enjoy:
+&lt;a href=&quot;/assets/images/movie-character-screen-time/tp_big_lebowski.png&quot;&gt;&lt;img src=&quot;/assets/images/movie-character-screen-time/tp_big_lebowski.png&quot; alt=&quot;The Big Lebowski&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/movie-character-screen-time/tp_pulp_fiction.png&quot;&gt;&lt;img src=&quot;/assets/images/movie-character-screen-time/tp_pulp_fiction.png&quot; alt=&quot;Pulp Fiction&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/movie-character-screen-time/tp_john_wick.png&quot;&gt;&lt;img src=&quot;/assets/images/movie-character-screen-time/tp_john_wick.png&quot; alt=&quot;John Wick&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;how-to-get-x-ray-data&quot;&gt;How to Get X-Ray Data?&lt;/h4&gt;
+
+&lt;p&gt;The X-Ray feature is based on an unencrypted JSON file which can be downloaded with the Chrome browser. Unfortunately, those files are not publicly available (signed CloudFront URL), meaning that you have to start streaming the movie before you can download the file. This also means that you are limited to the content included in your Prime subscription, or you need to rent/buy the movies in which you are interested. Nevertheless, I think it is still an interesting source, especially when you consider the alternatives.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Start Developer Tools: Menu &amp;gt; Tools &amp;gt; Developer Tools&lt;/li&gt;
+  &lt;li&gt;Start streaming a video &amp;amp; close the player after a few seconds&lt;/li&gt;
+  &lt;li&gt;Select the following Developer Tools settings:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/movie-character-screen-time/devtools.png&quot;&gt;&lt;img src=&quot;/assets/images/movie-character-screen-time/devtools.png&quot; alt=&quot;DevTools Settings&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Click on the gray record button to capture the network traffic&lt;/li&gt;
+  &lt;li&gt;Start streaming the video again&lt;/li&gt;
+  &lt;li&gt;Now the following file should appear: &lt;em&gt;data.json?Expires=&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Right-click on the file &amp;gt; Open Link in New Tab &amp;gt; Save Page As…&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Then you can use in R the &lt;a href=&quot;https://cran.r-project.org/web/packages/jsonlite/index.html&quot;&gt;&lt;em&gt;jsonlite&lt;/em&gt;&lt;/a&gt; package to load the JSON file and then do, for example, something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;library(jsonlite)
+library(ggplot2)
+
+data &amp;lt;- fromJSON(&quot;starwars.json&quot;, flatten = TRUE)
+e &amp;lt;- data$resource$events
+e$start &amp;lt;- as.numeric(as.data.frame(e$when)[1,])
+e$end &amp;lt;- as.numeric(as.data.frame(e$when)[2,])
+ggplot(e, aes(colour=e$character)) + 
+  geom_segment(aes(x=e$start, xend=e$end, y=e$character, yend=e$character), size=5)
+&lt;/code&gt;&lt;/pre&gt;
+
+          </description>
+        <pubDate>Wed, 22 Jun 2016 03:00:00 +0200</pubDate>
+        <link>http://www.curiousgnu.com/movie-character-screen-time</link>
+        <guid isPermaLink="true">http://www.curiousgnu.com/movie-character-screen-time</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Which illicit drugs do Chicagoans take?</title>
           <description>
             &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;http://www.curiousgnu.com/assets/images/chicago-drugs/cover.jpg&quot;  alt=&quot;Cover Image&quot; /&gt;

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- [[! Page Meta ]] -->
-    <title>Which illicit drugs do Chicagoans take?</title>
+    <title>Using Amazon's X-Ray to Visualize Characters' Screen Time</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="alternate" type="application/rss+xml" title="CuriousGnu - All Posts" href="http://www.curiousgnu.com/rss/">
@@ -31,7 +31,7 @@
     <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
     <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-    <meta property="og:image" content="http://s3.amazonaws.com/cgcdn-static/chicago_og.jpg">
+    <meta property="og:image" content="http://s3.amazonaws.com/cgcdn-static/screentime_og.png">
     <!-- [[! Styles'n'Scripts ]] -->
     <link rel="stylesheet" type="text/css" href="/assets/css/screen.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400">
@@ -86,16 +86,16 @@
     <article class="post post-template">
 
         <header class="post-header">
-            <h1 class="post-title">Which illicit drugs do Chicagoans take?</h1>
+            <h1 class="post-title">Using Amazon's X-Ray to Visualize Characters' Screen Time</h1>
             <section class="post-meta">
             <!-- <a href='/'>CuriousGnu</a> -->
-            <time class="post-date" datetime="2016-05-27">27 May 2016</time>
+            <time class="post-date" datetime="2016-06-22">22 Jun 2016</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
                 
                     
-                       <a href='/tag/Drugs'>Drugs</a>
+                       <a href='/tag/Movies'>Movies</a>
                        
                 
                 
@@ -103,31 +103,60 @@
         </header>
 
         <section class="post-content">
-            <p>In one of my <a href="http://www.curiousgnu.com/cryptomarkets-lsd-sales">previous blog articles</a>, I wrote about how drug dealers use the darknet to sell their products. For this post, I will use police reports to show you more about drug possession in the real world. I chose the city of Chicago because they make all reported incidents of crime available through their <a href="https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-present/ijzp-q8t2">open data platform</a> which is the basis for the following analysis.</p>
+            <p>Today’s blog post is once again about the visualization of movie data. As I already experimented with the IMDb dataset to <a href="http://www.curiousgnu.com/imdb-age-gap">compare the average age</a> of actors and actresses, I wanted to try something a bit different. One thing that I have always found cool is the visualization of movie plots (e.g. <a href="https://xkcd.com/657/">xkcd</a>). The reason why I never attempted to do something like this myself was that I had no idea from where I could get the required data. Of course, there is always the possibility to generate the data manually, but that is usually a tedious task that I try to avoid. Fortunately, I found a much more convenient data source, while I was watching a movie on the <a href="https://www.amazon.com/video">Amazon Video</a> app.</p>
 
-<h5 id="what-are-the-most-common-drugs">What are the most common drugs?</h5>
+<p><a href="/assets/images/movie-character-screen-time/xray_screenshot.jpg"><img src="/assets/images/movie-character-screen-time/xray_screenshot.jpg" alt="X-Ray Screenshot" style="max-width: 480px" /></a></p>
 
-<p>First, I took all reported incidents of drug possession since 2001 and checked how the numbers have changed over the past 15 years. The following graph shows the number of reported incidents by year and substance. The number of incidents of <em>cannabis</em> possessions peaked at more than 23k in 2010 and then decreased by nearly 55%, landing at 11k in 2015. Reported incidents related to the possession of <em>crack cocaine</em> continuously declined over the years, making heroin the second most common drug since 2010. It should be noted that these numbers only refer to the reported incidents of drug possession and not the actual drug consumption.</p>
+<p>Its X-Ray feature shows you relevant IMDb information based on which actor is currently in the scene. The app does that based on a single text file which contains the information for when a character appears in a scene. At the end of the post, I will describe how you can extract the file yourself. First, I downloaded the X-Ray file for the latest <a href="https://www.amazon.com/dp/B019G7X9E6">Star Wars movie</a>. Based on this data we can compare the characters by their screen time.</p>
 
-<p><a href="/assets/images/chicago-drugs/possession_15_hd.png"><img src="/assets/images/chicago-drugs/possession_01_15.gif" alt="Drug Possession 2001-2015" style="max-width: 100%" /></a></p>
+<p><a href="/assets/images/movie-character-screen-time/barplot.png"><img src="/assets/images/movie-character-screen-time/barplot.png" alt="Characters Screen Time by Minutes" style="max-width: 647px" /></a></p>
 
-<p>The map on the right shows hot spots in Chicago where many of the incidents took place. This heat map is based on the density of the incidents. In the recent years, we can see a higher concentration of the reports on the West Side.</p>
+<p>I noticed that the numbers are not always 100% accurate because some characters are only visible in parts of a scene. However, it should not be a major problem for which we are using them in this post. Next, I used the <a href="https://cran.r-project.org/web/packages/ggplot2/"><em>ggplot2</em></a> package in R to plot the following Gantt chart:</p>
 
-<h5 id="do-drug-preferences-differ-between-areas">Do drug preferences differ between areas?</h5>
+<p><a href="/assets/images/movie-character-screen-time/tp_starwars.png"><img src="/assets/images/movie-character-screen-time/tp_starwars.png" alt="Star Wars The Force Awakens" /></a></p>
 
-<p>Next, I wanted to find out if some drugs are more popular in certain areas than the others. To do this, I created three new heat maps for the possession of <em>cocaine</em>, <em>heroin</em>, and <em>cannabis</em>. As we can see below, there seems to be a difference between the three substances:</p>
+<p>We can use the X-Ray data, not only to identify in which scene a character appears but also with whom else. To visualize this information, I used <a href="https://gephi.org/"><em>Gephi</em></a>, an open source tool to plot networks. My assumption is that the longer characters appear on-screen together, the closer their relationship is. The circle size is based on their total screen time.</p>
 
-<p><a href="/assets/images/chicago-drugs/map_grid.jpg"><img src="/assets/images/chicago-drugs/map_grid.jpg" alt="Possession by Community Areas" /></a></p>
+<p><a href="/assets/images/movie-character-screen-time/network.png"><img src="/assets/images/movie-character-screen-time/network.png" alt="Star Wars - Network Plot" style="max-width: 512px" /></a></p>
 
-<p>To find an explanation for the local differences, I downloaded <a href="https://datahub.cmap.illinois.gov/dataset/community-data-snapshots-raw-data-2015/resource/8c4e096e-c90c-4bef-9cf1-9028d094296e">census data</a> on a community area level. We can use this data to explore how the community areas differ from each other in factors like education, income, race, or unemployment. If we plot this data in a map format and compare them to the previous heat maps, it shows that there could be a connection between them and the possession of certain drugs.</p>
+<p>I hope these examples show what you can do with Amazon X-Ray data relatively quickly. The best thing of this approach is that it only requires a minimum manual work. So, here are Gantt charts for three other movies I enjoy:
+<a href="/assets/images/movie-character-screen-time/tp_big_lebowski.png"><img src="/assets/images/movie-character-screen-time/tp_big_lebowski.png" alt="The Big Lebowski" /></a></p>
 
-<p>Judging by the looks of graphs is of course, not an appropriate method, which is why I also used a spatial regression to test how education, income, race, and unemployment relates to the reported possession of cocaine, heroin, and cannabis. The depended variables are the percentage of reported incidents based on the total population of the community area in which they occurred.</p>
+<p><a href="/assets/images/movie-character-screen-time/tp_pulp_fiction.png"><img src="/assets/images/movie-character-screen-time/tp_pulp_fiction.png" alt="Pulp Fiction" /></a></p>
 
-<p>The results below show that reported cannabis possession is lower in community areas with a higher median income and education. For heroin, we see similar results with the exception that median income is not a significant factor but median age is. For cocaine, the only two significant variables are the relative shares of the Black and Hispanic population. Apparently more incidents of cocaine possession happen in areas with bigger Black and Hispanic populations.</p>
+<p><a href="/assets/images/movie-character-screen-time/tp_john_wick.png"><img src="/assets/images/movie-character-screen-time/tp_john_wick.png" alt="John Wick" /></a></p>
 
-<p><a href="/assets/images/chicago-drugs/regression_table.png"><img src="/assets/images/chicago-drugs/regression_table.png" alt="Regression Results" style="max-width: 640px" /></a></p>
+<h4 id="how-to-get-x-ray-data">How to Get X-Ray Data?</h4>
 
-<p>If you have any suggestion or tips for future articles, please feel free to contact me by <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#099;&#117;&#114;&#105;&#111;&#117;&#115;&#103;&#110;&#117;&#046;&#099;&#111;&#109;">email</a> or <a href="https://www.reddit.com/user/CuriousGnu/">Reddit message</a>.</p>
+<p>The X-Ray feature is based on an unencrypted JSON file which can be downloaded with the Chrome browser. Unfortunately, those files are not publicly available (signed CloudFront URL), meaning that you have to start streaming the movie before you can download the file. This also means that you are limited to the content included in your Prime subscription, or you need to rent/buy the movies in which you are interested. Nevertheless, I think it is still an interesting source, especially when you consider the alternatives.</p>
+
+<ol>
+  <li>Start Developer Tools: Menu &gt; Tools &gt; Developer Tools</li>
+  <li>Start streaming a video &amp; close the player after a few seconds</li>
+  <li>Select the following Developer Tools settings:</li>
+</ol>
+
+<p><a href="/assets/images/movie-character-screen-time/devtools.png"><img src="/assets/images/movie-character-screen-time/devtools.png" alt="DevTools Settings" /></a></p>
+
+<ol>
+  <li>Click on the gray record button to capture the network traffic</li>
+  <li>Start streaming the video again</li>
+  <li>Now the following file should appear: <em>data.json?Expires=</em></li>
+  <li>Right-click on the file &gt; Open Link in New Tab &gt; Save Page As…</li>
+</ol>
+
+<p>Then you can use in R the <a href="https://cran.r-project.org/web/packages/jsonlite/index.html"><em>jsonlite</em></a> package to load the JSON file and then do, for example, something like this:</p>
+
+<pre><code>library(jsonlite)
+library(ggplot2)
+
+data &lt;- fromJSON("starwars.json", flatten = TRUE)
+e &lt;- data$resource$events
+e$start &lt;- as.numeric(as.data.frame(e$when)[1,])
+e$end &lt;- as.numeric(as.data.frame(e$when)[2,])
+ggplot(e, aes(colour=e$character)) + 
+  geom_segment(aes(x=e$start, xend=e$end, y=e$character, yend=e$character), size=5)
+</code></pre>
 
         </section>
 
@@ -158,15 +187,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=Which illicit drugs do Chicagoans take?&amp;url=http://www.curiousgnu.com/chicago-drugs"
+                <a class="icon-twitter" href="http://twitter.com/share?text=Using Amazon's X-Ray to Visualize Characters' Screen Time&amp;url=http://www.curiousgnu.com/movie-character-screen-time"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.curiousgnu.com/chicago-drugs"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.curiousgnu.com/movie-character-screen-time"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.curiousgnu.com/chicago-drugs"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.curiousgnu.com/movie-character-screen-time"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -183,20 +212,13 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/movie-character-screen-time/cover.jpg)" href="/movie-character-screen-time">
-            <section class="post">
-                <h2 class="title-sm">Using Amazon's X-Ray to Visualize Characters' Screen Time</h2>
-                <p>Today’s blog post is once again about the visualization of movie data. As I already...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/rd-godwin/cover.jpg)" href="/reddit-godwin">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/chicago-drugs/cover.jpg)" href="/chicago-drugs">
             <section class="post">
-                <h2 class="title-sm">78% of Reddit Threads With 1,000+ Comments Mention Nazis</h2>
-                <p>Let me start this post by noting that I will not attempt to test Godwin’s...</p>
+                <h2>Which illicit drugs do Chicagoans take?</h2>
+                <p>In one of my previous blog articles, I wrote about how drug dealers use the...</p>
             </section>
         </a>
     

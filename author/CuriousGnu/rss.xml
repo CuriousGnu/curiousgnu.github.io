@@ -12,6 +12,71 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>Using Amazon's X-Ray to Visualize Characters' Screen Time</title>
+	  <link>//movie-character-screen-time</link>
+	  <author>CuriousGnu</author>
+	  <pubDate>2016-06-22T03:00:00+02:00</pubDate>
+	  <guid>//movie-character-screen-time</guid>
+	  <description><![CDATA[
+	     <p>Today’s blog post is once again about the visualization of movie data. As I already experimented with the IMDb dataset to <a href="http://www.curiousgnu.com/imdb-age-gap">compare the average age</a> of actors and actresses, I wanted to try something a bit different. One thing that I have always found cool is the visualization of movie plots (e.g. <a href="https://xkcd.com/657/">xkcd</a>). The reason why I never attempted to do something like this myself was that I had no idea from where I could get the required data. Of course, there is always the possibility to generate the data manually, but that is usually a tedious task that I try to avoid. Fortunately, I found a much more convenient data source, while I was watching a movie on the <a href="https://www.amazon.com/video">Amazon Video</a> app.</p>
+
+<p><a href="/assets/images/movie-character-screen-time/xray_screenshot.jpg"><img src="/assets/images/movie-character-screen-time/xray_screenshot.jpg" alt="X-Ray Screenshot" style="max-width: 480px" /></a></p>
+
+<p>Its X-Ray feature shows you relevant IMDb information based on which actor is currently in the scene. The app does that based on a single text file which contains the information for when a character appears in a scene. At the end of the post, I will describe how you can extract the file yourself. First, I downloaded the X-Ray file for the latest <a href="https://www.amazon.com/dp/B019G7X9E6">Star Wars movie</a>. Based on this data we can compare the characters by their screen time.</p>
+
+<p><a href="/assets/images/movie-character-screen-time/barplot.png"><img src="/assets/images/movie-character-screen-time/barplot.png" alt="Characters Screen Time by Minutes" style="max-width: 647px" /></a></p>
+
+<p>I noticed that the numbers are not always 100% accurate because some characters are only visible in parts of a scene. However, it should not be a major problem for which we are using them in this post. Next, I used the <a href="https://cran.r-project.org/web/packages/ggplot2/"><em>ggplot2</em></a> package in R to plot the following Gantt chart:</p>
+
+<p><a href="/assets/images/movie-character-screen-time/tp_starwars.png"><img src="/assets/images/movie-character-screen-time/tp_starwars.png" alt="Star Wars The Force Awakens" /></a></p>
+
+<p>We can use the X-Ray data, not only to identify in which scene a character appears but also with whom else. To visualize this information, I used <a href="https://gephi.org/"><em>Gephi</em></a>, an open source tool to plot networks. My assumption is that the longer characters appear on-screen together, the closer their relationship is. The circle size is based on their total screen time.</p>
+
+<p><a href="/assets/images/movie-character-screen-time/network.png"><img src="/assets/images/movie-character-screen-time/network.png" alt="Star Wars - Network Plot" style="max-width: 512px" /></a></p>
+
+<p>I hope these examples show what you can do with Amazon X-Ray data relatively quickly. The best thing of this approach is that it only requires a minimum manual work. So, here are Gantt charts for three other movies I enjoy:
+<a href="/assets/images/movie-character-screen-time/tp_big_lebowski.png"><img src="/assets/images/movie-character-screen-time/tp_big_lebowski.png" alt="The Big Lebowski" /></a></p>
+
+<p><a href="/assets/images/movie-character-screen-time/tp_pulp_fiction.png"><img src="/assets/images/movie-character-screen-time/tp_pulp_fiction.png" alt="Pulp Fiction" /></a></p>
+
+<p><a href="/assets/images/movie-character-screen-time/tp_john_wick.png"><img src="/assets/images/movie-character-screen-time/tp_john_wick.png" alt="John Wick" /></a></p>
+
+<h4 id="how-to-get-x-ray-data">How to Get X-Ray Data?</h4>
+
+<p>The X-Ray feature is based on an unencrypted JSON file which can be downloaded with the Chrome browser. Unfortunately, those files are not publicly available (signed CloudFront URL), meaning that you have to start streaming the movie before you can download the file. This also means that you are limited to the content included in your Prime subscription, or you need to rent/buy the movies in which you are interested. Nevertheless, I think it is still an interesting source, especially when you consider the alternatives.</p>
+
+<ol>
+  <li>Start Developer Tools: Menu &gt; Tools &gt; Developer Tools</li>
+  <li>Start streaming a video &amp; close the player after a few seconds</li>
+  <li>Select the following Developer Tools settings:</li>
+</ol>
+
+<p><a href="/assets/images/movie-character-screen-time/devtools.png"><img src="/assets/images/movie-character-screen-time/devtools.png" alt="DevTools Settings" /></a></p>
+
+<ol>
+  <li>Click on the gray record button to capture the network traffic</li>
+  <li>Start streaming the video again</li>
+  <li>Now the following file should appear: <em>data.json?Expires=</em></li>
+  <li>Right-click on the file &gt; Open Link in New Tab &gt; Save Page As…</li>
+</ol>
+
+<p>Then you can use in R the <a href="https://cran.r-project.org/web/packages/jsonlite/index.html"><em>jsonlite</em></a> package to load the JSON file and then do, for example, something like this:</p>
+
+<pre><code>library(jsonlite)
+library(ggplot2)
+
+data &lt;- fromJSON("starwars.json", flatten = TRUE)
+e &lt;- data$resource$events
+e$start &lt;- as.numeric(as.data.frame(e$when)[1,])
+e$end &lt;- as.numeric(as.data.frame(e$when)[2,])
+ggplot(e, aes(colour=e$character)) + 
+  geom_segment(aes(x=e$start, xend=e$end, y=e$character, yend=e$character), size=5)
+</code></pre>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>Which illicit drugs do Chicagoans take?</title>
 	  <link>//chicago-drugs</link>
 	  <author>CuriousGnu</author>
@@ -318,26 +383,6 @@ HAVING	SUM(a.trump) &gt;= 100
 <p>Finally, I also created a density plot which summarizes all data points in a nice looking, colorful graph. The area below the gray dashed line stands for all the movies in which the leading actor is older :</p>
 
 <p><a href="/assets/images/age-gap/plot_1_hd.png"><img src="/assets/images/age-gap/plot_1.png" alt="Age Gap Plot" title="Age Gap Plot" /></a></p>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>Actresses Are on Average 7 Years Younger</title>
-	  <link>//imdb-age-distribution</link>
-	  <author>CuriousGnu</author>
-	  <pubDate>2015-11-02T21:10:00+01:00</pubDate>
-	  <guid>//imdb-age-distribution</guid>
-	  <description><![CDATA[
-	     <p>The IMDb dataset is a great source for everyone loves movies and numbers. After I had figured out how to <a href="http://imdbpy.sourceforge.net/support.html" target="_blank">import the data</a> into a local SQL database, the first thing I did was to look at the age of the actresses and actors during filming.</p>
-
-<p>It turns out that the average actress is, with a median age of 32, <strong>seven years younger</strong> than her male counterpart who is on average 39 years old. The diagram below shows that the distribution of ages of actresses is more skewed to the right (γ1=.912) than those of ages of actors (γ1=.483). This suggests that there is a relatively higher demand for actresses under the age of 35. Interestingly we do not see such an apparent age preference in the casting of actors.</p>
-
-<p><a href="/assets/images/age-dist/plot_hd.png"><img src="/assets/images/age-dist/plot.png" alt="Age Distribution Plot" title="Age Distribution Plot" /></a></p>
-
-<p>The sample consists of all roles played by actresses (n=21,551) and actors (n=50,165) in U.S. movie released between 2000 and 2015, with more than 10,000 IMDb-Votes. By the way, in the United States, the median age of females and males is 39.2 years and 36.5 years respectively (<a href="https://www.cia.gov/library/publications/the-world-factbook/geos/us.html">The World Factbook, 2015</a>).</p>
-
-<p><small>Photo: “California Movie Theater Berkeley” by <a href="https://flic.kr/p/aM4GwX">Russell Mondy</a> is licensed under CC BY-NC 2.0</small></p>
 
 	  ]]></description>
 	</item>
