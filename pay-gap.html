@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- [[! Page Meta ]] -->
-    <title>Using Amazon's X-Ray to Visualize Characters' Screen Time</title>
+    <title>Chicago pays female employees only 80% of what it pays male employees</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="alternate" type="application/rss+xml" title="CuriousGnu - All Posts" href="http://www.curiousgnu.com/rss/">
@@ -31,7 +31,7 @@
     <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
     <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-    <meta property="og:image" content="http://s3.amazonaws.com/cgcdn-static/screentime_og.png">
+    <meta property="og:image" content="http://s3.amazonaws.com/cgcdn-static/pay_gap_og.png">
     <!-- [[! Styles'n'Scripts ]] -->
     <link rel="stylesheet" type="text/css" href="/assets/css/screen.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400">
@@ -86,16 +86,16 @@
     <article class="post post-template">
 
         <header class="post-header">
-            <h1 class="post-title">Using Amazon's X-Ray to Visualize Characters' Screen Time</h1>
+            <h1 class="post-title">Chicago pays female employees only 80% of what it pays male employees</h1>
             <section class="post-meta">
             <!-- <a href='/'>CuriousGnu</a> -->
-            <time class="post-date" datetime="2016-06-22">22 Jun 2016</time>
+            <time class="post-date" datetime="2016-07-05">05 Jul 2016</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
                 
                     
-                       <a href='/tag/Movies'>Movies</a>
+                       <a href='/tag/Politics'>Politics</a>
                        
                 
                 
@@ -103,60 +103,29 @@
         </header>
 
         <section class="post-content">
-            <p>Today’s blog post is once again about the visualization of movie data. As I already experimented with the IMDb dataset to <a href="http://www.curiousgnu.com/imdb-age-gap">compare the average age</a> of actors and actresses, I wanted to try something a bit different. One thing that I have always found cool is the visualization of movie plots (e.g. <a href="https://xkcd.com/657/">xkcd</a>). The reason why I never attempted to do something like this myself was that I had no idea from where I could get the required data. Of course, there is always the possibility to generate the data manually, but that is usually a tedious task that I try to avoid. Fortunately, I found a much more convenient data source, while I was watching a movie on the <a href="https://www.amazon.com/video">Amazon Video</a> app.</p>
+            <p>While I was browsing through the City of <a href="https://data.cityofchicago.org/">Chicago’s Data Catalog</a>, I came across a <a href="https://data.cityofchicago.org/Administration-Finance/Current-Employee-Names-Salaries-and-Position-Title/xzkq-xp2w">dataset</a> of the city’s 32,000 employees which included their full names, position titles, and annual salaries. I thought that it was a great opportunity to find out whether the gender pay gap was a problem there also. The gender pay gap is the average difference between men’s and women’s earnings, which in the US is somewhere around <a href="http://www.iwpr.org/initiatives/pay-equity-and-discrimination">-21%</a> for women. It is an important number many politicians and activists use as proof for gender inequality.</p>
 
-<p><a href="/assets/images/movie-character-screen-time/xray_screenshot.jpg"><img src="/assets/images/movie-character-screen-time/xray_screenshot.jpg" alt="X-Ray Screenshot" style="max-width: 480px" /></a></p>
+<p>Before I could compare the average salaries of female and male city employees, I needed to identify their gender – a piece of information which was not included in the official dataset. To do this, I used the R-Package <a href="https://cran.r-project.org/web/packages/gender/index.html"><em>gender</em></a> to predict the gender of a person based on his or her first name. Of course, this method isn’t 100% accurate, but because of the high number of employees, this potential inaccuracy shouldn’t be a problem. After that, I was able to compare the average annual salaries of male and female city employees. It turns out that the City of Chicago isn’t any better than the rest of the nation. It pays its female employees on average, only 80% of what their male colleagues make – which is very close to the national average of 79%.</p>
 
-<p>Its X-Ray feature shows you relevant IMDb information based on which actor is currently in the scene. The app does that based on a single text file which contains the information for when a character appears in a scene. At the end of the post, I will describe how you can extract the file yourself. First, I downloaded the X-Ray file for the latest <a href="https://www.amazon.com/dp/B019G7X9E6">Star Wars movie</a>. Based on this data we can compare the characters by their screen time.</p>
+<p><a href="/assets/images/pay-gap/barchart.png"><img src="/assets/images/pay-gap/barchart.png" alt="Pay Gap Barchart" style="max-width: 500px" /></a></p>
 
-<p><a href="/assets/images/movie-character-screen-time/barplot.png"><img src="/assets/images/movie-character-screen-time/barplot.png" alt="Characters Screen Time by Minutes" style="max-width: 647px" /></a></p>
+<p>If you think now that there are many other factors besides gender, that determine a person’s salary, and that chart above is completely useless, you are right. It’s obviously not good enough to compare only the average earnings of both genders if they do different kinds of jobs. The criticism of how the gender pay gap is used in political discussions isn’t something new, and it has been proven many times that the gender pay gap isn’t a sufficient proof for gender inequality.</p>
 
-<p>I noticed that the numbers are not always 100% accurate because some characters are only visible in parts of a scene. However, it should not be a major problem for which we are using them in this post. Next, I used the <a href="https://cran.r-project.org/web/packages/ggplot2/"><em>ggplot2</em></a> package in R to plot the following Gantt chart:</p>
+<p>I think one of the problems with the arguments against the gender pay gap is that they often rely on statistical tests. Don’t get me wrong, these tests are the only scientifically correct way to do it; but unfortunately, many people stop listening to you as soon as you start mentioning t-tests and confidence levels. The reason why I find the Chicago dataset so interesting is that it contains the salaries of each employee, which allows us to use it as a real-world example to illustrate the problems with the gender pay gap argument. To do this, I propose a simple scatter plot to display the average male and female salaries per position title.</p>
 
-<p><a href="/assets/images/movie-character-screen-time/tp_starwars.png"><img src="/assets/images/movie-character-screen-time/tp_starwars.png" alt="Star Wars The Force Awakens" /></a></p>
+<p><a href="/assets/images/pay-gap/sketch.png"><img src="/assets/images/pay-gap/sketch.png" alt="Pay Gap Sketch" style="max-width: 300px" /></a></p>
 
-<p>We can use the X-Ray data, not only to identify in which scene a character appears but also with whom else. To visualize this information, I used <a href="https://gephi.org/"><em>Gephi</em></a>, an open source tool to plot networks. My assumption is that the longer characters appear on-screen together, the closer their relationship is. The circle size is based on their total screen time.</p>
+<p>So, each dot represents one job position, like police officer or police sergeant. If a dot (1) is below the 45-degree line, the average salary of men is higher than the average salary of women holding the same position. If a dot (2) is above the 45-degree line, it’s the other way around. In case the average salaries of both genders are equal, the dot (3) sits directly on the line. Based on this idea, I generated the following plot:</p>
 
-<p><a href="/assets/images/movie-character-screen-time/network.png"><img src="/assets/images/movie-character-screen-time/network.png" alt="Star Wars - Network Plot" style="max-width: 512px" /></a></p>
+<p><a href="/assets/images/pay-gap/scatter_plot.png"><img src="/assets/images/pay-gap/scatter_plot.png" alt="Pay Gap Scatter Plot" style="max-width: 600px" /></a></p>
 
-<p>I hope these examples show what you can do with Amazon X-Ray data relatively quickly. The best thing of this approach is that it only requires a minimum manual work. So, here are Gantt charts for three other movies I enjoy:
-<a href="/assets/images/movie-character-screen-time/tp_big_lebowski.png"><img src="/assets/images/movie-character-screen-time/tp_big_lebowski.png" alt="The Big Lebowski" /></a></p>
+<p>This plot clearly shows that women are not systematically paid 20% less for doing the same job as the first bar chart might have suggested.  The main reason for the difference is that women are doing different jobs than men do. Therefore, the gender pay gap shouldn’t be used as an argument for the existence of gender inequality but gender differences. I’m not saying that gender discrimination doesn’t exist in the workplace, it’s just that the gender pay gap doesn’t support the claim that women are paid 20% less for doing the same job. Therefore, a more honest way to use this statistic would be in a discussion about how both gender and personal choices affect careers.</p>
 
-<p><a href="/assets/images/movie-character-screen-time/tp_pulp_fiction.png"><img src="/assets/images/movie-character-screen-time/tp_pulp_fiction.png" alt="Pulp Fiction" /></a></p>
+<p>In conclusion, it’s true that the gender pay gap exists, and that on average, women make less money than men. However, the claims that it proves gender inequality are false because women are simply doing different kinds of jobs.</p>
 
-<p><a href="/assets/images/movie-character-screen-time/tp_john_wick.png"><img src="/assets/images/movie-character-screen-time/tp_john_wick.png" alt="John Wick" /></a></p>
+<p>If you have questions or concerns, feel free to write me an  <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#099;&#117;&#114;&#105;&#111;&#117;&#115;&#103;&#110;&#117;&#046;&#099;&#111;&#109;">email</a>.</p>
 
-<h4 id="how-to-get-x-ray-data">How to Get X-Ray Data?</h4>
-
-<p>The X-Ray feature is based on an unencrypted JSON file which can be downloaded with the Chrome browser. Unfortunately, those files are not publicly available (signed CloudFront URL), meaning that you have to start streaming the movie before you can download the file. This also means that you are limited to the content included in your Prime subscription, or you need to rent/buy the movies in which you are interested. Nevertheless, I think it is still an interesting source, especially when you consider the alternatives.</p>
-
-<ol>
-  <li>Start Developer Tools: Menu &gt; Tools &gt; Developer Tools</li>
-  <li>Start streaming a video &amp; close the player after a few seconds</li>
-  <li>Select the following Developer Tools settings:</li>
-</ol>
-
-<p><a href="/assets/images/movie-character-screen-time/devtools.png"><img src="/assets/images/movie-character-screen-time/devtools.png" alt="DevTools Settings" /></a></p>
-
-<ol>
-  <li>Click on the gray record button to capture the network traffic</li>
-  <li>Start streaming the video again</li>
-  <li>Now the following file should appear: <em>data.json?Expires=</em></li>
-  <li>Right-click on the file &gt; Open Link in New Tab &gt; Save Page As…</li>
-</ol>
-
-<p>Then you can use in R the <a href="https://cran.r-project.org/web/packages/jsonlite/index.html"><em>jsonlite</em></a> package to load the JSON file and then do, for example, something like this:</p>
-
-<pre><code>library(jsonlite)
-library(ggplot2)
-
-data &lt;- fromJSON("starwars.json", flatten = TRUE)
-e &lt;- data$resource$events
-e$start &lt;- as.numeric(as.data.frame(e$when)[1,])
-e$end &lt;- as.numeric(as.data.frame(e$when)[2,])
-ggplot(e, aes(colour=e$character)) + 
-  geom_segment(aes(x=e$start, xend=e$end, y=e$character, yend=e$character), size=5)
-</code></pre>
+<p><small>Photo: “Chicago” by <a href="https://flic.kr/p/62vAsR">Tony Webster</a> is licensed under CC BY 2.0</small></p>
 
         </section>
 
@@ -187,15 +156,15 @@ ggplot(e, aes(colour=e$character)) +
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=Using Amazon's X-Ray to Visualize Characters' Screen Time&amp;url=http://www.curiousgnu.com/movie-character-screen-time"
+                <a class="icon-twitter" href="http://twitter.com/share?text=Chicago pays female employees only 80% of what it pays male employees&amp;url=http://www.curiousgnu.com/pay-gap"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.curiousgnu.com/movie-character-screen-time"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.curiousgnu.com/pay-gap"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.curiousgnu.com/movie-character-screen-time"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.curiousgnu.com/pay-gap"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -212,20 +181,13 @@ ggplot(e, aes(colour=e$character)) +
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/pay-gap/cover.jpg)" href="/pay-gap">
-            <section class="post">
-                <h2 class="title-sm">Chicago pays female employees only 80% of what it pays male employees</h2>
-                <p>While I was browsing through the City of Chicago’s Data Catalog, I came across a...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/chicago-drugs/cover.jpg)" href="/chicago-drugs">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/movie-character-screen-time/cover.jpg)" href="/movie-character-screen-time">
             <section class="post">
-                <h2>Which illicit drugs do Chicagoans take?</h2>
-                <p>In one of my previous blog articles, I wrote about how drug dealers use the...</p>
+                <h2 class="title-sm">Using Amazon's X-Ray to Visualize Characters' Screen Time</h2>
+                <p>Today’s blog post is once again about the visualization of movie data. As I already...</p>
             </section>
         </a>
     
