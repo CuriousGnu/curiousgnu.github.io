@@ -8,6 +8,37 @@
     
       
       <item>
+        <title>Conan is The Dirtiest Late-Night Show on YouTube</title>
+          <description>
+            &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;http://www.curiousgnu.com/assets/images/late-night-shows/cover.png&quot;  alt=&quot;Cover Image&quot; /&gt;
+            &lt;p&gt;I had the idea for this blog post while I was watching some interviews on YouTube. The videos of the &lt;a href=&quot;https://www.youtube.com/user/teamcoco&quot;&gt;&lt;em&gt;Conan&lt;/em&gt;&lt;/a&gt; show stood out to me because many of them seem to be focused on sexual topics. To me, it looks like they were following the simple “sex sells” approach. Not that there’s something inherently wrong with this, it just appears that &lt;em&gt;Conan&lt;/em&gt; uses it much more than other late-night show channels.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/late-night-shows/screenshot.png&quot;&gt;&lt;img src=&quot;/assets/images/late-night-shows/screenshot.png&quot; alt=&quot;Conan Search Results&quot; style=&quot;max-width: 600px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This brought me to my main question. Are &lt;em&gt;Conan&lt;/em&gt; videos more focused on sexual content than the ones of other late-night shows? I decided to compare its YouTube channel to the official channels of &lt;a href=&quot;https://www.youtube.com/user/JimmyKimmelLive&quot;&gt;&lt;em&gt;Jimmy Kimmel Live!&lt;/em&gt;&lt;/a&gt;,  &lt;a href=&quot;https://www.youtube.com/user/latenight&quot;&gt;&lt;em&gt;The Tonight Show Starring Jimmy Fallon&lt;/em&gt;&lt;/a&gt;, &lt;a href=&quot;https://www.youtube.com/channel/UCMtFAi84ehTSYSE9XoHefig&quot;&gt;&lt;em&gt;The Late Show with Stephen Colbert&lt;/em&gt;&lt;/a&gt;, and &lt;a href=&quot;https://www.youtube.com/user/TheLateLateShow&quot;&gt;&lt;em&gt;The Late Late Show with James Corden&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The public &lt;a href=&quot;https://developers.google.com/youtube/v3/docs/videos/list&quot;&gt;YouTube API&lt;/a&gt; allowed me to download the information for all available 12,237 videos. To find out whether a video contains sexual content or not, I compared the video’s title and description against a word list (see below). If the title or description contains at least one of the words, the video will be rated as “contains sexual content”. On top of that, I also checked if the video titles contain names of persons to group the videos into three categories: female, male, and neutral. For example, interviews with actresses fall into the female category, whereas, monologs fall into the neutral category.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/late-night-shows/barplot.png&quot;&gt;&lt;img src=&quot;/assets/images/late-night-shows/barplot.png&quot; alt=&quot;Late Night Show - Bar Plot&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The graph above shows that &lt;strong&gt;17%&lt;/strong&gt; of &lt;em&gt;Conan&lt;/em&gt; videos in the female category contain sexual content which is &lt;strong&gt;11%&lt;/strong&gt; more than the &lt;em&gt;Late Show with Stephen Colbert&lt;/em&gt;, the second place. We also can see that the share of &lt;em&gt;Conan&lt;/em&gt; videos containing sexual content is twice as large in the female category than in the male category.  These numbers confirm the hypothesis that the &lt;em&gt;Conan&lt;/em&gt; YouTube channel focuses much more on sexual content than other late-night shows. &lt;em&gt;The Tonight Show Starring Jimmy Fallon appears&lt;/em&gt; to be the YouTube channel with the cleanest video titles and descriptions.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Bonus:&lt;/strong&gt; The results left me wondering if suggestive titles help the channels to gain views. I created the following plot with the &lt;a href=&quot;https://cran.cnr.berkeley.edu/web/packages/beanplot/&quot;&gt;beanplot&lt;/a&gt; R package which shows us that only &lt;em&gt;Conan&lt;/em&gt; seems to benefit from sexual video titles or descriptions. If you’re interested in the beanplot, you can find a detailed explanation &lt;a href=&quot;https://cran.cnr.berkeley.edu/web/packages/beanplot/vignettes/beanplot.pdf&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/late-night-shows/beanplot.png&quot;&gt;&lt;img src=&quot;/assets/images/late-night-shows/beanplot.png&quot; alt=&quot;Late Night Show - Bean Plot&quot; style=&quot;max-width: 680px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Word List: boob*, dating*, hooker*, kiss*, love scene*, naked*, naughty*, nude*, nudity*, orgasm*, panties*, penis*, porn*, prostitute*, sex*, slut*, strip*, topless*, whore*
+&lt;/code&gt;&lt;/pre&gt;
+
+          </description>
+        <pubDate>Wed, 13 Jul 2016 03:00:00 +0200</pubDate>
+        <link>http://www.curiousgnu.com/late-night-shows</link>
+        <guid isPermaLink="true">http://www.curiousgnu.com/late-night-shows</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Chicago pays female employees only 80% of what it pays male employees</title>
           <description>
             &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;http://www.curiousgnu.com/assets/images/pay-gap/cover.jpg&quot;  alt=&quot;Cover Image&quot; /&gt;

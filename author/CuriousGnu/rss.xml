@@ -12,6 +12,35 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>Conan is The Dirtiest Late-Night Show on YouTube</title>
+	  <link>//late-night-shows</link>
+	  <author>CuriousGnu</author>
+	  <pubDate>2016-07-13T03:00:00+02:00</pubDate>
+	  <guid>//late-night-shows</guid>
+	  <description><![CDATA[
+	     <p>I had the idea for this blog post while I was watching some interviews on YouTube. The videos of the <a href="https://www.youtube.com/user/teamcoco"><em>Conan</em></a> show stood out to me because many of them seem to be focused on sexual topics. To me, it looks like they were following the simple “sex sells” approach. Not that there’s something inherently wrong with this, it just appears that <em>Conan</em> uses it much more than other late-night show channels.</p>
+
+<p><a href="/assets/images/late-night-shows/screenshot.png"><img src="/assets/images/late-night-shows/screenshot.png" alt="Conan Search Results" style="max-width: 600px" /></a></p>
+
+<p>This brought me to my main question. Are <em>Conan</em> videos more focused on sexual content than the ones of other late-night shows? I decided to compare its YouTube channel to the official channels of <a href="https://www.youtube.com/user/JimmyKimmelLive"><em>Jimmy Kimmel Live!</em></a>,  <a href="https://www.youtube.com/user/latenight"><em>The Tonight Show Starring Jimmy Fallon</em></a>, <a href="https://www.youtube.com/channel/UCMtFAi84ehTSYSE9XoHefig"><em>The Late Show with Stephen Colbert</em></a>, and <a href="https://www.youtube.com/user/TheLateLateShow"><em>The Late Late Show with James Corden</em></a>.</p>
+
+<p>The public <a href="https://developers.google.com/youtube/v3/docs/videos/list">YouTube API</a> allowed me to download the information for all available 12,237 videos. To find out whether a video contains sexual content or not, I compared the video’s title and description against a word list (see below). If the title or description contains at least one of the words, the video will be rated as “contains sexual content”. On top of that, I also checked if the video titles contain names of persons to group the videos into three categories: female, male, and neutral. For example, interviews with actresses fall into the female category, whereas, monologs fall into the neutral category.</p>
+
+<p><a href="/assets/images/late-night-shows/barplot.png"><img src="/assets/images/late-night-shows/barplot.png" alt="Late Night Show - Bar Plot" /></a></p>
+
+<p>The graph above shows that <strong>17%</strong> of <em>Conan</em> videos in the female category contain sexual content which is <strong>11%</strong> more than the <em>Late Show with Stephen Colbert</em>, the second place. We also can see that the share of <em>Conan</em> videos containing sexual content is twice as large in the female category than in the male category.  These numbers confirm the hypothesis that the <em>Conan</em> YouTube channel focuses much more on sexual content than other late-night shows. <em>The Tonight Show Starring Jimmy Fallon appears</em> to be the YouTube channel with the cleanest video titles and descriptions.</p>
+
+<p><strong>Bonus:</strong> The results left me wondering if suggestive titles help the channels to gain views. I created the following plot with the <a href="https://cran.cnr.berkeley.edu/web/packages/beanplot/">beanplot</a> R package which shows us that only <em>Conan</em> seems to benefit from sexual video titles or descriptions. If you’re interested in the beanplot, you can find a detailed explanation <a href="https://cran.cnr.berkeley.edu/web/packages/beanplot/vignettes/beanplot.pdf">here</a>.</p>
+
+<p><a href="/assets/images/late-night-shows/beanplot.png"><img src="/assets/images/late-night-shows/beanplot.png" alt="Late Night Show - Bean Plot" style="max-width: 680px" /></a></p>
+
+<pre><code>Word List: boob*, dating*, hooker*, kiss*, love scene*, naked*, naughty*, nude*, nudity*, orgasm*, panties*, penis*, porn*, prostitute*, sex*, slut*, strip*, topless*, whore*
+</code></pre>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>Chicago pays female employees only 80% of what it pays male employees</title>
 	  <link>//pay-gap</link>
 	  <author>CuriousGnu</author>
@@ -353,46 +382,6 @@ HAVING	SUM(a.trump) &gt;= 100
 <p>Before doing that, I replaced all the different versions of a name (e.g., Lizzy, Liz, Keen) with the name you can see in the center of the word clouds. In case you are wondering why there are not always complete words in the clouds, it is because of a process called <em>stemming</em> which reduces words to their word stem. The idea behind it is to group the different forms of a word together instead of treating every single form as an own term.</p>
 
 <p>I hope you like this post. Please feel free to contact me if you have any questions or suggestions.</p>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>Who sells LSD on the Darktnet?</title>
-	  <link>//cryptomarkets-lsd-sales</link>
-	  <author>CuriousGnu</author>
-	  <pubDate>2016-01-16T12:10:00+01:00</pubDate>
-	  <guid>//cryptomarkets-lsd-sales</guid>
-	  <description><![CDATA[
-	     <p>I recently got my hands on Diana S. Dolliver’s <a href="http://dx.doi.org/10.1016/j.drugpo.2015.01.008" target="_blank">paper</a> about drug dealing on the Tor network, a hidden, uncensored network which can only be accessed by <a href="https://www.torproject.org/" target="_blank">special software</a>. I got interested this topic because it allows us to analyse transactions which used to be hidden and nearly impossible to observe.</p>
-
-<p>Besides the many legitimate use cases of the Tor network, it also provides together with Bitcoin the technology most <em>cryptomarkets</em> use. Tor allows the side administrators to host their sites anonymously without the fear of getting arrested immediately by the FBI. Cryptomarkets function similar to eBay, in the sense that they do not sell drugs directly but provide a platform where other vendors can sell their products for a small fee. The screenshot below shows how such a site looks from a buyers perspective. I chose to take a close look at the <em>AlphaBay Market</em>, one of the biggest platforms in December 2015.</p>
-
-<p><a href="/assets/images/darknet-lsd/screenshot.png"><img src="/assets/images/darknet-lsd/screenshot.png" alt="AlphaBay Market Screenshot" title="AlphaBay Market Screenshot" /></a></p>
-
-<h5 id="how-to-analyse-the-alphabay-market">How to analyse the AlphaBay Market?</h5>
-
-<p>If you access one of the larger cryptomarkets, you will probably see thousands of different offerings ranging from prescription drugs to illegal weapons. The fact that anonymous users claim to sell those products, of course, does not say anything about the actual demand and volume of the sales. This is the point where it gets interesting because the <em>AlphaBay Market</em> has a revealing feedback system which lists not only lists all products sold but also their prices, and purchase dates.</p>
-
-<p>Assuming a constant feedback ratio, we can use this data to observe the early development of the market from only one snapshot. To automatically download the customer feedbacks I wrote a scraper in Python, which provided me with the dataset for the further analysis.</p>
-
-<h5 id="how-much-lsd-is-sold">How much LSD is sold?</h5>
-
-<p>Unfortunately, the scraping process of a website hidden in the Tor network is a quite slow. Therefore, I decided only to download information related to LSD sales. The diagram below shows last year’s LSD sales for the weeks 13 to 50:</p>
-
-<p><a href="/assets/images/darknet-lsd/plot_hd.png"><img src="/assets/images/darknet-lsd/plot.png" alt="LSD Sales" title="LSD Sales" /></a></p>
-
-<p>During November 2015, approximately <strong>$215,000</strong> worth of LSD was sold on the AlphaBay Market. I do not have a definitive explanation for the sales increase following week 44, but my guess is that problems with competing cryptomarkets drove new sellers to this platform and their existing customers followed. This theory is supported by the fact that already established vendors like <em>Lyseric025</em> were not able to significantly increase their revenue during this time.</p>
-
-<h5 id="who-are-the-dealers">Who are the dealers?</h5>
-
-<p>To better get a better understanding of who those LSD vendors are, we need to look at their other sales also:</p>
-
-<p><a href="/assets/images/darknet-lsd/table_hd.png"><img src="/assets/images/darknet-lsd/table.png" alt="LSD Vendors" title="LSD Vendors" /></a></p>
-
-<p>We can see in the table above that the leading LSD seller on the AlphaBay Market was <em>Lyseric025</em>, who had a market share of 29% in November 2015 and generated a revenue of $65,438. Only 3% of it came from B2B sales (sale over $200) which suggest a strong focus on the end customer.</p>
-
-<p>Interestingly most sellers on this list made the majority of their revenue with LSD. One of the reasons for this could be that the LSD is supposedly produced by only a <a href="http://www.justice.gov/archive/ndic/pubs25/25921/25921p.pdf" target="_blank">few producers</a> which wholesalers are probably only interested in selling in large volumes. This would mean that a specialized vendor could increase its profit by using economies of scale. I wonder if there is a similar specialization in other more decentralized drug markets.</p>
 
 	  ]]></description>
 	</item>

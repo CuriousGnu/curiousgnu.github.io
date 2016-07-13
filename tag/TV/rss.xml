@@ -12,6 +12,35 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>Conan is The Dirtiest Late-Night Show on YouTube</title>
+	  <link>//late-night-shows</link>
+	  <author>CuriousGnu</author>
+	  <pubDate>2016-07-13T03:00:00+02:00</pubDate>
+	  <guid>//late-night-shows</guid>
+	  <description><![CDATA[
+	     <p>I had the idea for this blog post while I was watching some interviews on YouTube. The videos of the <a href="https://www.youtube.com/user/teamcoco"><em>Conan</em></a> show stood out to me because many of them seem to be focused on sexual topics. To me, it looks like they were following the simple “sex sells” approach. Not that there’s something inherently wrong with this, it just appears that <em>Conan</em> uses it much more than other late-night show channels.</p>
+
+<p><a href="/assets/images/late-night-shows/screenshot.png"><img src="/assets/images/late-night-shows/screenshot.png" alt="Conan Search Results" style="max-width: 600px" /></a></p>
+
+<p>This brought me to my main question. Are <em>Conan</em> videos more focused on sexual content than the ones of other late-night shows? I decided to compare its YouTube channel to the official channels of <a href="https://www.youtube.com/user/JimmyKimmelLive"><em>Jimmy Kimmel Live!</em></a>,  <a href="https://www.youtube.com/user/latenight"><em>The Tonight Show Starring Jimmy Fallon</em></a>, <a href="https://www.youtube.com/channel/UCMtFAi84ehTSYSE9XoHefig"><em>The Late Show with Stephen Colbert</em></a>, and <a href="https://www.youtube.com/user/TheLateLateShow"><em>The Late Late Show with James Corden</em></a>.</p>
+
+<p>The public <a href="https://developers.google.com/youtube/v3/docs/videos/list">YouTube API</a> allowed me to download the information for all available 12,237 videos. To find out whether a video contains sexual content or not, I compared the video’s title and description against a word list (see below). If the title or description contains at least one of the words, the video will be rated as “contains sexual content”. On top of that, I also checked if the video titles contain names of persons to group the videos into three categories: female, male, and neutral. For example, interviews with actresses fall into the female category, whereas, monologs fall into the neutral category.</p>
+
+<p><a href="/assets/images/late-night-shows/barplot.png"><img src="/assets/images/late-night-shows/barplot.png" alt="Late Night Show - Bar Plot" /></a></p>
+
+<p>The graph above shows that <strong>17%</strong> of <em>Conan</em> videos in the female category contain sexual content which is <strong>11%</strong> more than the <em>Late Show with Stephen Colbert</em>, the second place. We also can see that the share of <em>Conan</em> videos containing sexual content is twice as large in the female category than in the male category.  These numbers confirm the hypothesis that the <em>Conan</em> YouTube channel focuses much more on sexual content than other late-night shows. <em>The Tonight Show Starring Jimmy Fallon appears</em> to be the YouTube channel with the cleanest video titles and descriptions.</p>
+
+<p><strong>Bonus:</strong> The results left me wondering if suggestive titles help the channels to gain views. I created the following plot with the <a href="https://cran.cnr.berkeley.edu/web/packages/beanplot/">beanplot</a> R package which shows us that only <em>Conan</em> seems to benefit from sexual video titles or descriptions. If you’re interested in the beanplot, you can find a detailed explanation <a href="https://cran.cnr.berkeley.edu/web/packages/beanplot/vignettes/beanplot.pdf">here</a>.</p>
+
+<p><a href="/assets/images/late-night-shows/beanplot.png"><img src="/assets/images/late-night-shows/beanplot.png" alt="Late Night Show - Bean Plot" style="max-width: 680px" /></a></p>
+
+<pre><code>Word List: boob*, dating*, hooker*, kiss*, love scene*, naked*, naughty*, nude*, nudity*, orgasm*, panties*, penis*, porn*, prostitute*, sex*, slut*, strip*, topless*, whore*
+</code></pre>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>What are the most common words in TV shows?</title>
 	  <link>//tv-show-word-clouds</link>
 	  <author>CuriousGnu</author>
