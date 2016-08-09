@@ -12,6 +12,117 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>These Are Most Dangerous PokeStops in NYC</title>
+	  <link>//pokemon-go</link>
+	  <author>CuriousGnu</author>
+	  <pubDate>2016-08-09T03:00:00+02:00</pubDate>
+	  <guid>//pokemon-go</guid>
+	  <description><![CDATA[
+	     <p>Pokemon GO quickly became one of the most popular mobile games. In cities all around the world, you can see people searching for Pokemon and battling other players in Poke Gyms. While exploring this new augmented reality, it’s easy to forget about the dangerous of the real word. On a daily basis, news sites report on Pokemon Go related incidents like <a href="https://www.washingtonpost.com/news/morning-mix/wp/2016/08/02/arizona-couple-accused-of-abandoning-son-for-pokemon-go/">child abandonment</a>, <a href="https://www.theguardian.com/australia-news/2016/jul/29/pokemon-go-player-crashes-car-into-school-while-playing-game">reckless driving</a>, or <a href="http://reut.rs/2aJ8W9n">trespassing</a>. Earlier this month New York Governor Andrew M. Cuomo even <a href="http://www.npr.org/sections/alltechconsidered/2016/08/02/488435018/new-york-bans-registered-sex-offenders-from-pok-mon-go">banned sex offenders</a> from playing the game.</p>
+
+<p>These incidents gave me the idea for this article about <a href="https://support.pokemongo.nianticlabs.com/hc/en-us/articles/221957688">PokeStops</a> in potentially unsafe areas where caution is advised. My goal was to analyze public data to identify PokeStops in New York City which are close to crime scenes and registered sex offenders.</p>
+
+<h4 id="pokestops-near-crime-scenes">PokeStops Near Crime Scenes</h4>
+
+<p>First, I used <a href="http://www.pokemongomap.info/">PokemonGOMap.info</a> to get the locations of the 24 thousand PokeStop in NYC and download all reported felonies of 2015 (103k) from the <a href="https://data.cityofnewyork.us/Public-Safety/NYPD-7-Major-Felony-Incidents/hyij-8hr7">NYC OpenData portal</a>. For this analysis, I exclude the offenses <em>burglary</em> (15k) and <em>grand larceny</em> (49k) because they’re less a potential threat to players in the area. The following map shows all PokeStops as blue dots whereas incidents of <em>felony assault &amp; robbery</em> (37k) are represented by green dots and <em>murder &amp; rape</em> (1.5k) by red dots.</p>
+
+<p><a href="/assets/images/pokemon-go/incidents.jpg"><img src="/assets/images/pokemon-go/incidents.jpg" alt="Incidents" /></a></p>
+
+<p>Next, I loaded the raw data into <a href="https://cran.r-project.org/">R</a>* to count all crimes that occurred within 150m (492ft) of each PokeStop. I had to choose this rather large area because the public data doesn’t show the exact location of the incidents due to privacy reason. Instead, it only provides the midpoint of the street segment on which they happened.</p>
+
+<p>The map below shows the top ten PokeStop in which proximity most major felony incidents occurred. For this map, the offenses murder and rape are weighted by the factor five and only the top PokeStops of an NTA are included to reduce regional clusters. You can find the total number of murders &amp; rapes in the areas of the PokeStops in the red boxes and total number of felony assaults &amp; robberies in the yellow boxes right next to them. The average number of incidents of all NYC PokeStops stands at <strong>0.15</strong> for murder or rape and <strong>4.00</strong> for <em>felony assault</em> or <em>robbery</em>.</p>
+
+<p><a href="/assets/images/pokemon-go/top_pokespots.png"><img src="/assets/images/pokemon-go/top_pokespots.png" alt="Most Dangerous PokeStops" /></a></p>
+
+<h4 id="pokestops-close-to-sex-offenders">PokeStops Close to Sex Offenders</h4>
+
+<p>Another question I researched was how many registered sex offenders live close to PokeStops. I downloaded their addresses from the website <a href="http://familywatchdog.us/">familywatchdog.us</a>. For the analysis I only selected people who were convicted for offenses against children and/or rape. The following map shows all PokeStops with the color of the dots indicating how many registered sex offenders live in a 150m (492ft) radius.</p>
+
+<p><a href="/assets/images/pokemon-go/sex_offender.jpg"><img src="/assets/images/pokemon-go/sex_offender.jpg" alt="Sex Offender" /></a></p>
+
+<p>The numbers show that <strong>11.4%</strong> of all PokeStops in NYC have at least one sex offender living nearby. The next table lists the top ten PokeStops by the total number of offenders living within 150m.</p>
+
+<table style="font-size:14px">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>PokeStop</th>
+      <th>Address</th>
+      <th>Sex Offender (within 150m)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Iglesia Church of Salvation</td>
+      <td><a href="http://maps.google.com/?q=3110%20Church%20Ave%2C%20Brooklyn%2C%20NY%2011226" target="_blank">3110 Church Ave, Brooklyn, NY 11226</a></td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Center For Figurative Painting</td>
+      <td><a href="http://maps.google.com/?q=261%20W%2035th%20St%2C%20New%20York%2C%20NY%2010001" target="_blank">261 W 35th St, New York, NY 10001</a></td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Power Shield Art</td>
+      <td><a href="http://maps.google.com/?q=252%20W%2037th%20St%2C%20New%20York%2C%20NY%2010018" target="_blank">252 W 37th St, New York, NY 10018</a></td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Garment Wear Arcade</td>
+      <td><a href="http://maps.google.com/?q=306%20W%2037th%20St%2C%20New%20York%2C%20NY%2010018" target="_blank">306 W 37th St, New York, NY 10018</a></td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Houndstooth Pub</td>
+      <td><a href="http://maps.google.com/?q=266%20W%2037th%20St%2C%20New%20York%2C%20NY%2010018" target="_blank">266 W 37th St, New York, NY 10018</a></td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Chill Cat</td>
+      <td><a href="http://maps.google.com/?q=247-265%20W%2037th%20St%2C%20New%20York%2C%20NY%2010018" target="_blank">247-265 W 37th St, New York, NY 10018</a></td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Church</td>
+      <td><a href="http://maps.google.com/?q=1800%20Bedford%20Ave%2C%20Brooklyn%2C%20NY%2011225" target="_blank">1800 Bedford Ave, Brooklyn, NY 11225</a></td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>The Theatre Building</td>
+      <td><a href="http://maps.google.com/?q=312%20W%2036th%20St%2C%20New%20York%2C%20NY%2010018" target="_blank">312 W 36th St, New York, NY 10018</a></td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Memorial of Electrical Diagrams</td>
+      <td><a href="http://maps.google.com/?q=555%208th%20Ave%2C%20New%20York%2C%20NY%2010018" target="_blank">555 8th Ave, New York, NY 10018</a></td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Chanin Commemorative Plaque</td>
+      <td><a href="http://maps.google.com/?q=41-99%20E%2041st%20St%2C%20New%20York%2C%20NY%2010017" target="_blank">41-99 E 41st St, New York, NY 10017</a></td>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>If you have questions or concerns, feel free to write me an <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#099;&#117;&#114;&#105;&#111;&#117;&#115;&#103;&#110;&#117;&#046;&#099;&#111;&#109;">email</a>.</p>
+
+<p><small>*R packages used: <a href="https://cran.r-project.org/web/packages/ggmap/index.html">ggmap</a>, <a href="https://cran.r-project.org/web/packages/GISTools/index.html">GISTools</a>, <a href="https://cran.r-project.org/web/packages/rgeos/index.html">rgeos</a>, <a href="https://cran.r-project.org/web/packages/maptools/index.html">maptools</a> | Photo: “back at work” by <a href="https://flic.kr/p/9ze8bf">Michael Cory</a> is licensed under CC BY-NC 2.0</small></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>Conan is The Dirtiest Late-Night Show on YouTube</title>
 	  <link>//late-night-shows</link>
 	  <author>CuriousGnu</author>
@@ -356,32 +467,6 @@ HAVING	SUM(a.trump) &gt;= 100
 <p>To determine how vulgar a tweet is, the software uses a similar word list based method. If a tweet contains a word which is in this list, it will be marked as <em>vulgar</em>. The lack of content-awareness will, of course, lead to some mistakes. For example, news articles about <em>sex trafficking</em> or <em>rape</em> will be falsely classified as <em>vulgar</em>. So please do not take the results too seriously and rather tweet something positive about it! Feel free to <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#099;&#117;&#114;&#105;&#111;&#117;&#115;&#103;&#110;&#117;&#046;&#099;&#111;&#109;">contact me</a> if you suggestions or questions.</p>
 
 <p>You can find the project here: <a href="https://tweetanalyzer.net">https://tweetanalyzer.net</a></p>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>What are the most common words in TV shows?</title>
-	  <link>//tv-show-word-clouds</link>
-	  <author>CuriousGnu</author>
-	  <pubDate>2016-02-27T13:42:00+01:00</pubDate>
-	  <guid>//tv-show-word-clouds</guid>
-	  <description><![CDATA[
-	     <p>Nowadays, there are some many great shows on television or available for streaming. After binge-watching the first season of Jessica Jones, I knew that I had to post something about this topic. I have to admit that I never spend much time on text analysis, so I decided to start with the basics. The first thing I did was to create simple word clouds based on the subtitles of <em>Jessica Jones</em>, <em>The Blacklist</em>, and <em>TBBT</em>. They are an easy way to visualize how frequently certain words are used in a text or TV show.</p>
-
-<p>Besides this basic type of word cloud, I also created a slightly different version of it. For this, I did not just count the words but also looked how close they are to a character’s name. This means that the more frequent a word is used in combination with a character’s name, the bigger it is in the word cloud.</p>
-
-<p><a href="/assets/images/tv-wordcloud/wordcloud_jessicajones_hd.png"><img src="/assets/images/tv-wordcloud/wordcloud_jessicajones.png" alt="Jessica Jones Wordcloud" title="Jessica Jones Wordcloud" /></a></p>
-
-<p><a href="/assets/images/tv-wordcloud/wordcloud_blacklist_hd.png"><img src="/assets/images/tv-wordcloud/wordcloud_blacklist.png" alt="The Blacklist Wordcloud" title="The Blacklist Wordcloud" /></a></p>
-
-<p><a href="/assets/images/tv-wordcloud/wordcloud_tbbt_hd.png"><img src="/assets/images/tv-wordcloud/wordcloud_tbbt.png" alt="TBBT Wordcloud" title="TBBT Wordcloud" /></a></p>
-
-<p>I created all those word clouds with the R package <a href="https://cran.r-project.org/web/packages/wordcloud/index.html"><em>wordcloud</em></a> which makes this job so easy. Besides that, the <em>findAssocs()</em> function from the <a href="https://cran.r-project.org/web/packages/tm/index.html"><em>tm</em></a> package was used calculate the often a word is used close to a character’s name. For the second type of word clouds, I used the correlation coefficients from this function as a weighting factor.</p>
-
-<p>Before doing that, I replaced all the different versions of a name (e.g., Lizzy, Liz, Keen) with the name you can see in the center of the word clouds. In case you are wondering why there are not always complete words in the clouds, it is because of a process called <em>stemming</em> which reduces words to their word stem. The idea behind it is to group the different forms of a word together instead of treating every single form as an own term.</p>
-
-<p>I hope you like this post. Please feel free to contact me if you have any questions or suggestions.</p>
 
 	  ]]></description>
 	</item>

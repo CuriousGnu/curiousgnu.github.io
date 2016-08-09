@@ -8,6 +8,119 @@
     
       
       <item>
+        <title>These Are Most Dangerous PokeStops in NYC</title>
+          <description>
+            &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;http://www.curiousgnu.com/assets/images/pokemon-go/cover.jpg&quot;  alt=&quot;Cover Image&quot; /&gt;
+            &lt;p&gt;Pokemon GO quickly became one of the most popular mobile games. In cities all around the world, you can see people searching for Pokemon and battling other players in Poke Gyms. While exploring this new augmented reality, it’s easy to forget about the dangerous of the real word. On a daily basis, news sites report on Pokemon Go related incidents like &lt;a href=&quot;https://www.washingtonpost.com/news/morning-mix/wp/2016/08/02/arizona-couple-accused-of-abandoning-son-for-pokemon-go/&quot;&gt;child abandonment&lt;/a&gt;, &lt;a href=&quot;https://www.theguardian.com/australia-news/2016/jul/29/pokemon-go-player-crashes-car-into-school-while-playing-game&quot;&gt;reckless driving&lt;/a&gt;, or &lt;a href=&quot;http://reut.rs/2aJ8W9n&quot;&gt;trespassing&lt;/a&gt;. Earlier this month New York Governor Andrew M. Cuomo even &lt;a href=&quot;http://www.npr.org/sections/alltechconsidered/2016/08/02/488435018/new-york-bans-registered-sex-offenders-from-pok-mon-go&quot;&gt;banned sex offenders&lt;/a&gt; from playing the game.&lt;/p&gt;
+
+&lt;p&gt;These incidents gave me the idea for this article about &lt;a href=&quot;https://support.pokemongo.nianticlabs.com/hc/en-us/articles/221957688&quot;&gt;PokeStops&lt;/a&gt; in potentially unsafe areas where caution is advised. My goal was to analyze public data to identify PokeStops in New York City which are close to crime scenes and registered sex offenders.&lt;/p&gt;
+
+&lt;h4 id=&quot;pokestops-near-crime-scenes&quot;&gt;PokeStops Near Crime Scenes&lt;/h4&gt;
+
+&lt;p&gt;First, I used &lt;a href=&quot;http://www.pokemongomap.info/&quot;&gt;PokemonGOMap.info&lt;/a&gt; to get the locations of the 24 thousand PokeStop in NYC and download all reported felonies of 2015 (103k) from the &lt;a href=&quot;https://data.cityofnewyork.us/Public-Safety/NYPD-7-Major-Felony-Incidents/hyij-8hr7&quot;&gt;NYC OpenData portal&lt;/a&gt;. For this analysis, I exclude the offenses &lt;em&gt;burglary&lt;/em&gt; (15k) and &lt;em&gt;grand larceny&lt;/em&gt; (49k) because they’re less a potential threat to players in the area. The following map shows all PokeStops as blue dots whereas incidents of &lt;em&gt;felony assault &amp;amp; robbery&lt;/em&gt; (37k) are represented by green dots and &lt;em&gt;murder &amp;amp; rape&lt;/em&gt; (1.5k) by red dots.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/pokemon-go/incidents.jpg&quot;&gt;&lt;img src=&quot;/assets/images/pokemon-go/incidents.jpg&quot; alt=&quot;Incidents&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Next, I loaded the raw data into &lt;a href=&quot;https://cran.r-project.org/&quot;&gt;R&lt;/a&gt;* to count all crimes that occurred within 150m (492ft) of each PokeStop. I had to choose this rather large area because the public data doesn’t show the exact location of the incidents due to privacy reason. Instead, it only provides the midpoint of the street segment on which they happened.&lt;/p&gt;
+
+&lt;p&gt;The map below shows the top ten PokeStop in which proximity most major felony incidents occurred. For this map, the offenses murder and rape are weighted by the factor five and only the top PokeStops of an NTA are included to reduce regional clusters. You can find the total number of murders &amp;amp; rapes in the areas of the PokeStops in the red boxes and total number of felony assaults &amp;amp; robberies in the yellow boxes right next to them. The average number of incidents of all NYC PokeStops stands at &lt;strong&gt;0.15&lt;/strong&gt; for murder or rape and &lt;strong&gt;4.00&lt;/strong&gt; for &lt;em&gt;felony assault&lt;/em&gt; or &lt;em&gt;robbery&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/pokemon-go/top_pokespots.png&quot;&gt;&lt;img src=&quot;/assets/images/pokemon-go/top_pokespots.png&quot; alt=&quot;Most Dangerous PokeStops&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;pokestops-close-to-sex-offenders&quot;&gt;PokeStops Close to Sex Offenders&lt;/h4&gt;
+
+&lt;p&gt;Another question I researched was how many registered sex offenders live close to PokeStops. I downloaded their addresses from the website &lt;a href=&quot;http://familywatchdog.us/&quot;&gt;familywatchdog.us&lt;/a&gt;. For the analysis I only selected people who were convicted for offenses against children and/or rape. The following map shows all PokeStops with the color of the dots indicating how many registered sex offenders live in a 150m (492ft) radius.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/pokemon-go/sex_offender.jpg&quot;&gt;&lt;img src=&quot;/assets/images/pokemon-go/sex_offender.jpg&quot; alt=&quot;Sex Offender&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The numbers show that &lt;strong&gt;11.4%&lt;/strong&gt; of all PokeStops in NYC have at least one sex offender living nearby. The next table lists the top ten PokeStops by the total number of offenders living within 150m.&lt;/p&gt;
+
+&lt;table style=&quot;font-size:14px&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;#&lt;/th&gt;
+      &lt;th&gt;PokeStop&lt;/th&gt;
+      &lt;th&gt;Address&lt;/th&gt;
+      &lt;th&gt;Sex Offender (within 150m)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Iglesia Church of Salvation&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://maps.google.com/?q=3110%20Church%20Ave%2C%20Brooklyn%2C%20NY%2011226&quot; target=&quot;_blank&quot;&gt;3110 Church Ave, Brooklyn, NY 11226&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;11&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;Center For Figurative Painting&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://maps.google.com/?q=261%20W%2035th%20St%2C%20New%20York%2C%20NY%2010001&quot; target=&quot;_blank&quot;&gt;261 W 35th St, New York, NY 10001&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;Power Shield Art&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://maps.google.com/?q=252%20W%2037th%20St%2C%20New%20York%2C%20NY%2010018&quot; target=&quot;_blank&quot;&gt;252 W 37th St, New York, NY 10018&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;Garment Wear Arcade&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://maps.google.com/?q=306%20W%2037th%20St%2C%20New%20York%2C%20NY%2010018&quot; target=&quot;_blank&quot;&gt;306 W 37th St, New York, NY 10018&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;Houndstooth Pub&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://maps.google.com/?q=266%20W%2037th%20St%2C%20New%20York%2C%20NY%2010018&quot; target=&quot;_blank&quot;&gt;266 W 37th St, New York, NY 10018&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;Chill Cat&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://maps.google.com/?q=247-265%20W%2037th%20St%2C%20New%20York%2C%20NY%2010018&quot; target=&quot;_blank&quot;&gt;247-265 W 37th St, New York, NY 10018&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;Church&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://maps.google.com/?q=1800%20Bedford%20Ave%2C%20Brooklyn%2C%20NY%2011225&quot; target=&quot;_blank&quot;&gt;1800 Bedford Ave, Brooklyn, NY 11225&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;The Theatre Building&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://maps.google.com/?q=312%20W%2036th%20St%2C%20New%20York%2C%20NY%2010018&quot; target=&quot;_blank&quot;&gt;312 W 36th St, New York, NY 10018&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;Memorial of Electrical Diagrams&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://maps.google.com/?q=555%208th%20Ave%2C%20New%20York%2C%20NY%2010018&quot; target=&quot;_blank&quot;&gt;555 8th Ave, New York, NY 10018&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;Chanin Commemorative Plaque&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://maps.google.com/?q=41-99%20E%2041st%20St%2C%20New%20York%2C%20NY%2010017&quot; target=&quot;_blank&quot;&gt;41-99 E 41st St, New York, NY 10017&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;If you have questions or concerns, feel free to write me an &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#097;&amp;#099;&amp;#116;&amp;#064;&amp;#099;&amp;#117;&amp;#114;&amp;#105;&amp;#111;&amp;#117;&amp;#115;&amp;#103;&amp;#110;&amp;#117;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;small&gt;*R packages used: &lt;a href=&quot;https://cran.r-project.org/web/packages/ggmap/index.html&quot;&gt;ggmap&lt;/a&gt;, &lt;a href=&quot;https://cran.r-project.org/web/packages/GISTools/index.html&quot;&gt;GISTools&lt;/a&gt;, &lt;a href=&quot;https://cran.r-project.org/web/packages/rgeos/index.html&quot;&gt;rgeos&lt;/a&gt;, &lt;a href=&quot;https://cran.r-project.org/web/packages/maptools/index.html&quot;&gt;maptools&lt;/a&gt; | Photo: “back at work” by &lt;a href=&quot;https://flic.kr/p/9ze8bf&quot;&gt;Michael Cory&lt;/a&gt; is licensed under CC BY-NC 2.0&lt;/small&gt;&lt;/p&gt;
+
+          </description>
+        <pubDate>Tue, 09 Aug 2016 03:00:00 +0200</pubDate>
+        <link>http://www.curiousgnu.com/pokemon-go</link>
+        <guid isPermaLink="true">http://www.curiousgnu.com/pokemon-go</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Conan is The Dirtiest Late-Night Show on YouTube</title>
           <description>
             &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;http://www.curiousgnu.com/assets/images/late-night-shows/cover.png&quot;  alt=&quot;Cover Image&quot; /&gt;
