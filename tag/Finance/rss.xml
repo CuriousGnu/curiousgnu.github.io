@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>www.curiousgnu.com</title>
+   
+   <link>http://www.curiousgnu.com/</link>
+   <description>Numbers, Graphs, and Apple Strudels</description>
+   <language>en-uk</language>
+   <managingEditor> CuriousGnu</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>Almost 80% of Private Day Traders Loose Money</title>
+	  <link>//day-trading</link>
+	  <author>CuriousGnu</author>
+	  <pubDate>2016-08-17T03:00:00+02:00</pubDate>
+	  <guid>//day-trading</guid>
+	  <description><![CDATA[
+	     <p>A few months ago, I wrote a <a href="http://www.curiousgnu.com/penny-auctions">blog post</a> about how penny auction sites make you money. As a reaction, some readers sent me links to day trading brokers that promise easy returns. These brokers allow private investors to hold stocks or currencies positions for a short time which makes it possible to speculate on small price changes. Many day traders use the margin and leverage to increase the size of their positions by lending money from their brokers.</p>
+
+<p>For example, a 1:10 leverage increases the profits by the factor 10 but also the potential losses. Strictly speaking, only trading within a day is called day trading. For this post, I’ll use a broader definition which also includes leveraged short-term trades where the positions are held for multiple days.</p>
+
+<p><img src="/assets/images/day-trading/banner.png" alt="Forex Banner" /></p>
+
+<p>In contrast to many penny auctions sites, these brokers are mostly legitimate and are regulated companies. However, this fact doesn’t make this kind of trading any less risky. My goal is to find out if the average investor profits from day trading.</p>
+
+<h4 id="data">Data</h4>
+<p>The data source for this post is <a href="https://en.wikipedia.org/wiki/EToro"><em>eToro</em></a>, a brokerage company that offers a feature called <a href="https://www.etoro.com/en/social-trading/">Social Trading</a>, which is social network for traders. It is enabled by default and allows users to view and copy other users’ trades. Therefore, everyone’s trading performance is publicly available who have not disabled Social Trading.</p>
+
+<p>On the 1st of August, 2016, I downloaded the publicly available data through their ranking API. I selected all users who were active during the past twelve months, traded with real money, and had at least three trades. The results consist of <strong>83.3k traders</strong> who fulfill these conditions. If you’re interested in how you can access the (undocumented) API, I recommend you to open Chrome’s <em>DevTools</em>, while you’re on eToro’s Discover People page.</p>
+
+<h4 id="results">Results</h4>
+<p>The following histogram shows the average gains of each trader over the past twelve months. In the end, <strong>79.5%</strong> of them lost real money. The median 12-month returns were <strong>-36.3%</strong>.</p>
+
+<p><a href="/assets/images/day-trading/histogram.png"><img src="/assets/images/day-trading/histogram.png" alt="eToro 12M Gains" /></a></p>
+
+<p>Besides the investing performance, the data also reveals from which countries the traders are coming. With a share of <strong>15.7%</strong>, the UK leads the list of most common countries followed by Germany with a share of <strong>11.3%</strong>. The US doesn’t appear in this list because <em>eToro</em> isn’t available in the US market, presumably due to stricter regulations.</p>
+
+<p><a href="/assets/images/day-trading/barchart.png"><img src="/assets/images/day-trading/barchart.png" alt="eToro Customers by Country" style="max-width: 720px" /></a></p>
+
+<h4 id="conclusion">Conclusion</h4>
+<p>The results show that day-trading is a highly risky investment on which most traders end up losing money. I wouldn’t go so far as to say that it’s impossible to make a profit in the long-term but apparently there is no easy method (e.g. technical analysis or social trading) to do it. I would be very careful, if someone promises easy money by trading based on simple patterns or trading signals.</p>
+
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

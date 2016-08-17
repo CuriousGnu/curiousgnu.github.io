@@ -12,6 +12,42 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>Almost 80% of Private Day Traders Loose Money</title>
+	  <link>//day-trading</link>
+	  <author>CuriousGnu</author>
+	  <pubDate>2016-08-17T03:00:00+02:00</pubDate>
+	  <guid>//day-trading</guid>
+	  <description><![CDATA[
+	     <p>A few months ago, I wrote a <a href="http://www.curiousgnu.com/penny-auctions">blog post</a> about how penny auction sites make you money. As a reaction, some readers sent me links to day trading brokers that promise easy returns. These brokers allow private investors to hold stocks or currencies positions for a short time which makes it possible to speculate on small price changes. Many day traders use the margin and leverage to increase the size of their positions by lending money from their brokers.</p>
+
+<p>For example, a 1:10 leverage increases the profits by the factor 10 but also the potential losses. Strictly speaking, only trading within a day is called day trading. For this post, I’ll use a broader definition which also includes leveraged short-term trades where the positions are held for multiple days.</p>
+
+<p><img src="/assets/images/day-trading/banner.png" alt="Forex Banner" /></p>
+
+<p>In contrast to many penny auctions sites, these brokers are mostly legitimate and are regulated companies. However, this fact doesn’t make this kind of trading any less risky. My goal is to find out if the average investor profits from day trading.</p>
+
+<h4 id="data">Data</h4>
+<p>The data source for this post is <a href="https://en.wikipedia.org/wiki/EToro"><em>eToro</em></a>, a brokerage company that offers a feature called <a href="https://www.etoro.com/en/social-trading/">Social Trading</a>, which is social network for traders. It is enabled by default and allows users to view and copy other users’ trades. Therefore, everyone’s trading performance is publicly available who have not disabled Social Trading.</p>
+
+<p>On the 1st of August, 2016, I downloaded the publicly available data through their ranking API. I selected all users who were active during the past twelve months, traded with real money, and had at least three trades. The results consist of <strong>83.3k traders</strong> who fulfill these conditions. If you’re interested in how you can access the (undocumented) API, I recommend you to open Chrome’s <em>DevTools</em>, while you’re on eToro’s Discover People page.</p>
+
+<h4 id="results">Results</h4>
+<p>The following histogram shows the average gains of each trader over the past twelve months. In the end, <strong>79.5%</strong> of them lost real money. The median 12-month returns were <strong>-36.3%</strong>.</p>
+
+<p><a href="/assets/images/day-trading/histogram.png"><img src="/assets/images/day-trading/histogram.png" alt="eToro 12M Gains" /></a></p>
+
+<p>Besides the investing performance, the data also reveals from which countries the traders are coming. With a share of <strong>15.7%</strong>, the UK leads the list of most common countries followed by Germany with a share of <strong>11.3%</strong>. The US doesn’t appear in this list because <em>eToro</em> isn’t available in the US market, presumably due to stricter regulations.</p>
+
+<p><a href="/assets/images/day-trading/barchart.png"><img src="/assets/images/day-trading/barchart.png" alt="eToro Customers by Country" style="max-width: 720px" /></a></p>
+
+<h4 id="conclusion">Conclusion</h4>
+<p>The results show that day-trading is a highly risky investment on which most traders end up losing money. I wouldn’t go so far as to say that it’s impossible to make a profit in the long-term but apparently there is no easy method (e.g. technical analysis or social trading) to do it. I would be very careful, if someone promises easy money by trading based on simple patterns or trading signals.</p>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>These Are The Most Dangerous PokeStops in NYC</title>
 	  <link>//pokemon-go</link>
 	  <author>CuriousGnu</author>
@@ -443,30 +479,6 @@ HAVING	SUM(a.trump) &gt;= 100
 <p>One of the most important parts of the business models of penny auction sites is that what they are doing is not considered gambling. I am not a lawyer, so I will not attempt to question the legality of their operations. Their central argument is that penny auctions require skill and are therefore exempt from the <a href="https://en.wikipedia.org/wiki/Unlawful_Internet_Gambling_Enforcement_Act_of_2006">Unlawful Internet Gambling Enforcement Act</a>, which is the same legal loophole daily fantasy sports sites like <a href="https://en.wikipedia.org/wiki/FanDuel">FanDuel</a> or <a href="https://en.wikipedia.org/wiki/DraftKings">DraftKings</a> use. Personally, I cannot see how any skill could increase your chances of winning an auction. The data clearly shows that you are bidding against an unknown number of users who sometimes act extremely irrational. Even if you had a comprehensive database of previous auctions, you probably would not be able to predict how far a specific user will go. If someone has already spent over $3,000 on a $180 tablet, what could stop them aside from his or her credit card limit? It would be really interesting to hear an official explanation of how skill is even a factor in this game.</p>
 
 <p>If you have any questions about this blog post, feel free to contact me by <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#099;&#117;&#114;&#105;&#111;&#117;&#115;&#103;&#110;&#117;&#046;&#099;&#111;&#109;">email</a>.</p>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>How positive are your tweets?</title>
-	  <link>//tweetanalyzer</link>
-	  <author>CuriousGnu</author>
-	  <pubDate>2016-03-16T22:42:00+01:00</pubDate>
-	  <guid>//tweetanalyzer</guid>
-	  <description><![CDATA[
-	     <p>In this blog post, I would like to present you <a href="https://tweetanalyzer.net">tweetanalyzer.net</a>, a small project of mine, where you can do a sentiment analysis of your tweets or the ones of any other Twitter user. The goal was to create a fun website which uses text analysis to determine how positive someone’s tweets are.</p>
-
-<p><a href="https://tweetanalyzer.net"><img src="/assets/images/tweetanalyzer/screen.png" alt="TweetAnalyzer.net" /></a></p>
-
-<p>After you signed in with your Twitter account, you can type in any username and the website will automatically download the latest 200-300 tweets and calculate a positivity and vulgarity score for each of them. The method used to do this is very simple. The backend uses the AFINN word list from <a href="http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010">Finn Årup Nielsen</a>, which contains nearly 2,500 words rated for their positivity from -5 (negative) to +5 (positive). After removing stop words, hashtags, and URLs the script looks up every word in this list and calculates the sum for each tweet. If this sum is over zero, the tweet will be marked as positive if it’s under zero as negative. The overall positivity score for a user is then calculated as follows:</p>
-
-<p><img src="/assets/images/tweetanalyzer/positivity_score.gif" alt="PSF" /></p>
-
-<p>Admintingly this approach has its weakness and is not as sophisticated as many other methods classification technique out there. For example, it can not understand the context of a tweet and how a specific word (e.g., <em>sick</em>) is used. I experimented more complex Python libraries for text analysis, but unfortunately they did not run well on the Google App Engine platform if you plan to analyse thousands of tweets but only have a limited budget. I am sure that it can be done without a problem but since I never used it before and did not want to spend too much time on it, I decided to use the simple solution which I believe is still sufficient for such a task.</p>
-
-<p>To determine how vulgar a tweet is, the software uses a similar word list based method. If a tweet contains a word which is in this list, it will be marked as <em>vulgar</em>. The lack of content-awareness will, of course, lead to some mistakes. For example, news articles about <em>sex trafficking</em> or <em>rape</em> will be falsely classified as <em>vulgar</em>. So please do not take the results too seriously and rather tweet something positive about it! Feel free to <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#099;&#117;&#114;&#105;&#111;&#117;&#115;&#103;&#110;&#117;&#046;&#099;&#111;&#109;">contact me</a> if you suggestions or questions.</p>
-
-<p>You can find the project here: <a href="https://tweetanalyzer.net">https://tweetanalyzer.net</a></p>
 
 	  ]]></description>
 	</item>
