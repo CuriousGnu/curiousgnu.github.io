@@ -8,6 +8,57 @@
     
       
       <item>
+        <title>A Darknet Site Currently Offers 42,497 U.S. Credit Cards</title>
+          <description>
+            &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;https://www.curiousgnu.com/assets/images/darknet-credit-cards/cover.jpg&quot;  alt=&quot;Cover Image&quot; /&gt;
+            &lt;p&gt;Last week, I found out that my credit card information was stolen and used by criminals for an expensive shopping spree. This incident inspired me to revisit my &lt;a href=&quot;https://www.curiousgnu.com/cryptomarkets-lsd-sales&quot;&gt;previous post&lt;/a&gt; about drug dealing on the Darknet and research how stolen credit cards are traded there. I was able to gather a dataset of &lt;strong&gt;42,497&lt;/strong&gt; stolen U.S. credit cards which are currently sold on a Darknet site. At the end of this post, you’ll find a link to a site that allows you to see if your card is in this dataset.&lt;/p&gt;
+
+&lt;p&gt;The Darknet, a part of the internet which is only accessible with special software like the &lt;a href=&quot;https://www.torproject.org/projects/torbrowser.html.en&quot;&gt;Tor Browser&lt;/a&gt;, allows users and website owners to stay anonymous. The anonymity not only makes the Darknet an essential tool for people like reporters or activists, but is also used widely by criminals. Nowadays the Darknet hosts multiple &lt;a href=&quot;https://en.wikipedia.org/wiki/Darknet_market&quot;&gt;Cryptomarkets&lt;/a&gt;, which are marketplaces similar to eBay where vendors can sell products like illicit drugs, counterfeit money, or stolen credit cards. I decided to take a close look at the AlphaBay Market because it’s one of the largest marketplaces and relatively easy to scrape.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/darknet-credit-cards/alphabay_screenshot.png&quot;&gt;&lt;img src=&quot;/assets/images/darknet-credit-cards/alphabay_screenshot.png&quot; alt=&quot;AlphaBay - Screenshot&quot; style=&quot;max-width: 600px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The AlphaBay Market has a feature called &lt;em&gt;CC Autoshop&lt;/em&gt; that allows potential buyers to search a database of all the stolen credit cards that are offered by different sellers. For example, it’s possible to only search for cards from a particular city. That’s important for criminals who try to circumvent anti-fraud measures by using stolen cards from the same region or state in which they are located. But it also means that the sellers have to reveal information that we can analyze.&lt;/p&gt;
+
+&lt;p&gt;First, I downloaded the entire &lt;em&gt;CC Autoshop&lt;/em&gt; as HTML files before I used the Python library &lt;em&gt;Beautiful Soup&lt;/em&gt; to extract the information. I got 42,497 U.S. credit cards which were offered on September 1st, 2016 as a result. The total value of is &lt;strong&gt;$324,941&lt;/strong&gt; with an average price of &lt;strong&gt;$7.65 per card&lt;/strong&gt;. Some cards (1025) even include the Social Security number of the owner. Considering that nearly 13 million Americans are victims of identity fraud each year, this number almost seems insignificant, but it can nevertheless cause millions of dollars in damages. What I find particularly concerning is that anyone can purchase these cards after doing basic internet research.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/darknet-credit-cards/map.jpg&quot;&gt;&lt;img src=&quot;/assets/images/darknet-credit-cards/map.jpg&quot; alt=&quot;AlphaBay - Countries&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The map above shows how many cards from each state are offered on the AlphaBay Market. It is suprising that &lt;strong&gt;27%&lt;/strong&gt; (11,338) of them are from Delaware and are sold by only two major sellers (&lt;em&gt;Sasha_Grey&lt;/em&gt; and &lt;em&gt;HotPizza&lt;/em&gt;). Unfortunately, I can only speculate about the reasons for this. Are those just company credit cards or does it suggest a local card breach? The following graph is an overview of all active AlphaBay CC vendors based on the total number of cards they offer.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/darknet-credit-cards/treemap.png&quot;&gt;&lt;img src=&quot;/assets/images/darknet-credit-cards/treemap.png&quot; alt=&quot;AlphaBay - Treemap&quot; style=&quot;max-width: 600px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If you would like to check whether your credit card is in the dataset, you can either download it as a &lt;a href=&quot;https://www.curiousgnu.com/assets/data/cc_autobuy_public.csv.gz&quot;&gt;CSV file&lt;/a&gt; or use the following site to search the database: &lt;a href=&quot;https://www.curiousgnu.com/assets/tools/cc.html&quot;&gt;www.curiousgnu.com/assets/tools/cc.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;how-to-scrape-darknet-sites&quot;&gt;How to scrape Darknet sites?&lt;/h4&gt;
+
+&lt;p&gt;Scraping &lt;a href=&quot;https://www.torproject.org/docs/hidden-services.html.en&quot;&gt;&lt;em&gt;hidden services&lt;/em&gt;&lt;/a&gt; in the Tor network (Darknet sites) is very similar to regular web scraping with the exception that most &lt;em&gt;hidden services&lt;/em&gt; don’t use JSON APIs, meaning that you have to extract the information from an HTML file. My preferred method is first to download all pages as HTML files before using Python and &lt;em&gt;Beautiful Soup&lt;/em&gt; to extract the information I need. The following steps should work on OS X and Linux systems.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/darknet-credit-cards/alphabay_curl_web.png&quot;&gt;&lt;img src=&quot;/assets/images/darknet-credit-cards/alphabay_curl_web.png&quot; alt=&quot;AlphaBay - CURL&quot; style=&quot;max-width: 500px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Visit the site you want to scrape in the Tor Browser.&lt;/li&gt;
+  &lt;li&gt;Open the Web Console (&lt;em&gt;Right Click &amp;gt; Inspect Element&lt;/em&gt;).&lt;/li&gt;
+  &lt;li&gt;Go to the &lt;em&gt;Network&lt;/em&gt; Tab.&lt;/li&gt;
+  &lt;li&gt;Right click on the main GET request (see Domain column) and select Copy as cURL to copy the curl command to replicate the request.&lt;/li&gt;
+  &lt;li&gt;Do not close the Tor browser.&lt;/li&gt;
+  &lt;li&gt;Before you can run the curl command in the Terminal, add the following options to the end of it &lt;strong&gt;&lt;em&gt;’–socks5-hostname 127.0.0.1:9150 –output o.html’&lt;/em&gt;&lt;/strong&gt;. It tells curl to use the Tor client and save the output to o.html.&lt;/li&gt;
+  &lt;li&gt;In case you want to download multiple pages, you can use the bash &lt;em&gt;for loop&lt;/em&gt; like this 
+&lt;strong&gt;&lt;em&gt;‘for i in {1..10}; do curl […] page=${i} –output ${i}.html; done’&lt;/em&gt;&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Follow the Beautiful Soup &lt;a href=&quot;https://www.crummy.com/software/BeautifulSoup/bs4/doc/&quot;&gt;documentation&lt;/a&gt; to extract the need information from the saved HTML files.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;If you have questions or concerns, feel free to write me an &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#097;&amp;#099;&amp;#116;&amp;#064;&amp;#099;&amp;#117;&amp;#114;&amp;#105;&amp;#111;&amp;#117;&amp;#115;&amp;#103;&amp;#110;&amp;#117;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
+
+
+          </description>
+        <pubDate>Tue, 06 Sep 2016 03:00:00 +0200</pubDate>
+        <link>https://www.curiousgnu.com/darknet-credit-cards</link>
+        <guid isPermaLink="true">https://www.curiousgnu.com/darknet-credit-cards</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Almost 80% of Private Day Traders Lose Money</title>
           <description>
             &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;https://www.curiousgnu.com/assets/images/day-trading/cover.jpg&quot;  alt=&quot;Cover Image&quot; /&gt;

@@ -12,6 +12,55 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>A Darknet Site Currently Offers 42,497 U.S. Credit Cards</title>
+	  <link>//darknet-credit-cards</link>
+	  <author>CuriousGnu</author>
+	  <pubDate>2016-09-06T03:00:00+02:00</pubDate>
+	  <guid>//darknet-credit-cards</guid>
+	  <description><![CDATA[
+	     <p>Last week, I found out that my credit card information was stolen and used by criminals for an expensive shopping spree. This incident inspired me to revisit my <a href="https://www.curiousgnu.com/cryptomarkets-lsd-sales">previous post</a> about drug dealing on the Darknet and research how stolen credit cards are traded there. I was able to gather a dataset of <strong>42,497</strong> stolen U.S. credit cards which are currently sold on a Darknet site. At the end of this post, you’ll find a link to a site that allows you to see if your card is in this dataset.</p>
+
+<p>The Darknet, a part of the internet which is only accessible with special software like the <a href="https://www.torproject.org/projects/torbrowser.html.en">Tor Browser</a>, allows users and website owners to stay anonymous. The anonymity not only makes the Darknet an essential tool for people like reporters or activists, but is also used widely by criminals. Nowadays the Darknet hosts multiple <a href="https://en.wikipedia.org/wiki/Darknet_market">Cryptomarkets</a>, which are marketplaces similar to eBay where vendors can sell products like illicit drugs, counterfeit money, or stolen credit cards. I decided to take a close look at the AlphaBay Market because it’s one of the largest marketplaces and relatively easy to scrape.</p>
+
+<p><a href="/assets/images/darknet-credit-cards/alphabay_screenshot.png"><img src="/assets/images/darknet-credit-cards/alphabay_screenshot.png" alt="AlphaBay - Screenshot" style="max-width: 600px" /></a></p>
+
+<p>The AlphaBay Market has a feature called <em>CC Autoshop</em> that allows potential buyers to search a database of all the stolen credit cards that are offered by different sellers. For example, it’s possible to only search for cards from a particular city. That’s important for criminals who try to circumvent anti-fraud measures by using stolen cards from the same region or state in which they are located. But it also means that the sellers have to reveal information that we can analyze.</p>
+
+<p>First, I downloaded the entire <em>CC Autoshop</em> as HTML files before I used the Python library <em>Beautiful Soup</em> to extract the information. I got 42,497 U.S. credit cards which were offered on September 1st, 2016 as a result. The total value of is <strong>$324,941</strong> with an average price of <strong>$7.65 per card</strong>. Some cards (1025) even include the Social Security number of the owner. Considering that nearly 13 million Americans are victims of identity fraud each year, this number almost seems insignificant, but it can nevertheless cause millions of dollars in damages. What I find particularly concerning is that anyone can purchase these cards after doing basic internet research.</p>
+
+<p><a href="/assets/images/darknet-credit-cards/map.jpg"><img src="/assets/images/darknet-credit-cards/map.jpg" alt="AlphaBay - Countries" /></a></p>
+
+<p>The map above shows how many cards from each state are offered on the AlphaBay Market. It is suprising that <strong>27%</strong> (11,338) of them are from Delaware and are sold by only two major sellers (<em>Sasha_Grey</em> and <em>HotPizza</em>). Unfortunately, I can only speculate about the reasons for this. Are those just company credit cards or does it suggest a local card breach? The following graph is an overview of all active AlphaBay CC vendors based on the total number of cards they offer.</p>
+
+<p><a href="/assets/images/darknet-credit-cards/treemap.png"><img src="/assets/images/darknet-credit-cards/treemap.png" alt="AlphaBay - Treemap" style="max-width: 600px" /></a></p>
+
+<p>If you would like to check whether your credit card is in the dataset, you can either download it as a <a href="https://www.curiousgnu.com/assets/data/cc_autobuy_public.csv.gz">CSV file</a> or use the following site to search the database: <a href="https://www.curiousgnu.com/assets/tools/cc.html">www.curiousgnu.com/assets/tools/cc.html</a></p>
+
+<h4 id="how-to-scrape-darknet-sites">How to scrape Darknet sites?</h4>
+
+<p>Scraping <a href="https://www.torproject.org/docs/hidden-services.html.en"><em>hidden services</em></a> in the Tor network (Darknet sites) is very similar to regular web scraping with the exception that most <em>hidden services</em> don’t use JSON APIs, meaning that you have to extract the information from an HTML file. My preferred method is first to download all pages as HTML files before using Python and <em>Beautiful Soup</em> to extract the information I need. The following steps should work on OS X and Linux systems.</p>
+
+<p><a href="/assets/images/darknet-credit-cards/alphabay_curl_web.png"><img src="/assets/images/darknet-credit-cards/alphabay_curl_web.png" alt="AlphaBay - CURL" style="max-width: 500px" /></a></p>
+
+<ol>
+  <li>Visit the site you want to scrape in the Tor Browser.</li>
+  <li>Open the Web Console (<em>Right Click &gt; Inspect Element</em>).</li>
+  <li>Go to the <em>Network</em> Tab.</li>
+  <li>Right click on the main GET request (see Domain column) and select Copy as cURL to copy the curl command to replicate the request.</li>
+  <li>Do not close the Tor browser.</li>
+  <li>Before you can run the curl command in the Terminal, add the following options to the end of it <strong><em>’–socks5-hostname 127.0.0.1:9150 –output o.html’</em></strong>. It tells curl to use the Tor client and save the output to o.html.</li>
+  <li>In case you want to download multiple pages, you can use the bash <em>for loop</em> like this 
+<strong><em>‘for i in {1..10}; do curl […] page=${i} –output ${i}.html; done’</em></strong>.</li>
+  <li>Follow the Beautiful Soup <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">documentation</a> to extract the need information from the saved HTML files.</li>
+</ol>
+
+<p>If you have questions or concerns, feel free to write me an <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#099;&#117;&#114;&#105;&#111;&#117;&#115;&#103;&#110;&#117;&#046;&#099;&#111;&#109;">email</a>.</p>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>Who sells LSD on the Darktnet?</title>
 	  <link>//cryptomarkets-lsd-sales</link>
 	  <author>CuriousGnu</author>

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- [[! Page Meta ]] -->
-    <title>Almost 80% of Private Day Traders Lose Money</title>
+    <title>A Darknet Site Currently Offers 42,497 U.S. Credit Cards</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="alternate" type="application/rss+xml" title="CuriousGnu - All Posts" href="https://www.curiousgnu.com/rss/">
@@ -31,7 +31,7 @@
     <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
     <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-    <meta property="og:image" content="http://s3.amazonaws.com/cgcdn-static/ogdaytrading2.png">
+    <meta property="og:image" content="http://s3.amazonaws.com/cgcdn-static/credit_card_og.jpg">
     <!-- [[! Styles'n'Scripts ]] -->
     <link rel="stylesheet" type="text/css" href="/assets/css/screen.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400">
@@ -86,16 +86,16 @@
     <article class="post post-template">
 
         <header class="post-header">
-            <h1 class="post-title">Almost 80% of Private Day Traders Lose Money</h1>
+            <h1 class="post-title">A Darknet Site Currently Offers 42,497 U.S. Credit Cards</h1>
             <section class="post-meta">
             <!-- <a href='/'>CuriousGnu</a> -->
-            <time class="post-date" datetime="2016-08-17">17 Aug 2016</time>
+            <time class="post-date" datetime="2016-09-06">06 Sep 2016</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
                 
                     
-                       <a href='/tag/Finance'>Finance</a>
+                       <a href='/tag/Cryptomarkets'>Cryptomarkets</a>
                        
                 
                 
@@ -103,30 +103,43 @@
         </header>
 
         <section class="post-content">
-            <p>A few months ago, I wrote a <a href="http://www.curiousgnu.com/penny-auctions">blog post</a> about how penny auction sites make you money. As a reaction, some readers sent me links to day trading brokers that promise easy returns. These brokers allow private investors to hold stocks or currencies positions for a short time which makes it possible to speculate on small price changes. Many day traders use the margin and leverage to increase the size of their positions by lending money from their brokers.</p>
+            <p>Last week, I found out that my credit card information was stolen and used by criminals for an expensive shopping spree. This incident inspired me to revisit my <a href="https://www.curiousgnu.com/cryptomarkets-lsd-sales">previous post</a> about drug dealing on the Darknet and research how stolen credit cards are traded there. I was able to gather a dataset of <strong>42,497</strong> stolen U.S. credit cards which are currently sold on a Darknet site. At the end of this post, you’ll find a link to a site that allows you to see if your card is in this dataset.</p>
 
-<p>For example, a 1:10 leverage increases the profits by the factor 10 but also the potential losses. Strictly speaking, only trading within a day is called day trading. For this post, I’ll use a broader definition which also includes leveraged short-term trades where the positions are held for multiple days.</p>
+<p>The Darknet, a part of the internet which is only accessible with special software like the <a href="https://www.torproject.org/projects/torbrowser.html.en">Tor Browser</a>, allows users and website owners to stay anonymous. The anonymity not only makes the Darknet an essential tool for people like reporters or activists, but is also used widely by criminals. Nowadays the Darknet hosts multiple <a href="https://en.wikipedia.org/wiki/Darknet_market">Cryptomarkets</a>, which are marketplaces similar to eBay where vendors can sell products like illicit drugs, counterfeit money, or stolen credit cards. I decided to take a close look at the AlphaBay Market because it’s one of the largest marketplaces and relatively easy to scrape.</p>
 
-<p><img src="/assets/images/day-trading/banner.png" alt="Forex Banner" /></p>
+<p><a href="/assets/images/darknet-credit-cards/alphabay_screenshot.png"><img src="/assets/images/darknet-credit-cards/alphabay_screenshot.png" alt="AlphaBay - Screenshot" style="max-width: 600px" /></a></p>
 
-<p>In contrast to many penny auctions sites, these brokers are mostly legitimate and are regulated companies. However, this fact doesn’t make this kind of trading any less risky. My goal is to find out if the average investor profits from day trading.</p>
+<p>The AlphaBay Market has a feature called <em>CC Autoshop</em> that allows potential buyers to search a database of all the stolen credit cards that are offered by different sellers. For example, it’s possible to only search for cards from a particular city. That’s important for criminals who try to circumvent anti-fraud measures by using stolen cards from the same region or state in which they are located. But it also means that the sellers have to reveal information that we can analyze.</p>
 
-<h4 id="data">Data</h4>
-<p>The data source for this post is <a href="https://en.wikipedia.org/wiki/EToro"><em>eToro</em></a>, a brokerage company that offers a feature called <a href="https://www.etoro.com/en/social-trading/">Social Trading</a>, which is social network for traders. It is enabled by default and allows users to view and copy other users’ trades. Therefore, everyone’s trading performance is publicly available who have not disabled Social Trading.</p>
+<p>First, I downloaded the entire <em>CC Autoshop</em> as HTML files before I used the Python library <em>Beautiful Soup</em> to extract the information. I got 42,497 U.S. credit cards which were offered on September 1st, 2016 as a result. The total value of is <strong>$324,941</strong> with an average price of <strong>$7.65 per card</strong>. Some cards (1025) even include the Social Security number of the owner. Considering that nearly 13 million Americans are victims of identity fraud each year, this number almost seems insignificant, but it can nevertheless cause millions of dollars in damages. What I find particularly concerning is that anyone can purchase these cards after doing basic internet research.</p>
 
-<p>On the 1st of August, 2016, I downloaded the publicly available data through their ranking API. I selected all users who were active during the past twelve months, traded with real money, and had at least three trades. The results consist of <strong>83.3k traders</strong> who fulfill these conditions. If you’re interested in how you can access the (undocumented) API, I recommend you to open Chrome’s <em>DevTools</em>, while you’re on eToro’s Discover People page.</p>
+<p><a href="/assets/images/darknet-credit-cards/map.jpg"><img src="/assets/images/darknet-credit-cards/map.jpg" alt="AlphaBay - Countries" /></a></p>
 
-<h4 id="results">Results</h4>
-<p>The following histogram shows the average gains of each trader over the past twelve months. In the end, <strong>79.5%</strong> of them lost real money. The median 12-month returns were <strong>-36.3%</strong>.</p>
+<p>The map above shows how many cards from each state are offered on the AlphaBay Market. It is suprising that <strong>27%</strong> (11,338) of them are from Delaware and are sold by only two major sellers (<em>Sasha_Grey</em> and <em>HotPizza</em>). Unfortunately, I can only speculate about the reasons for this. Are those just company credit cards or does it suggest a local card breach? The following graph is an overview of all active AlphaBay CC vendors based on the total number of cards they offer.</p>
 
-<p><a href="/assets/images/day-trading/histogram.png"><img src="/assets/images/day-trading/histogram.png" alt="eToro 12M Gains" /></a></p>
+<p><a href="/assets/images/darknet-credit-cards/treemap.png"><img src="/assets/images/darknet-credit-cards/treemap.png" alt="AlphaBay - Treemap" style="max-width: 600px" /></a></p>
 
-<p>Besides the investing performance, the data also reveals from which countries the traders are coming. With a share of <strong>15.7%</strong>, the UK leads the list of most common countries followed by Germany with a share of <strong>11.3%</strong>. The US doesn’t appear in this list because <em>eToro</em> isn’t available in the US market, presumably due to stricter regulations.</p>
+<p>If you would like to check whether your credit card is in the dataset, you can either download it as a <a href="https://www.curiousgnu.com/assets/data/cc_autobuy_public.csv.gz">CSV file</a> or use the following site to search the database: <a href="https://www.curiousgnu.com/assets/tools/cc.html">www.curiousgnu.com/assets/tools/cc.html</a></p>
 
-<p><a href="/assets/images/day-trading/barchart.png"><img src="/assets/images/day-trading/barchart.png" alt="eToro Customers by Country" style="max-width: 720px" /></a></p>
+<h4 id="how-to-scrape-darknet-sites">How to scrape Darknet sites?</h4>
 
-<h4 id="conclusion">Conclusion</h4>
-<p>The results show that day-trading is a highly risky investment on which most traders end up losing money. I wouldn’t go so far as to say that it’s impossible to make a profit in the long-term but apparently there is no easy method (e.g. technical analysis or social trading) to do it. I would be very careful, if someone promises easy money by trading based on simple patterns or trading signals.</p>
+<p>Scraping <a href="https://www.torproject.org/docs/hidden-services.html.en"><em>hidden services</em></a> in the Tor network (Darknet sites) is very similar to regular web scraping with the exception that most <em>hidden services</em> don’t use JSON APIs, meaning that you have to extract the information from an HTML file. My preferred method is first to download all pages as HTML files before using Python and <em>Beautiful Soup</em> to extract the information I need. The following steps should work on OS X and Linux systems.</p>
+
+<p><a href="/assets/images/darknet-credit-cards/alphabay_curl_web.png"><img src="/assets/images/darknet-credit-cards/alphabay_curl_web.png" alt="AlphaBay - CURL" style="max-width: 500px" /></a></p>
+
+<ol>
+  <li>Visit the site you want to scrape in the Tor Browser.</li>
+  <li>Open the Web Console (<em>Right Click &gt; Inspect Element</em>).</li>
+  <li>Go to the <em>Network</em> Tab.</li>
+  <li>Right click on the main GET request (see Domain column) and select Copy as cURL to copy the curl command to replicate the request.</li>
+  <li>Do not close the Tor browser.</li>
+  <li>Before you can run the curl command in the Terminal, add the following options to the end of it <strong><em>’–socks5-hostname 127.0.0.1:9150 –output o.html’</em></strong>. It tells curl to use the Tor client and save the output to o.html.</li>
+  <li>In case you want to download multiple pages, you can use the bash <em>for loop</em> like this 
+<strong><em>‘for i in {1..10}; do curl […] page=${i} –output ${i}.html; done’</em></strong>.</li>
+  <li>Follow the Beautiful Soup <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">documentation</a> to extract the need information from the saved HTML files.</li>
+</ol>
+
+<p>If you have questions or concerns, feel free to write me an <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#099;&#117;&#114;&#105;&#111;&#117;&#115;&#103;&#110;&#117;&#046;&#099;&#111;&#109;">email</a>.</p>
 
 
         </section>
@@ -158,15 +171,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=Almost 80% of Private Day Traders Lose Money&amp;url=https://www.curiousgnu.com/day-trading"
+                <a class="icon-twitter" href="http://twitter.com/share?text=A Darknet Site Currently Offers 42,497 U.S. Credit Cards&amp;url=https://www.curiousgnu.com/darknet-credit-cards"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.curiousgnu.com/day-trading"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.curiousgnu.com/darknet-credit-cards"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://www.curiousgnu.com/day-trading"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://www.curiousgnu.com/darknet-credit-cards"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -183,20 +196,13 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/darknet-credit-cards/cover.jpg)" href="/darknet-credit-cards">
-            <section class="post">
-                <h2 class="title-sm">A Darknet Site Currently Offers 42,497 U.S. Credit Cards</h2>
-                <p>Last week, I found out that my credit card information was stolen and used by...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/pokemon-go/cover.jpg)" href="/pokemon-go">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/day-trading/cover.jpg)" href="/day-trading">
             <section class="post">
-                <h2 class="title-sm">These Are The Most Dangerous PokeStops in NYC</h2>
-                <p>Pokemon GO quickly became one of the most popular mobile games. In cities all around...</p>
+                <h2 class="title-sm">Almost 80% of Private Day Traders Lose Money</h2>
+                <p>A few months ago, I wrote a blog post about how penny auction sites make...</p>
             </section>
         </a>
     

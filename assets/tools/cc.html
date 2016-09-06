@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="CuriousGnu">
+    <link rel="icon" href="https://www.curiousgnu.com/favicon.ico">
+    <title>Check Your Credit Card - by CuriousGnu</title>
+    <style type="text/css">
+        #container {
+            position: absolute;
+            width: 800px;
+            top: 20px;
+            left: 40px;
+        }
+        #result {
+            min-width: 100%;
+            text-align:left;
+            border-collapse: collapse;
+            border:1px solid #333;
+        }
+        #result th {
+            background-color:black;
+            color:white;
+            font-weight: normal;
+        }
+        #notfound, #error {
+            font-weight: bold;
+            display: block;
+            margin: 6px 0;     
+        }
+        #error {
+            color: darkred;
+
+        }
+        #notfound {
+            color: darkgreen;
+        }
+        #disclaimer {
+            font-size: 15px;
+            border: 1px darkred dashed;
+            color: darkred;
+            padding: 5px;
+        }
+        #disclaimer a {
+            color: darkred;
+            font-weight: bold;
+        }
+        h1 {
+            font-size: 20px;
+            text-decoration: underline;
+        }
+        input {
+            font-size: 16px;
+            margin: 4px 0;
+            border: 1px #666 solid;
+        }
+        input[type="submit"] {
+            cursor: pointer;
+            background-color: #ddd;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="container">    
+        <h1>Check if your card is in the AlphaBay dataset.</h1>
+        <div id="disclaimer">I <u>do not</u> sell credit card information! This site lets you search a database of 42,497 credit cards which are sold by criminals on the darknet. I do not have access to the full card numbers! For more information, please read my <a href="https://www.curiousgnu.com/darknet-credit-cards">blog post</a>.</div>
+        <hr>
+        <form id="searchBox">
+            <p>
+                <strong>BIN </strong>(first 6 digits of your card number):<br>
+                <input placeholder="1234" type="number" max="9999" style="width:55px" id="cc1" autocomplete="off" required> - <input placeholder="45" type="number" id="cc2" max="99" style="width:40px" autocomplete="off" required>
+            </p>
+            <p>
+                <strong>ZIP Code</strong>:<br>
+                <input type="number" placeholder="10001" style="width:80px" id="zipcode" autocomplete="off" required>
+            </p>
+            <p>
+                <input type="submit" value="Search">
+            </p>
+        </form>
+        <hr>
+        <span id="error" style="display:none">Error: Unable to connect to the database</span>
+        <span id="notfound" style="display:none">No credit card found!</span>
+        <table id="result">
+            <tr style="">
+                <th>BIN</th>
+                <th>Brand</th> 
+                <th>Exp.</th>
+                <th>Name</th>
+                <th>State</th>
+                <th>City</th>
+                <th>ZIP</th>
+                <th>Bank</th> 
+            </tr>
+            <tr class="resultPH">
+                <td>-</td>
+                <td>-</td> 
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td> 
+                <td>-</td>
+                <td>-</td>
+            </tr>
+        </table>
+        <p style="color:#888">created by <a href="https://www.curiousgnu.com">CuriousGnu</a> | Dataset: 2016/09/01</p>
+    </div>
+    <script>
+        $("#searchBox").submit(function(e){
+            $(".resultAdd").remove();
+            $(".resultPH").show();
+            bin = String($("#cc1").val())+String($("#cc2").val());
+            zip = String($("#zipcode").val());
+            $.ajax({        
+                url: "https://curiousgnu.carto.com/api/v2/sql?q=SELECT%20*%20FROM%20cc_autobuy_public%20WHERE%20bin%20%3D%20"+bin+"%20AND%20zip%20%3D%20"+zip,
+                type: "GET",
+                success: function (resp) {
+                    $("#error").hide();
+                    if(resp.total_rows > 0) {
+                        $(".resultPH").hide();
+                        $("#notfound").hide();
+                        $(resp.rows).each(function( index ) {
+                            $("#result tr:last").after("<tr class='resultAdd'><td>"+this.bin+"</td><td>"+this.brand+"</td><td>"+this.exp+"</td><td>"+this.name+"</td><td>"+this.state+"</td><td>"+this.city+"</td><td>"+this.zip+"</td><td>"+this.bank+"</td></tr>");
+                        });
+                    } else {
+                        $("#notfound").show();
+                    }
+                },
+                error: function(e){
+                    $("#notfound").hide();
+                    $("#error").show();
+                }  
+            });
+            event.preventDefault();
+        });
+    </script>
+  </body>
+</html>
