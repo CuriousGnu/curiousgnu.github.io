@@ -12,6 +12,91 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>Age Differences of Celebrity Couples</title>
+	  <link>//age-differences-celebrity-couples</link>
+	  <author>CuriousGnu</author>
+	  <pubDate>2017-01-26T13:00:00+01:00</pubDate>
+	  <guid>//age-differences-celebrity-couples</guid>
+	  <description><![CDATA[
+	     <p>In one of my <a href="https://www.curiousgnu.com/imdb-age-gap">first posts</a>, I wrote about the age difference of movie couples and showed that the male is, on average, slightly older than his partner. The goal of this article is to find out whether there is a similar trend among real celebrity couples. Even though the age difference in sexual relationships is a frequent subject of proper scientific studies, I thought it would be still interesting to take a closer look at stars’ dating lives.</p>
+
+<p>As a data source, I scraped the website <a href="http://www.whosdatedwho.com/">whosdatedwho.com</a> (WDW), which collects information about the dating history of celebrities. Since it is a typical gossip site, and also relies on rumors, it must be expected that some of the data is inaccurate or incomplete. Nevertheless, this should be acceptable for our use case. The web-scraping provided data on 53,820 celebrities (dataset: 2016/12/06). To ensure the relevance of the data, I only included relationships which started in the past 50 years in the sample where at least one partner had been among the 5,000 most searched celebrities (WDW Rank). In addition, I removed all relationships from the sample for which the birthdates of both partners were not available. After applying all the criteria, the sample consisted of 6,693 relationships.</p>
+
+<p>While extracting the data from the HTML source was a straightforward process with the Python library, <a href="https://www.crummy.com/software/BeautifulSoup/">Beautiful Soup</a>, it was surprising that WDW doesn’t provide any information about gender. In cases where the sex couldn’t be derived from the occupation (e.g., actor/actresses), I used <a href="https://genderize.io/">genderize.io</a> to determine the gender from the first name and manually checked unclear cases.</p>
+
+<p>To visualize the data, we can use a program like <a href="https://gephi.org/">Gephi</a> to plot the relationships as a network. For the following figure, I used Gephi’s ego network filter with a depth setting of 2 to illustrate to whom <em>Alexander Skarsgård</em>, a Swedish actor, was directly and indirectly connected.</p>
+
+<p><a href="/assets/images/age-differences-celebrity-couples/net.png"><img src="/assets/images/age-differences-celebrity-couples/net.png" alt="Whosdatedwho.com Network" style="max-width:500px" /></a></p>
+
+<p>This figure indicates that both <em>Alexander Skarsgård</em> and <em>Marilyn Manson</em>, an American singer, dated the actress <em>Evan Rachel Wood</em>. Next, let’s look at the ages of the partners at the start of their (alleged) relationships. The 2D density plot shows the age of the male partner on the x-axis and the age of the female partner on the y-axis. The plot suggests that, in many cases, the man is slightly older than his female partner, a difference that gets bigger with the increasing age of the male. Overall, this age disparity is similar to the age difference among married couples in Western countries (<a href="https://en.wikipedia.org/wiki/Age_disparity_in_sexual_relationships">Wikipedia</a>).</p>
+
+<p><a href="/assets/images/age-differences-celebrity-couples/density.png"><img src="/assets/images/age-differences-celebrity-couples/density.png" alt="Couples - Density Plot" style="max-width:500px" /></a></p>
+
+<p>To visualize the age difference across certain age groups, I used the R package <a href="https://cran.r-project.org/web/packages/yarrr/index.html">yarrr</a> for the next pirate plot. The plot illustrates that the age disparity in new relationships increases significantly when male celebrities get older. While male stars in their <strong>20s</strong> have female partners  <strong>2.4 years</strong> older on average, the women in new relationships with <strong>40- to 49-year-olds</strong> and <strong>over-50s</strong> are about <strong>6.0</strong> and <strong>16.5 years younger</strong>, respectively.</p>
+
+<style type="text/css">
+	.tg-ba  {border-collapse:collapse;border-spacing:0;border:none;max-width: 400px;border-top: 2px #333 solid;border-bottom: 2px #333 solid;}
+	.tg-ba td{font-size:14px;padding:1px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;background-color:#fff!important;text-align:center}
+	.tg-ba th{font-size:14px;font-weight:normal;padding:1px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;background-color:#fff!important;text-align:center;border-bottom: 1px #333 solid;}
+	.tg-ba .tg-c9cr{font-style:italic}
+	.tg-ba .tg-wxgh{text-decoration:underline;vertical-align:top}
+	.tg-ba .tg-yw4l{vertical-align:top}
+	.tg-ba .tg-db0a{text-decoration:underline}
+</style>
+
+<center>
+	<table class="tg-ba">
+		<tr>
+			<th class="tg-031e"></th>
+			<th class="tg-c9cr" colspan="2">age difference</th>
+			<th class="tg-yw4l"></th>
+		</tr>
+		<tr>
+			<td class="tg-db0a">age (male)</td>
+			<td class="tg-db0a">mean</td>
+			<td class="tg-wxgh">median</td>
+			<td class="tg-wxgh">n</td>
+		</tr>
+		<tr>
+			<td class="tg-031e">20-29</td>
+			<td class="tg-031e">-2.39</td>
+			<td class="tg-yw4l">-1</td>
+			<td class="tg-yw4l">420</td>
+		</tr>
+		<tr>
+			<td class="tg-031e">30-39</td>
+			<td class="tg-031e">0.51</td>
+			<td class="tg-yw4l">1</td>
+			<td class="tg-yw4l">3,170</td>
+		</tr>
+		<tr>
+			<td class="tg-031e">40-49</td>
+			<td class="tg-031e">5.99</td>
+			<td class="tg-yw4l">7</td>
+			<td class="tg-yw4l">2,130</td>
+		</tr>
+		<tr>
+			<td class="tg-031e">50+</td>
+			<td class="tg-031e">16.47</td>
+			<td class="tg-yw4l">17</td>
+			<td class="tg-yw4l">973</td>
+		</tr>
+	</table>
+</center>
+
+<p><a href="/assets/images/age-differences-celebrity-couples/pirate.png"><img src="/assets/images/age-differences-celebrity-couples/pirate.png" alt="Couples - Pirate Plot" style="max-width:500px" /></a></p>
+
+<p>A regression analysis can be applied to examine the relationship between female and male age further. To automatically account for non-linearity, I chose <a href="https://en.wikipedia.org/wiki/Multivariate_adaptive_regression_splines">MARS</a> (<a href="https://cran.r-project.org/web/packages/earth/index.html">earth</a> R package). The result shows the age difference changes with the increasing age of the male partner. The shaded area is the 90% prediction interval. According to the model, the new partner (female) of a <strong>40-year-old</strong> male celebrity who started dating is on average <strong>9.8 years younger</strong>.</p>
+
+<p><a href="/assets/images/age-differences-celebrity-couples/regression.png"><img src="/assets/images/age-differences-celebrity-couples/regression.png" alt="Couples - Pirate Regression" style="max-width:600px" /></a></p>
+
+<p>Overall, the data shows that the often criticized age difference among movie couples may not be too far from reality, or at least the reality of some celebrities. If you have questions or concerns, feel free to write me an <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#099;&#117;&#114;&#105;&#111;&#117;&#115;&#103;&#110;&#117;&#046;&#099;&#111;&#109;">email</a>.</p>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>A Darknet Site Currently Offers 42,497 U.S. Credit Cards</title>
 	  <link>//darknet-credit-cards</link>
 	  <author>CuriousGnu</author>
@@ -26,7 +111,7 @@
 
 <p>The AlphaBay Market has a feature called <em>CC Autoshop</em> that allows potential buyers to search a database of all the stolen credit cards that are offered by different sellers. For example, it’s possible to only search for cards from a particular city. That’s important for criminals who try to circumvent anti-fraud measures by using stolen cards from the same region or state in which they are located. But it also means that the sellers have to reveal information that we can analyze.</p>
 
-<p>First, I downloaded the entire <em>CC Autoshop</em> as HTML files before I used the Python library <em>Beautiful Soup</em> to extract the information. I got 42,497 U.S. credit cards which were offered on September 1st, 2016 as a result. The total value of is <strong>$324,941</strong> with an average price of <strong>$7.65 per card</strong>. Some cards (1025) even include the Social Security number of the owner. Considering that nearly 13 million Americans are victims of identity fraud each year, this number almost seems insignificant, but it can nevertheless cause millions of dollars in damages. What I find particularly concerning is that anyone can purchase these cards after doing basic internet research.</p>
+<p>First, I downloaded the entire <em>CC Autoshop</em> as HTML files before I used the Python library <em>Beautiful Soup</em> to extract the information. I got 42,497 U.S. credit cards which were offered on September 1st, 2016 as a result. The total value of is <strong>$324,941</strong> with an average price of <strong>$7.65 per card</strong>. Some cards (1025) even include the Social Security number of the owner. Considering that nearly <a href="http://www.creditcards.com/credit-card-news/credit-card-security-id-theft-fraud-statistics-1276.php">13 million Americans</a> are victims of identity fraud each year, this number almost seems insignificant, but it can nevertheless cause millions of dollars in damages. What I find particularly concerning is that anyone can purchase these cards after doing basic internet research.</p>
 
 <p><a href="/assets/images/darknet-credit-cards/map.jpg"><img src="/assets/images/darknet-credit-cards/map.jpg" alt="AlphaBay - Countries" /></a></p>
 
@@ -456,41 +541,6 @@ HAVING	SUM(a.trump) &gt;= 100
 <p> </p>
 
 <p><small>Photos by <a href="https://www.flickr.com/photos/gageskidmore/">Gage Skidmore</a> is licensed under CC BY-SA 2.0</small></p>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>Redditors who commented in /r/X also commented in /r/Y</title>
-	  <link>//reddit-comments</link>
-	  <author>CuriousGnu</author>
-	  <pubDate>2016-04-20T14:14:00+02:00</pubDate>
-	  <guid>//reddit-comments</guid>
-	  <description><![CDATA[
-	     <p>This blog article is about <a href="http://www.reddit.com">reddit.com</a>, a website where people can post links to interesting websites and discuss a wide variety of different topics. According to <a href="http://www.alexa.com/topsites/countries/US">Alexa</a>, a company who analyzes web traffic, Reddit is the ninth most popular site in the United States. Reddit has thousands of different subcategories, called subreddits, which are usually moderated by volunteers. There are subreddits for nearly every topic you can imagine; for example, on <a href="http://www.reddit.com/r/movies">/r/movies</a> people can discuss the latest blockbuster whereas the users over at <a href="http://www.reddit.com/r/sloths">/r/sloths</a> are passionately committed to collecting cute pictures of sloths.</p>
-
-<p>But Reddit can also be fascinating to people who are interested in data research because the user generated data is easily accessible via the official API and through <a href="https://bigquery.cloud.google.com/table/fh-bigquery:reddit_comments.2016_01">Google BigQuery</a> where you can find an SQL database which you can use for little to no cost. For this article, I decided to start with something simple. My goal is to find out how the 50 most popular subreddits are related to each other. The idea behind it is that users usually write comments in subreddits which are close to their personal interests, meaning that a user who is active in the <a href="http://www.reddit.com/r/StarWars">/r/StarWars</a> subreddit is probably also active in the <a href="http://www.reddit.com/r/firefly">/r/firefly</a> subreddit because both categories fit his or her interest in science fiction.</p>
-
-<p><a href="/assets/images/rd-comments/rd_comments_net_hd.png"><img src="/assets/images/rd-comments/rd_comments_net_hd.png" alt="Subreddit Network" style="max-height:640px; max-width:640px" /></a></p>
-
-<p>Based on this assumption, my approach was to look at all 1.2 million unique users who posted a comment in at least one of the top 50 subreddits during January 2016. To calculate the strength of the relationship between the subreddits, I used multiple logistic regression models which for example can tell us how much the probability of a Redditor posting a comment in <a href="http://www.reddit.com/r/StarWars">/r/StarWars</a> increases if he or she also posted a comment in <a href="http://www.reddit.com/r/firefly">/r/firefly</a>. The bigger this number is, the more closely related those subreddits are to each other. The network graph above is a visualization of these results. A bigger dot stands for a larger number of connections to its neighbors.</p>
-
-<p>Looking at the graph, we can identify four major groups of subreddits:</p>
-
-<ol>
-  <li><strong>News &amp; Science</strong>: <a href="http://www.reddit.com/r/worldnews">/r/worldnews</a>, <a href="http://www.reddit.com/r/science">/r/science</a>, <a href="http://www.reddit.com/r/space">/r/space</a>, <a href="http://www.reddit.com/r/futurology">/r/futurology</a>, …</li>
-  <li><strong>Entertainment</strong>: <a href="http://www.reddit.com/r/movies">/r/movies</a>, <a href="http://www.reddit.com/r/television">/r/television</a>, <a href="http://www.reddit.com/r/music">/r/music</a>, <a href="http://www.reddit.com/r/books">/r/books</a>, …</li>
-  <li><strong>Visual Content</strong>: <a href="http://www.reddit.com/r/funny">/r/funny</a>, <a href="http://www.reddit.com/r/pics">/r/pics</a>, <a href="http://www.reddit.com/r/aww">/r/aww</a>, <a href="http://www.reddit.com/r/creepy">/r/creepy</a>, …</li>
-  <li><strong>Textual Content</strong>: <a href="http://www.reddit.com/r/showerthought">/r/showerthought</a>, <a href="http://www.reddit.com/r/askreddit">/r/askreddit</a>, <a href="http://www.reddit.com/r/tifu">/r/tifu</a>, <a href="http://www.reddit.com/r/lifeprotips">/r/lifeprotips</a>, …</li>
-</ol>
-
-<p>The subreddit <a href="http://www.reddit.com/r/todayilearned">/r/todayilearned</a> doesn’t belong to any particular group because it’s somewhat popular among all users. This analysis doesn’t go into great detail, but I think it’s nevertheless interesting to see that the groups of subreddit seem to make sense and can be interpreted. For example, it doesn’t sound wrong that users who enjoy commenting on topics about space are also interested in science.</p>
-
-<p>Additionally, I also made a table from the same data. The software programs I used to create both graphs are <a href="https://gephi.org/">Gephi</a> and <a href="https://public.tableau.com/s/">Tableau</a> respectively. A blue square stands for a positive correlation coefficient whereas a red square represents the opposite.  You can open the full table by clicking on the graph below:</p>
-
-<p><a href="https://public.tableau.com/profile/curious.gnu#!/vizhome/RedditComments-LogitRegressioncuriousgnu_com/Sheet1"><img src="/assets/images/rd-comments/rd_table.png" alt="Subreddit Table" /></a></p>
-
-<p>Admittedly, these aren’t exactly groundbreaking results, but it was real fun to try out some statistical methods on this huge amount of data. I’m currently testing how I can use this data source for an article about text analysis.</p>
 
 	  ]]></description>
 	</item>

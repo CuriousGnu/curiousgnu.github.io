@@ -8,6 +8,93 @@
     
       
       <item>
+        <title>Age Differences of Celebrity Couples</title>
+          <description>
+            &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;https://www.curiousgnu.com/assets/images/age-differences-celebrity-couples/cover.jpg&quot;  alt=&quot;Cover Image&quot; /&gt;
+            &lt;p&gt;In one of my &lt;a href=&quot;https://www.curiousgnu.com/imdb-age-gap&quot;&gt;first posts&lt;/a&gt;, I wrote about the age difference of movie couples and showed that the male is, on average, slightly older than his partner. The goal of this article is to find out whether there is a similar trend among real celebrity couples. Even though the age difference in sexual relationships is a frequent subject of proper scientific studies, I thought it would be still interesting to take a closer look at stars’ dating lives.&lt;/p&gt;
+
+&lt;p&gt;As a data source, I scraped the website &lt;a href=&quot;http://www.whosdatedwho.com/&quot;&gt;whosdatedwho.com&lt;/a&gt; (WDW), which collects information about the dating history of celebrities. Since it is a typical gossip site, and also relies on rumors, it must be expected that some of the data is inaccurate or incomplete. Nevertheless, this should be acceptable for our use case. The web-scraping provided data on 53,820 celebrities (dataset: 2016/12/06). To ensure the relevance of the data, I only included relationships which started in the past 50 years in the sample where at least one partner had been among the 5,000 most searched celebrities (WDW Rank). In addition, I removed all relationships from the sample for which the birthdates of both partners were not available. After applying all the criteria, the sample consisted of 6,693 relationships.&lt;/p&gt;
+
+&lt;p&gt;While extracting the data from the HTML source was a straightforward process with the Python library, &lt;a href=&quot;https://www.crummy.com/software/BeautifulSoup/&quot;&gt;Beautiful Soup&lt;/a&gt;, it was surprising that WDW doesn’t provide any information about gender. In cases where the sex couldn’t be derived from the occupation (e.g., actor/actresses), I used &lt;a href=&quot;https://genderize.io/&quot;&gt;genderize.io&lt;/a&gt; to determine the gender from the first name and manually checked unclear cases.&lt;/p&gt;
+
+&lt;p&gt;To visualize the data, we can use a program like &lt;a href=&quot;https://gephi.org/&quot;&gt;Gephi&lt;/a&gt; to plot the relationships as a network. For the following figure, I used Gephi’s ego network filter with a depth setting of 2 to illustrate to whom &lt;em&gt;Alexander Skarsgård&lt;/em&gt;, a Swedish actor, was directly and indirectly connected.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/age-differences-celebrity-couples/net.png&quot;&gt;&lt;img src=&quot;/assets/images/age-differences-celebrity-couples/net.png&quot; alt=&quot;Whosdatedwho.com Network&quot; style=&quot;max-width:500px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This figure indicates that both &lt;em&gt;Alexander Skarsgård&lt;/em&gt; and &lt;em&gt;Marilyn Manson&lt;/em&gt;, an American singer, dated the actress &lt;em&gt;Evan Rachel Wood&lt;/em&gt;. Next, let’s look at the ages of the partners at the start of their (alleged) relationships. The 2D density plot shows the age of the male partner on the x-axis and the age of the female partner on the y-axis. The plot suggests that, in many cases, the man is slightly older than his female partner, a difference that gets bigger with the increasing age of the male. Overall, this age disparity is similar to the age difference among married couples in Western countries (&lt;a href=&quot;https://en.wikipedia.org/wiki/Age_disparity_in_sexual_relationships&quot;&gt;Wikipedia&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/age-differences-celebrity-couples/density.png&quot;&gt;&lt;img src=&quot;/assets/images/age-differences-celebrity-couples/density.png&quot; alt=&quot;Couples - Density Plot&quot; style=&quot;max-width:500px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;To visualize the age difference across certain age groups, I used the R package &lt;a href=&quot;https://cran.r-project.org/web/packages/yarrr/index.html&quot;&gt;yarrr&lt;/a&gt; for the next pirate plot. The plot illustrates that the age disparity in new relationships increases significantly when male celebrities get older. While male stars in their &lt;strong&gt;20s&lt;/strong&gt; have female partners  &lt;strong&gt;2.4 years&lt;/strong&gt; older on average, the women in new relationships with &lt;strong&gt;40- to 49-year-olds&lt;/strong&gt; and &lt;strong&gt;over-50s&lt;/strong&gt; are about &lt;strong&gt;6.0&lt;/strong&gt; and &lt;strong&gt;16.5 years younger&lt;/strong&gt;, respectively.&lt;/p&gt;
+
+&lt;style type=&quot;text/css&quot;&gt;
+	.tg-ba  {border-collapse:collapse;border-spacing:0;border:none;max-width: 400px;border-top: 2px #333 solid;border-bottom: 2px #333 solid;}
+	.tg-ba td{font-size:14px;padding:1px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;background-color:#fff!important;text-align:center}
+	.tg-ba th{font-size:14px;font-weight:normal;padding:1px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;background-color:#fff!important;text-align:center;border-bottom: 1px #333 solid;}
+	.tg-ba .tg-c9cr{font-style:italic}
+	.tg-ba .tg-wxgh{text-decoration:underline;vertical-align:top}
+	.tg-ba .tg-yw4l{vertical-align:top}
+	.tg-ba .tg-db0a{text-decoration:underline}
+&lt;/style&gt;
+
+&lt;center&gt;
+	&lt;table class=&quot;tg-ba&quot;&gt;
+		&lt;tr&gt;
+			&lt;th class=&quot;tg-031e&quot;&gt;&lt;/th&gt;
+			&lt;th class=&quot;tg-c9cr&quot; colspan=&quot;2&quot;&gt;age difference&lt;/th&gt;
+			&lt;th class=&quot;tg-yw4l&quot;&gt;&lt;/th&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td class=&quot;tg-db0a&quot;&gt;age (male)&lt;/td&gt;
+			&lt;td class=&quot;tg-db0a&quot;&gt;mean&lt;/td&gt;
+			&lt;td class=&quot;tg-wxgh&quot;&gt;median&lt;/td&gt;
+			&lt;td class=&quot;tg-wxgh&quot;&gt;n&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td class=&quot;tg-031e&quot;&gt;20-29&lt;/td&gt;
+			&lt;td class=&quot;tg-031e&quot;&gt;-2.39&lt;/td&gt;
+			&lt;td class=&quot;tg-yw4l&quot;&gt;-1&lt;/td&gt;
+			&lt;td class=&quot;tg-yw4l&quot;&gt;420&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td class=&quot;tg-031e&quot;&gt;30-39&lt;/td&gt;
+			&lt;td class=&quot;tg-031e&quot;&gt;0.51&lt;/td&gt;
+			&lt;td class=&quot;tg-yw4l&quot;&gt;1&lt;/td&gt;
+			&lt;td class=&quot;tg-yw4l&quot;&gt;3,170&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td class=&quot;tg-031e&quot;&gt;40-49&lt;/td&gt;
+			&lt;td class=&quot;tg-031e&quot;&gt;5.99&lt;/td&gt;
+			&lt;td class=&quot;tg-yw4l&quot;&gt;7&lt;/td&gt;
+			&lt;td class=&quot;tg-yw4l&quot;&gt;2,130&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td class=&quot;tg-031e&quot;&gt;50+&lt;/td&gt;
+			&lt;td class=&quot;tg-031e&quot;&gt;16.47&lt;/td&gt;
+			&lt;td class=&quot;tg-yw4l&quot;&gt;17&lt;/td&gt;
+			&lt;td class=&quot;tg-yw4l&quot;&gt;973&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/table&gt;
+&lt;/center&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/age-differences-celebrity-couples/pirate.png&quot;&gt;&lt;img src=&quot;/assets/images/age-differences-celebrity-couples/pirate.png&quot; alt=&quot;Couples - Pirate Plot&quot; style=&quot;max-width:500px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;A regression analysis can be applied to examine the relationship between female and male age further. To automatically account for non-linearity, I chose &lt;a href=&quot;https://en.wikipedia.org/wiki/Multivariate_adaptive_regression_splines&quot;&gt;MARS&lt;/a&gt; (&lt;a href=&quot;https://cran.r-project.org/web/packages/earth/index.html&quot;&gt;earth&lt;/a&gt; R package). The result shows the age difference changes with the increasing age of the male partner. The shaded area is the 90% prediction interval. According to the model, the new partner (female) of a &lt;strong&gt;40-year-old&lt;/strong&gt; male celebrity who started dating is on average &lt;strong&gt;9.8 years younger&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/age-differences-celebrity-couples/regression.png&quot;&gt;&lt;img src=&quot;/assets/images/age-differences-celebrity-couples/regression.png&quot; alt=&quot;Couples - Pirate Regression&quot; style=&quot;max-width:600px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Overall, the data shows that the often criticized age difference among movie couples may not be too far from reality, or at least the reality of some celebrities. If you have questions or concerns, feel free to write me an &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#097;&amp;#099;&amp;#116;&amp;#064;&amp;#099;&amp;#117;&amp;#114;&amp;#105;&amp;#111;&amp;#117;&amp;#115;&amp;#103;&amp;#110;&amp;#117;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
+
+
+          </description>
+        <pubDate>Thu, 26 Jan 2017 13:00:00 +0100</pubDate>
+        <link>https://www.curiousgnu.com/age-differences-celebrity-couples</link>
+        <guid isPermaLink="true">https://www.curiousgnu.com/age-differences-celebrity-couples</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>A Darknet Site Currently Offers 42,497 U.S. Credit Cards</title>
           <description>
             &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;https://www.curiousgnu.com/assets/images/darknet-credit-cards/cover.jpg&quot;  alt=&quot;Cover Image&quot; /&gt;
@@ -19,7 +106,7 @@
 
 &lt;p&gt;The AlphaBay Market has a feature called &lt;em&gt;CC Autoshop&lt;/em&gt; that allows potential buyers to search a database of all the stolen credit cards that are offered by different sellers. For example, it’s possible to only search for cards from a particular city. That’s important for criminals who try to circumvent anti-fraud measures by using stolen cards from the same region or state in which they are located. But it also means that the sellers have to reveal information that we can analyze.&lt;/p&gt;
 
-&lt;p&gt;First, I downloaded the entire &lt;em&gt;CC Autoshop&lt;/em&gt; as HTML files before I used the Python library &lt;em&gt;Beautiful Soup&lt;/em&gt; to extract the information. I got 42,497 U.S. credit cards which were offered on September 1st, 2016 as a result. The total value of is &lt;strong&gt;$324,941&lt;/strong&gt; with an average price of &lt;strong&gt;$7.65 per card&lt;/strong&gt;. Some cards (1025) even include the Social Security number of the owner. Considering that nearly 13 million Americans are victims of identity fraud each year, this number almost seems insignificant, but it can nevertheless cause millions of dollars in damages. What I find particularly concerning is that anyone can purchase these cards after doing basic internet research.&lt;/p&gt;
+&lt;p&gt;First, I downloaded the entire &lt;em&gt;CC Autoshop&lt;/em&gt; as HTML files before I used the Python library &lt;em&gt;Beautiful Soup&lt;/em&gt; to extract the information. I got 42,497 U.S. credit cards which were offered on September 1st, 2016 as a result. The total value of is &lt;strong&gt;$324,941&lt;/strong&gt; with an average price of &lt;strong&gt;$7.65 per card&lt;/strong&gt;. Some cards (1025) even include the Social Security number of the owner. Considering that nearly &lt;a href=&quot;http://www.creditcards.com/credit-card-news/credit-card-security-id-theft-fraud-statistics-1276.php&quot;&gt;13 million Americans&lt;/a&gt; are victims of identity fraud each year, this number almost seems insignificant, but it can nevertheless cause millions of dollars in damages. What I find particularly concerning is that anyone can purchase these cards after doing basic internet research.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;/assets/images/darknet-credit-cards/map.jpg&quot;&gt;&lt;img src=&quot;/assets/images/darknet-credit-cards/map.jpg&quot; alt=&quot;AlphaBay - Countries&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
