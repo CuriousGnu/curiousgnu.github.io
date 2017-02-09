@@ -12,6 +12,29 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>Visualization: Traffic Collisions in Manhattan</title>
+	  <link>//manhattan-traffic-collitions</link>
+	  <author>CuriousGnu</author>
+	  <pubDate>2017-02-09T11:00:00+01:00</pubDate>
+	  <guid>//manhattan-traffic-collitions</guid>
+	  <description><![CDATA[
+	     <p>Today’s blog post is a visualization of traffic collisions in New York City. The New York Police Departmentpublishes information about motor vehicle collisions on the official <a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions/h9gi-nx95">NYC OpenData</a> platform. The dataset contains nearly one million incidents going back to the year 2012. For the following visualizations, I only looked at accidents that occurred during the year 2016 in Manhattan (n=36,680).</p>
+
+<p>My first idea was to display all last year’s collisions on an animated map. For this type of task, <a href="https://carto.com/">CARTO</a> (formerly CartoDB) is an excellent freemium service that allows users to create custom maps. Usually, you can upload the OpenData CSV files directly to CARTO; however, for one-fifth of the incidents, no GPS coordinates are provided, and only streets or intersections are given. This lack of information makes a process called geocoding necessary, which transforms postal addresses to geographic coordinates. Due to the relatively large sample size (n=6,301), the free geocoding option of CARTO wasn’t sufficient, so I used the website, <a href="https://geocod.io/">Geocodio</a>, which offers a very affordable pay-as-you-go plan. For this map, I differentiated between collisions that lead to material damage or personal injury.</p>
+
+<iframe width="100%" height="530" frameborder="0" src="https://curiousgnu.carto.com/viz/4fba7a94-ec7b-11e6-b3db-0e233c30368f/embed_map" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" oallowfullscreen="" msallowfullscreen=""></iframe>
+
+<p>Aside from this, we can of course also use the data for other types of plots. The following line plots compare the number of collisions between times of day and months.</p>
+
+<p><a href="/assets/images/manhattan-traffic-collisions/line_charts.png"><img src="/assets/images/manhattan-traffic-collisions/line_charts.png" alt="Traffic Collitions in 2016 in Mannhattan" style="max-width: 550px" /></a></p>
+
+<p>In addition to these simple visualizations, it could be interesting to check how the weather affects the number of accidents (<a href="https://www.ncdc.noaa.gov/data-access/land-based-station-data/land-based-datasets">climatological data</a>). If you have questions, feel free to write me an <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#099;&#117;&#114;&#105;&#111;&#117;&#115;&#103;&#110;&#117;&#046;&#099;&#111;&#109;">email</a>.</p>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>Age Differences of Celebrity Couples</title>
 	  <link>//age-differences-celebrity-couples</link>
 	  <author>CuriousGnu</author>
@@ -477,70 +500,6 @@ ggplot(e, aes(colour=e$character)) +
 <p><a href="/assets/images/rd-godwin/pbrd.png"><img src="/assets/images/rd-godwin/pbrd.png" alt="Hitler References" style="max-width:780px" /></a></p>
 
 <p>The next step would be to implement sophisticated text mining techniques to identify comments which use Nazi analogies in a way as described by Godwin. Unfortunately due to time constraints and the complexity of this problem, I was not able to try for this blog post.</p>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>How The World Sees Hillary Clinton & Donald Trump</title>
-	  <link>//how-the-world-sees-clinton-trump</link>
-	  <author>CuriousGnu</author>
-	  <pubDate>2016-04-27T19:14:00+02:00</pubDate>
-	  <guid>//how-the-world-sees-clinton-trump</guid>
-	  <description><![CDATA[
-	     <p>For this week’s blog post, I will try to find out how the international news media writes about Hillary Clinton and Donald Trump; the presidential front-runners of both parties. The plan is to check on several international news sources to derive positive and negative things regarding Hillary Clinton or Donald Trump. Doing this will give us an idea of how the news media in other countries, writes and talks about the two candidates.</p>
-
-<p>Fortunately, most of the hard work was already done by the <a href="http://gdeltproject.org/">GDELT Project</a>, which monitors news sites from all around the world and makes its work freely available for everyone. They even automatically determine how positive or negative news articles are using sentiment analysis. Based on the <a href="http://gdeltproject.org/data.html">GDELT dataset</a>, I created a map for each candidate which shows how the average tone of the texts compares to American news (Clinton: -1.15; Trump: -1.40). The results are based on a total of over <strong>550,000 articles</strong> published after July 2015 of which 65.3% mentioned <em>Donald Trump</em> at least twice, and 46.1% mentioned <em>Hillary Clinton</em> at least twice.</p>
-
-<div class="emb-iframe">
-  <iframe height="612" width="980" frameborder="0" src="https://curiousgnu.cartodb.com/viz/5497e1dc-0991-11e6-87dd-0e5db1731f59/embed_map" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" oallowfullscreen="" msallowfullscreen=""></iframe>
-</div>
-<div class="emb-iframe">
-  <iframe height="612" width="980" frameborder="0" src="https://curiousgnu.cartodb.com/viz/676de180-0991-11e6-9940-0e674067d321/embed_map" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" oallowfullscreen="" msallowfullscreen=""></iframe>
-</div>
-
-<p>Compared to the Republican front-runner Donald Trump, international journalists seem to view Hillary Clinton much more positively. Looking at the maps above, we can see that news articles from countries like <em>Mexico</em>, <em>India</em>, or <em>China</em> are clearly more favorable towards Clinton than Trump. One exception is the Russian media which reports 19% more positively about Trump than its American counterpart. I don’t want to get political, but I think the results for some countries aren’t much of a surprise.</p>
-
-<h4 id="technical-background">Technical Background</h4>
-
-<p>The process of doing this analysis is fairly straightforward and does not require anything except a browser and a Google account. First, I used the <a href="http://gdeltproject.org/">GDELT database</a>, publicly available on <a href="https://bigquery.cloud.google.com/table/gdelt-bq:gdeltv2.gkg">Google BigQuery</a>, to extract the raw data needed to create both maps. I wrote the following SQL query to do this:</p>
-
-<pre class="sql"><code>SELECT	a.country
-	,AVG(CASE WHEN a.trump = 1 
-		THEN a.tone ELSE NULL END) trump_tone
-	,AVG(CASE WHEN a.hillary = 1
-		THEN a.tone ELSE NULL END) hillary_tone
-FROM (SELECT 
-  cc.CountryHumanName country
-  ,CASE WHEN 
-  	LOWER(gkg.AllNames) LIKE '%donald%trump%donald%trump%'
-  	THEN 1 ELSE 0 END trump
-  ,CASE WHEN
-  	LOWER(gkg.AllNames) LIKE '%hillary%clinton%hillary%clinton%'
-  	THEN 1 ELSE 0 END hillary
-  ,FIRST(SPLIT(gkg.V2Tone, ',')) tone
-FROM [gdelt-bq:gdeltv2.gkg] gkg
-INNER JOIN [gdelt-bq:gdeltv2.domainsbycountry_alllangs_april2015] cc
-  ON cc.Domain = gkg.SourceCommonName
-WHERE (
-  	LOWER(gkg.AllNames) LIKE '%donald%trump%donald%trump%'
-  	OR LOWER(gkg.AllNames) LIKE '%hillary%clinton%hillary%clinton%'
-  ) AND gkg.DATE &gt;= 20150801000000
-) a
-GROUP BY a.country
-HAVING	SUM(a.trump) &gt;= 100
-	AND SUM(a.hillary) &gt;= 100
-</code></pre>
-
-<p>In the second step, I exported the results of the query as a CSV file and uploaded it to <a href="https://cartodb.com/">CartoDB</a>, a free web service where you can create maps based on location-based data. From there on you can follow their documentation and have your maps ready in no time.</p>
-
-<p>From my experience, <a href="https://cartodb.com/">CartoDB</a> is a great tool if you want to create interactive and highly customizable maps. If you only need a basic set of features, you ought to try out <a href="https://www.google.com/sheets/about/">Google Sheets</a>. <a href="http://www.tableau.com/">Tableau</a> is another good alternative that I frequently use, which is also available in the free version <a href="https://public.tableau.com/s/">Tableau Public</a>. I didn’t use Tableau in this project because CartoDB offers much better embedding options for blogs or websites.</p>
-
-<p>If you have any questions about this blog post, feel free to contact me by <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#099;&#117;&#114;&#105;&#111;&#117;&#115;&#103;&#110;&#117;&#046;&#099;&#111;&#109;">email</a> or write me a PM on Reddit.</p>
-
-<p> </p>
-
-<p><small>Photos by <a href="https://www.flickr.com/photos/gageskidmore/">Gage Skidmore</a> is licensed under CC BY-SA 2.0</small></p>
 
 	  ]]></description>
 	</item>

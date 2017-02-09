@@ -8,6 +8,31 @@
     
       
       <item>
+        <title>Visualization: Traffic Collisions in Manhattan</title>
+          <description>
+            &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;https://www.curiousgnu.com/assets/images/manhattan-traffic-collisions/cover.jpg&quot;  alt=&quot;Cover Image&quot; /&gt;
+            &lt;p&gt;Today’s blog post is a visualization of traffic collisions in New York City. The New York Police Departmentpublishes information about motor vehicle collisions on the official &lt;a href=&quot;https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions/h9gi-nx95&quot;&gt;NYC OpenData&lt;/a&gt; platform. The dataset contains nearly one million incidents going back to the year 2012. For the following visualizations, I only looked at accidents that occurred during the year 2016 in Manhattan (n=36,680).&lt;/p&gt;
+
+&lt;p&gt;My first idea was to display all last year’s collisions on an animated map. For this type of task, &lt;a href=&quot;https://carto.com/&quot;&gt;CARTO&lt;/a&gt; (formerly CartoDB) is an excellent freemium service that allows users to create custom maps. Usually, you can upload the OpenData CSV files directly to CARTO; however, for one-fifth of the incidents, no GPS coordinates are provided, and only streets or intersections are given. This lack of information makes a process called geocoding necessary, which transforms postal addresses to geographic coordinates. Due to the relatively large sample size (n=6,301), the free geocoding option of CARTO wasn’t sufficient, so I used the website, &lt;a href=&quot;https://geocod.io/&quot;&gt;Geocodio&lt;/a&gt;, which offers a very affordable pay-as-you-go plan. For this map, I differentiated between collisions that lead to material damage or personal injury.&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;530&quot; frameborder=&quot;0&quot; src=&quot;https://curiousgnu.carto.com/viz/4fba7a94-ec7b-11e6-b3db-0e233c30368f/embed_map&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; oallowfullscreen=&quot;&quot; msallowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Aside from this, we can of course also use the data for other types of plots. The following line plots compare the number of collisions between times of day and months.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/manhattan-traffic-collisions/line_charts.png&quot;&gt;&lt;img src=&quot;/assets/images/manhattan-traffic-collisions/line_charts.png&quot; alt=&quot;Traffic Collitions in 2016 in Mannhattan&quot; style=&quot;max-width: 550px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;In addition to these simple visualizations, it could be interesting to check how the weather affects the number of accidents (&lt;a href=&quot;https://www.ncdc.noaa.gov/data-access/land-based-station-data/land-based-datasets&quot;&gt;climatological data&lt;/a&gt;). If you have questions, feel free to write me an &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#097;&amp;#099;&amp;#116;&amp;#064;&amp;#099;&amp;#117;&amp;#114;&amp;#105;&amp;#111;&amp;#117;&amp;#115;&amp;#103;&amp;#110;&amp;#117;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
+
+
+          </description>
+        <pubDate>Thu, 09 Feb 2017 11:00:00 +0100</pubDate>
+        <link>https://www.curiousgnu.com/manhattan-traffic-collitions</link>
+        <guid isPermaLink="true">https://www.curiousgnu.com/manhattan-traffic-collitions</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Age Differences of Celebrity Couples</title>
           <description>
             &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;https://www.curiousgnu.com/assets/images/age-differences-celebrity-couples/cover.jpg&quot;  alt=&quot;Cover Image&quot; /&gt;
