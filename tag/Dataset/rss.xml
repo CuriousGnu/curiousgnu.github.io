@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>www.curiousgnu.com</title>
+   
+   <link>https://www.curiousgnu.com/</link>
+   <description>Numbers, Graphs, and Apple Strudels</description>
+   <language>en-uk</language>
+   <managingEditor> CuriousGnu</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>Dataset: Yearly Bills of Mortality from 1657 to 1758</title>
+	  <link>//yearly-bills-of-mortality-1657-1758</link>
+	  <author>CuriousGnu</author>
+	  <pubDate>2017-02-22T11:00:00+01:00</pubDate>
+	  <guid>//yearly-bills-of-mortality-1657-1758</guid>
+	  <description><![CDATA[
+	     <p>In this blog post, I would like to share the <em>Yearly Bills of Mortality</em> dataset that I recently generated. The <em>Bills of Mortality</em> were a mortality statistic for London and were first published in the 17th century. Besides the number of deaths, they also provide information about the cause of death since 1629. The first time I read about these documents was in a <cite><a href="http://www.telegraph.co.uk/news/science/science-news/8934045/Historic-medical-records-show-deaths-from-lethargy-and-itch.html">newspaper article</a></cite> in The Telegraph about the absurdly sounding causes of death such as itch, lethargy, or grief.</p>
+
+<p><a href="/assets/images/bills-of-mortality/itch.jpg"><img src="/assets/images/bills-of-mortality/itch.jpg" alt="Bills of Mortality - Itch" style="max-width: 300px" /></a></p>
+
+<p>Interestingly, Google digitized the book <em>“Collection of Yearly Bills of Mortality, from 1657 to 1758 Inclusive”</em> and made it available through <cite><a href="https://books.google.com/books/about/Collection_of_Yearly_Bills_of_Mortality.html?id=3wYAAAAAMAAJ">Google Books</a></cite>. In addition to that, <cite><a href="https://archive.org/details/collectionyearl00hebegoog">archive.org</a></cite> offers those scans in a variety of formats. Unfortunately, Google’s optical character recognition (OCR) does not work particularly well on historical documents especially if the data is presented in tables, which makes searching the PDF and analyzing the changes in certain numbers difficult.</p>
+
+<p>Finding those kinds of statistics rather intriguing, I considered the <em>Yearly Bills of Mortality</em> to be a perfect test case for manual data entry services that I am currently testing. The task was to convert the “Diseases and Casualties” table of 102 pages into an Excel table. In the case of different variants of the same causes of death (e.g., <em>hang’d</em> and <em>hanged</em>), a consistent form of spelling was used.</p>
+
+<p><a href="/assets/images/bills-of-mortality/page.jpg"><img src="/assets/images/bills-of-mortality/page.jpg" alt="Bills of Mortality - Page" style="max-width: 500px" /></a></p>
+
+<p>If you are also interested in this subject or just want to explore what killed Londoners between the years 1657 and 1758, you can download the complete dataset here <cite><a href="https://s3.amazonaws.com/cgcdn-misc/yearly_bills_of_mortality_1657_1758.zip">CSV file</a></cite>. Additionally, I uploaded the data to <cite><a href="https://public.tableau.com/profile/curious.gnu#!/vizhome/YearlyBillsofMortality1657-1758/Dashboard1">Tableau Public</a></cite>; you can try it out in the interactive graph below. Please note that I of course cannot guarantee the accuracy of the dataset.</p>
+
+<div class="tableauPlaceholder" id="viz1487713662489" style="position: relative"><noscript><a href="https:&#47;&#47;www.curiousgnu.com"><img alt="Dashboard 1 " src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ye&#47;YearlyBillsofMortality1657-1758&#47;Dashboard1&#47;1_rss.png" style="border: none" /></a></noscript><object class="tableauViz" style="display:none;"><param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" /> <param name="site_root" value="" /><param name="name" value="YearlyBillsofMortality1657-1758&#47;Dashboard1" /><param name="tabs" value="no" /><param name="toolbar" value="no" /><param name="static_image" value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ye&#47;YearlyBillsofMortality1657-1758&#47;Dashboard1&#47;1.png" /> <param name="animate_transition" value="yes" /><param name="display_static_image" value="yes" /><param name="display_spinner" value="yes" /><param name="display_overlay" value="yes" /><param name="display_count" value="yes" /></object></div>
+<script type="text/javascript"> var divElement = document.getElementById('viz1487713662489'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement); </script>
+<p><br /></p>
+
+<p>In case the graph does not work in your browser, please use this direct link <cite><a href="https://public.tableau.com/profile/curious.gnu#!/vizhome/YearlyBillsofMortality1657-1758/Dashboard1">public.tableau.com</a></cite>. If you have questions or concerns, feel free to write me an <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#099;&#117;&#114;&#105;&#111;&#117;&#115;&#103;&#110;&#117;&#046;&#099;&#111;&#109;">email</a>.</p>
+
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>
