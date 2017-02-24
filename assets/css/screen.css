@@ -877,9 +877,9 @@ body.nav-opened .nav {
 .page-title-box {
     border: 3px solid #334475;
     padding: 0.75rem 1.5rem;
-    -moz-border-image: -moz-linear-gradient(top, #5a76cc 0%, #334475 100%);
-    -webkit-border-image: -webkit-linear-gradient(top, #5a76cc 0%, #334475 100%);
-    border-image: linear-gradient(to bottom, #5a76cc 0%, #334475 100%);
+    -moz-border-image: -moz-linear-gradient(top, #334475 0%, #0b0f1a 100%);
+    -webkit-border-image: -webkit-linear-gradient(top, #334475 0%, #0b0f1a 100%);
+    border-image: linear-gradient(to bottom, #334475 0%, #0b0f1a 100%);
     border-image-slice: 1;
 }
 
