@@ -1765,7 +1765,7 @@ body:not(.post-template) .post-title {
     }
 
     .no-cover.post-head.main-header {
-        height: 75px;
+        height: 110px;
         padding: 0;
     }
 
@@ -1807,6 +1807,10 @@ body:not(.post-template) .post-title {
 
     .no-cover.main-header {
         height: 30vh;
+    }
+
+    .no-cover.post-head.main-header {
+        height: 40px;
     }
 
     .archive-template .main-header {
