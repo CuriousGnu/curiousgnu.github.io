@@ -12,6 +12,79 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>Text Analysis of YouTube Comments</title>
+	  <link>//youtube-comments-text-analysis</link>
+	  <author>CuriousGnu</author>
+	  <pubDate>2017-02-28T11:00:00+01:00</pubDate>
+	  <guid>//youtube-comments-text-analysis</guid>
+	  <description><![CDATA[
+	     <p>According to <cite><a href="http://www.alexa.com/topsites">Alexa.com</a></cite>, an Amazon subsidiary that analysis web traffic, YouTube is the world’s most popular social media site. Its user numbers even exceed those of web giants such as Facebook or Wikipedia. Over the past twelve years, YouTube has become a diverse platform where users can find and watch videos in a wide variety of genres, from cute cats to recorded university lectures.</p>
+
+<p>Even though user comments are an integral part of the YouTube community, the comment section is also infamous as a home for trolls, negativity, and insults. For me, the broad acceptance of YouTube makes its user comments an interesting subject that’s worth a closer look. My plan for this post is to use text analysis to find out more about YouTube comments and determine whether they differ among certain categories.</p>
+
+<h4 id="dataset">Dataset</h4>
+<p>To download a large set of YouTube comments, I used a Python script that uses the official <cite><a href="https://developers.google.com/youtube/v3/">YouTube API</a></cite>, which (fortunately) offers generous API limits, allowing us to gather hundreds of thousands of individual comments. For this analysis, I decided to download only comments that refer to one of twenty selected channels in one of the following four categories: comedy, science, TV, and news &amp; politics (see table below). I used Socialblade’s <cite><a href="http://socialblade.com/youtube/top/100">YouTube top list</a></cite> as a guideline. However, I also took the liberty of excluding some channels that didn’t fit the category or targeted non-English-speaking viewers.</p>
+
+<table style="font-size:14px">
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Channels</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>comedy</td>
+      <td>PewDiePie, SMOSH, CollegeHumor, FailArmy, JennaMarbles</td>
+    </tr>
+    <tr>
+      <td>science</td>
+      <td>AsapSCIENCE, SciShow, Numberphile, ScienceChannel, Veritasium</td>
+    </tr>
+    <tr>
+      <td>TV</td>
+      <td>Jimmy Fallon, Conan, James Corden,  Jimmy Kimmel, TheEllenShow</td>
+    </tr>
+    <tr>
+      <td>news &amp; politics</td>
+      <td>TYT, ABCNews, CNN, Infowars, Vox</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Of these channels, the 25 most-watched videos between the years 2015 and 2016 were identified. For each of these videos, up to 500 of the most relevant comments were downloaded. Users responding to other users were ignored to ensure that each comment was an independent contribution. After letting the Python script run for about 1 hour, I ended up with a dataset containing just over 350,000 comments. You can find the script and the R script for the following analysis here: <a href="https://s3.amazonaws.com/cgcdn-misc/yt_comments_code.zip">yt_comments_code.zip</a>.</p>
+
+<h4 id="analysis">Analysis</h4>
+<p>For the analysis, I switched from Python to R so that I could use the <cite><a href="https://cran.r-project.org/web/packages/quanteda/">quanteda</a></cite> package, a handy toolset for quantitative text analysis. First, I generated a comparison word cloud for the four previously defined categories. In contrast to a traditional world cloud, in which the font sizes represent the words’ numbers of occurrences, a comparison word cloud illustrates which words are primarily used in specific categories. Therefore, the text size is linked to a word’s maximum deviation from its rate of occurrence in a category and the average across all comments.</p>
+
+<p><a href="/assets/images/youtube-comments/wordcloud.png"><img src="/assets/images/youtube-comments/wordcloud.png" alt="YouTube Comments Wordcloud" style="max-width: 600px" /></a></p>
+
+<p>The comparison word cloud shows that while viewers of news videos commented on political and social issues (e.g., <em>trump</em>, <em>racist</em>), comments on videos in the TV category contained more positive words (e.g., <em>love</em>, <em>funny</em>, <em>lol</em>). Furthermore, presumably topic-related keywords characterized comments from the science channels, while the use of profanity appears to be more prevalent in the comment sections of comedy videos.</p>
+
+<p>These findings lead to the question: do viewers’ contributions significantly differ across the four categories regarding complexity and the use of profanity? A readability measurement like <cite><a href="https://en.wikipedia.org/wiki/SMOG">SMOG</a></cite> could be used to measure the complexity of a text. Even though such formulas are sometimes used on text snippets like tweets (e.g., <cite><a href="http://time.com/2958650/twitter-reading-level/">Times</a></cite>), I’m not convinced that it is an appropriate approach because brief internet comments and tweets differ substantially from the newspaper articles and business writing for which most of these measurements were originally designed.</p>
+
+<p>Therefore, I chose a much simpler approach by using the word count of a comment as an indicator for the comment’s complexity. While this indicator cannot, of course, account for the actual context of a comment, it can be a rough estimate of how much effort a viewer put into commenting on a video. Regarding the use of profanity, a comment was classified as profane if it contained at least one profane word. The source of the used swear-word list is <a href="http://www.noswearing.com/dictionary">noswearing.com</a>. The following bar chart shows the average word length for the four categories and the share of profane comments.</p>
+
+<p><a href="/assets/images/youtube-comments/bar_chart_01.png"><img src="/assets/images/youtube-comments/bar_chart_01.png" alt="YouTube Comments Bar Chart 1" style="max-width: 500px" /></a></p>
+
+<p>We can see that the average comments on videos in the science and news channels are 20 and 24 words respectively, or about twice as long as the comments on videos in the TV and comedy category. With 15% of profane comments, the news channels have the highest share of profanity, whereas the science channels have the lowest rate, at just 5%. Furthermore, a Kruskal-Wallis test and chi-squared test (+post hoc tests) confirmed that the found differences are statistically significant.</p>
+
+<p>Next, a sentiment analysis was used to determine the polarity of the comments, thereby classifying whether they are positive, negative, or neutral. For this analysis, I employed the <cite><a href="https://cran.r-project.org/web/packages/syuzhet/">Syuzhet</a></cite> R-package, which uses a straightforward knowledge-based technique based on lexicons, which are collections of positive and negative words. In the settings, I chose the <cite><a href="https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html">bing</a></cite> lexicon by Minqing Hu and Bing Liu. The next bar chart shows what many percentage of the comments in each category are classified as positive, negative, or neutral.</p>
+
+<p><a href="/assets/images/youtube-comments/bar_chart_02.png"><img src="/assets/images/youtube-comments/bar_chart_02.png" alt="YouTube Comments Bar Chart 2" style="max-width: 700px" /></a></p>
+
+<p>The news category, at 38%, has not only the highest share of negative comments, but also the lowest percentage (36%) of neutral comments. Considering that political issues are often polarizing topics, this result seems to be reasonable. Interestingly, the TV category, with 32% and 21%, has the highest share of positive and the lowest share of negative comments respectively.</p>
+
+<h4 id="summary">Summary</h4>
+<p>Overall, the analysis of over 350,000 comments shows that their style and content differs substantially across certain YouTube categories. While the average comments on videos about news and politics are longer than comments on other types of content, they also contain significantly more profanity and negativity. Compared to this category, science channels attract comments that are roughly as long, but contain much less profanity. Surprisingly, the comments in the TV category are largely family-friendly and positive. One explanation might be that these channels moderate the comments more strictly than the average news or comedy YouTubers.</p>
+
+<p>If you have any questions or concerns about this post, feel free to write me an <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#099;&#117;&#114;&#105;&#111;&#117;&#115;&#103;&#110;&#117;&#046;&#099;&#111;&#109;">email</a>.</p>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>Dataset: Yearly Bills of Mortality from 1657 to 1758</title>
 	  <link>//yearly-bills-of-mortality-1657-1758</link>
 	  <author>CuriousGnu</author>
@@ -468,42 +541,6 @@ e$end &lt;- as.numeric(as.data.frame(e$when)[2,])
 ggplot(e, aes(colour=e$character)) + 
   geom_segment(aes(x=e$start, xend=e$end, y=e$character, yend=e$character), size=5)
 </code></pre>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>Which illicit drugs do Chicagoans take?</title>
-	  <link>//chicago-drugs</link>
-	  <author>CuriousGnu</author>
-	  <pubDate>2016-05-27T03:00:00+02:00</pubDate>
-	  <guid>//chicago-drugs</guid>
-	  <description><![CDATA[
-	     <p>In one of my <a href="http://www.curiousgnu.com/cryptomarkets-lsd-sales">previous blog articles</a>, I wrote about how drug dealers use the darknet to sell their products. For this post, I will use police reports to show you more about drug possession in the real world. I chose the city of Chicago because they make all reported incidents of crime available through their <a href="https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-present/ijzp-q8t2">open data platform</a> which is the basis for the following analysis.</p>
-
-<h5 id="what-are-the-most-common-drugs">What are the most common drugs?</h5>
-
-<p>First, I took all reported incidents of drug possession since 2001 and checked how the numbers have changed over the past 15 years. The following graph shows the number of reported incidents by year and substance. The number of incidents of <em>cannabis</em> possessions peaked at more than 23k in 2010 and then decreased by nearly 55%, landing at 11k in 2015. Reported incidents related to the possession of <em>crack cocaine</em> continuously declined over the years, making heroin the second most common drug since 2010. It should be noted that these numbers only refer to the reported incidents of drug possession and not the actual drug consumption.</p>
-
-<p><a href="/assets/images/chicago-drugs/possession_15_hd.png"><img src="/assets/images/chicago-drugs/possession_01_15.gif" alt="Drug Possession 2001-2015" style="max-width: 100%" /></a></p>
-
-<p>The map on the right shows hot spots in Chicago where many of the incidents took place. This heat map is based on the density of the incidents. In the recent years, we can see a higher concentration of the reports on the West Side.</p>
-
-<h5 id="do-drug-preferences-differ-between-areas">Do drug preferences differ between areas?</h5>
-
-<p>Next, I wanted to find out if some drugs are more popular in certain areas than the others. To do this, I created three new heat maps for the possession of <em>cocaine</em>, <em>heroin</em>, and <em>cannabis</em>. As we can see below, there seems to be a difference between the three substances:</p>
-
-<p><a href="/assets/images/chicago-drugs/map_grid.jpg"><img src="/assets/images/chicago-drugs/map_grid.jpg" alt="Possession by Community Areas" /></a></p>
-
-<p>To find an explanation for the local differences, I downloaded <a href="https://datahub.cmap.illinois.gov/dataset/community-data-snapshots-raw-data-2015/resource/8c4e096e-c90c-4bef-9cf1-9028d094296e">census data</a> on a community area level. We can use this data to explore how the community areas differ from each other in factors like education, income, race, or unemployment. If we plot this data in a map format and compare them to the previous heat maps, it shows that there could be a connection between them and the possession of certain drugs.</p>
-
-<p>Judging by the looks of graphs is of course, not an appropriate method, which is why I also used a spatial regression to test how education, income, race, and unemployment relates to the reported possession of cocaine, heroin, and cannabis. The depended variables are the percentage of reported incidents based on the total population of the community area in which they occurred.</p>
-
-<p>The results below show that reported cannabis possession is lower in community areas with a higher median income and education. For heroin, we see similar results with the exception that median income is not a significant factor but median age is. For cocaine, the only two significant variables are the relative shares of the Black and Hispanic population. Apparently more incidents of cocaine possession happen in areas with bigger Black and Hispanic populations.</p>
-
-<p><a href="/assets/images/chicago-drugs/regression_table.png"><img src="/assets/images/chicago-drugs/regression_table.png" alt="Regression Results" style="max-width: 640px" /></a></p>
-
-<p>If you have any suggestion or tips for future articles, please feel free to contact me by <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#099;&#117;&#114;&#105;&#111;&#117;&#115;&#103;&#110;&#117;&#046;&#099;&#111;&#109;">email</a> or <a href="https://www.reddit.com/user/CuriousGnu/">Reddit message</a>.</p>
 
 	  ]]></description>
 	</item>
