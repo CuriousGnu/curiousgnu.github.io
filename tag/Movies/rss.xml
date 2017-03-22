@@ -31,8 +31,8 @@
   <thead>
     <tr>
       <th>#</th>
-      <th>Chick Flicks (% female votes)</th>
       <th>Guy Movies (% female votes)</th>
+      <th>Chick Flicks (% female votes)</th>
     </tr>
   </thead>
   <tbody>
