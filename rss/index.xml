@@ -8,6 +8,127 @@
     
       
       <item>
+        <title>Analyzing Subtitles - Chick Flick or Guy Movie?</title>
+          <description>
+            &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;https://www.curiousgnu.com/assets/images/subtitles-target-audience/cover.jpg&quot;  alt=&quot;Cover Image&quot; /&gt;
+            &lt;p&gt;Romantic comedy or action movie? While this cliché certainly oversimplifies the differences in movie preferences between men and women, it is common knowledge that certain movie genres primarily target one gender. The colloquial term &lt;em&gt;chick flick&lt;/em&gt; refers to movies targeted to a female audience whereas &lt;em&gt;guy movies&lt;/em&gt; are mainly aimed at male viewers. For example, a study found that female viewers have a stronger preference for movies with happier themes than their male counterparts (&lt;cite&gt;&lt;a href=&quot;http://dx.doi.org/10.1027/1864-1105.20.3.97&quot;&gt;Banerjee et al., 2008&lt;/a&gt;&lt;/cite&gt;).&lt;/p&gt;
+
+&lt;p&gt;For this post, my goal is to investigate how &lt;em&gt;chick flicks&lt;/em&gt;, and &lt;em&gt;guy movies&lt;/em&gt; differ regarding the words spoken. As obtaining the original scripts is rather difficult, I decided to analyze the movies’ subtitles instead, which were available from &lt;cite&gt;&lt;a href=&quot;https://www.amazon.com/s/?rh=n%3A7589478011%2Cn%3A2858905011%2Cp_n_consumption_type%3A9052272011%2Cp_n_feature_fourteen_browse-bin%3A2654454011%2Cp_n_ways_to_watch%3A12007867011%2Cp_n_feature_twelve_browse-bin%3A5824772011&quot;&gt;Amazon Video&lt;/a&gt;&lt;/cite&gt;. At the end of this post, you will find a brief description of how subtitles can be downloaded from the Amazon website. Since subtitles are protected by copyright, please understand that I cannot share the files that I used in this project.&lt;/p&gt;
+
+&lt;h4 id=&quot;data&quot;&gt;Data&lt;/h4&gt;
+&lt;p&gt;I downloaded the subtitles of the &lt;strong&gt;top 1,000&lt;/strong&gt; &lt;cite&gt;&lt;a href=&quot;https://www.amazon.com/s/?rh=n%3A7589478011%2Cn%3A2858905011%2Cp_n_consumption_type%3A9052272011%2Cp_n_feature_fourteen_browse-bin%3A2654454011%2Cp_n_ways_to_watch%3A12007867011%2Cp_n_feature_twelve_browse-bin%3A5824772011&quot;&gt;Amazon Video bestsellers&lt;/a&gt;&lt;/cite&gt; (7th March, 2017) and gathered additional information from &lt;cite&gt;&lt;a href=&quot;https://www.imdb.com&quot;&gt;IMDb&lt;/a&gt;&lt;/cite&gt;. To determine whether a film is targeted at a male or female audience, I used the proportion of women votes on the IMDb score. In this sample, women make up on average about &lt;strong&gt;one-quarter&lt;/strong&gt; of all gender votes.&lt;/p&gt;
+
+&lt;p&gt;25% of the movies with the lowest share of female votes were defined as &lt;em&gt;guy movies&lt;/em&gt; while the top 25% were defined as &lt;em&gt;chick flicks&lt;/em&gt;. Next, I removed movies with less than 1,000 total votes to ensure a fair comparison. Considering the rather vague definition of these two terms, I believe that this approach is sufficient for this context. The following table shows the top ten movies for each category:&lt;/p&gt;
+
+&lt;table style=&quot;font-size:14px&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;#&lt;/th&gt;
+      &lt;th&gt;Chick Flicks (% female votes)&lt;/th&gt;
+      &lt;th&gt;Guy Movies (% female votes)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Never Back Down: No Surrender (3.8%)&lt;/td&gt;
+      &lt;td&gt;Northanger Abbey (81.7%)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;Justice League Dark (4.8%)&lt;/td&gt;
+      &lt;td&gt;Persuasion (72.3%)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;Dragon Ball Z: Resurrection (5.1%)&lt;/td&gt;
+      &lt;td&gt;The Last Song (65.4%)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;Batman: Bad Blood (5.2%)&lt;/td&gt;
+      &lt;td&gt;The Princess Diaries 2 (64.1%)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;Justice League: Throne of Atlantis (5.6%)&lt;/td&gt;
+      &lt;td&gt;Something Borrowed (62.6%)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;Kill Command (5.7%)&lt;/td&gt;
+      &lt;td&gt;Letters To Juliet (62.5%)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;Justice League vs. Teen Titans (6.3%)&lt;/td&gt;
+      &lt;td&gt;Ever After: A Cinderella Story (60.7%)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;Headshot (6.4%)&lt;/td&gt;
+      &lt;td&gt;Little Women (59.7%)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;We Were Soldiers (6.6%)&lt;/td&gt;
+      &lt;td&gt;27 Dresses (58.5%)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;Predator (6.7%)&lt;/td&gt;
+      &lt;td&gt;The Young Victoria (58.2%)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;analysis&quot;&gt;Analysis&lt;/h4&gt;
+&lt;p&gt;First, I used the ‘&lt;cite&gt;&lt;a href=&quot;https://cran.r-project.org/web/packages/wordcloud/&quot;&gt;&lt;em&gt;wordcloud&lt;/em&gt;&lt;/a&gt;&lt;/cite&gt;’ package in R to plot a comparison word cloud, which highlights the words that were heavily used in one of the two categories. To remove movie specific words, such as character names, I dropped all words from the sample that were not in at least three different movie subtitles.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/subtitles-target-audience/wordcloud.png&quot;&gt;&lt;img src=&quot;/assets/images/subtitles-target-audience/wordcloud.png&quot; alt=&quot;Subtitles Wordcloud&quot; style=&quot;max-width: 600px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The more frequent use of profane language in &lt;em&gt;guy movies&lt;/em&gt; and the higher use of positive words in &lt;em&gt;chick flicks&lt;/em&gt; is in line with the assumption that women prefer relationship movies while men are more interested in thriller and action genres. A quick sentiment analysis performed through the ‘&lt;cite&gt;&lt;a href=&quot;https://cran.r-project.org/web/packages/sentimentr/&quot;&gt;&lt;em&gt;sentimentr&lt;/em&gt;&lt;/a&gt;&lt;/cite&gt;’ R-package confirms that movies targeted at a female audience are slightly more positive than movies produced for a male audience.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/subtitles-target-audience/sentiment.png&quot;&gt;&lt;img src=&quot;/assets/images/subtitles-target-audience/sentiment.png&quot; alt=&quot;Subtitles Sentiment&quot; style=&quot;max-width: 500px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;These results show that the use of certain words differs significantly between the two categories. Furthermore, these findings suggest that we can use subtitles to determine whether a movie is more likely to target a male or female audience. As this is a traditional text classification problem, a wide variety of machine learning algorithms exist, such as &lt;cite&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Support_vector_machine&quot;&gt;support vector machines&lt;/a&gt;&lt;/cite&gt;, &lt;cite&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Naive_Bayes_classifier&quot;&gt;naive Bayes classifiers&lt;/a&gt;&lt;/cite&gt;, or &lt;cite&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Boosting_(machine_learning)&quot;&gt;boosting classifiers&lt;/a&gt;&lt;/cite&gt;, which could be applied.&lt;/p&gt;
+
+&lt;p&gt;Even though some of these algorithms would probably be more accurate and robust for this task, I used a &lt;cite&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Decision_tree_learning&quot;&gt;classification tree&lt;/a&gt;&lt;/cite&gt; model (‘&lt;cite&gt;&lt;a href=&quot;https://cran.r-project.org/web/packages/rpart/index.html&quot;&gt;&lt;em&gt;rpart&lt;/em&gt;&lt;/a&gt;&lt;/cite&gt;’, R-package) because it produces results that are easy to understand and apply. The goal of this method is to derive a set of rules from input variables that can predict which class an item belongs to. In this case, the input variables for each movie are the numbers of occurrences of each word stem. The target category is either &lt;em&gt;chick flick&lt;/em&gt; or &lt;em&gt;guy movie&lt;/em&gt;. The following tree is based on a randomly selected training set.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/subtitles-target-audience/tree.png&quot;&gt;&lt;img src=&quot;/assets/images/subtitles-target-audience/tree.png&quot; alt=&quot;Subtitles Regression Tree&quot; style=&quot;max-width: 500px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;According to this model, if the word stem ‘&lt;strong&gt;&lt;em&gt;love&lt;/em&gt;&lt;/strong&gt;’ appears more than 11 times in the subtitles and ‘&lt;strong&gt;&lt;em&gt;gun&lt;/em&gt;&lt;/strong&gt;’ is only used once, the movie is most likely targeted at women. However, if ‘&lt;strong&gt;&lt;em&gt;love&lt;/em&gt;&lt;/strong&gt;’ occurs no more than 11 times in the subtitles and ‘&lt;strong&gt;&lt;em&gt;hell&lt;/em&gt;&lt;/strong&gt;’ at least once, the movie is probably produced for a male audience. When applied to the test set, this model predicts &lt;strong&gt;82%&lt;/strong&gt; of the categories correctly. This is significantly higher than the &lt;strong&gt;54%&lt;/strong&gt; no information rate, which is the percentage of the largest class in the training set.&lt;/p&gt;
+
+&lt;p&gt;Overall, I think it is quite interesting to see how the results support the assumption about typical &lt;em&gt;chick flicks&lt;/em&gt; and &lt;em&gt;guy movies&lt;/em&gt;. Knowing that gender specific movies are a controversial topic for some people, I hope that no one is offended by this post or my choice of words as this is unintentional.&lt;/p&gt;
+
+&lt;h5 id=&quot;download-subtitles-from-amazon-video&quot;&gt;Download Subtitles from Amazon Video&lt;/h5&gt;
+&lt;p&gt;Amazon Video offers high quality subtitles that can be downloaded in the &lt;cite&gt;&lt;a href=&quot;https://www.w3.org/TR/2006/CR-ttaf1-dfxp-20061116/&quot;&gt;&lt;em&gt;DFXP format&lt;/em&gt;&lt;/a&gt;&lt;/cite&gt; using Google Chrome’s Developer Tools. To get the subtitles, you need to start streaming the requested movie. Therefore, being a Prime member is very helpful as it includes free access to a large portion of the video content. Otherwise, gathering the subtitles for a large sample of movies could become rather expensive.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/subtitles-target-audience/screenshot.png&quot;&gt;&lt;img src=&quot;/assets/images/subtitles-target-audience/screenshot.png&quot; alt=&quot;Subtitles Screenshot&quot; style=&quot;max-width: 668px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Visit the movie’s product page (e.g. &lt;cite&gt;&lt;a href=&quot;https://www.amazon.com/dp/B01CUVU7DQ/&quot;&gt;amazon.com/dp/B01CUVU7DQ&lt;/a&gt;&lt;/cite&gt;)&lt;/li&gt;
+  &lt;li&gt;Open &lt;em&gt;Developer Tools&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Select the &lt;em&gt;Network&lt;/em&gt; tab&lt;/li&gt;
+  &lt;li&gt;Click the &lt;em&gt;Watch Now&lt;/em&gt; button&lt;/li&gt;
+  &lt;li&gt;Type ‘subtitle’ into the search bar&lt;/li&gt;
+  &lt;li&gt;Select &lt;em&gt;GetPlaybackResources?…&lt;/em&gt; and open the &lt;em&gt;Preview&lt;/em&gt; tab&lt;/li&gt;
+  &lt;li&gt;Open the URL under [subtitleURLs &amp;gt; 0 &amp;gt; url]&lt;/li&gt;
+  &lt;li&gt;Done!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;If you have any questions or concerns about this post, feel free to write me an &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#097;&amp;#099;&amp;#116;&amp;#064;&amp;#099;&amp;#117;&amp;#114;&amp;#105;&amp;#111;&amp;#117;&amp;#115;&amp;#103;&amp;#110;&amp;#117;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
+
+
+          </description>
+        <pubDate>Wed, 22 Mar 2017 03:00:00 +0100</pubDate>
+        <link>https://www.curiousgnu.com/subtitles-target-audience</link>
+        <guid isPermaLink="true">https://www.curiousgnu.com/subtitles-target-audience</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Text Analysis of YouTube Comments</title>
           <description>
             &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;https://www.curiousgnu.com/assets/images/youtube-comments/cover.jpg&quot;  alt=&quot;Cover Image&quot; /&gt;
