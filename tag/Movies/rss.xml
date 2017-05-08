@@ -124,7 +124,7 @@
   <li>Done!</li>
 </ol>
 
-<p>If you have any questions or concerns about this post, feel free to write me an <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#099;&#117;&#114;&#105;&#111;&#117;&#115;&#103;&#110;&#117;&#046;&#099;&#111;&#109;">email</a>.</p>
+<p>If you have any questions or concerns about this post, feel free to write me an <a href="mailto:contact@curiousgnu.com">email</a>.</p>
 
 
 	  ]]></description>
@@ -209,7 +209,7 @@
 
 <p><a href="/assets/images/age-differences-celebrity-couples/regression.png"><img src="/assets/images/age-differences-celebrity-couples/regression.png" alt="Couples - Pirate Regression" style="max-width:600px" /></a></p>
 
-<p>Overall, the data shows that the often criticized age difference among movie couples may not be too far from reality, or at least the reality of some celebrities. If you have questions or concerns, feel free to write me an <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#099;&#117;&#114;&#105;&#111;&#117;&#115;&#103;&#110;&#117;&#046;&#099;&#111;&#109;">email</a>.</p>
+<p>Overall, the data shows that the often criticized age difference among movie couples may not be too far from reality, or at least the reality of some celebrities. If you have questions or concerns, feel free to write me an <a href="mailto:contact@curiousgnu.com">email</a>.</p>
 
 
 	  ]]></description>
@@ -247,34 +247,51 @@
 
 <h4 id="how-to-get-x-ray-data">How to Get X-Ray Data?</h4>
 
-<p>The X-Ray feature is based on an unencrypted JSON file which can be downloaded with the Chrome browser. Unfortunately, those files are not publicly available (signed CloudFront URL), meaning that you have to start streaming the movie before you can download the file. This also means that you are limited to the content included in your Prime subscription, or you need to rent/buy the movies in which you are interested. Nevertheless, I think it is still an interesting source, especially when you consider the alternatives.</p>
+<p>The X-Ray feature is based on an unencrypted JSON file that can be downloaded with the Chrome browser. Unfortunately, those files are not publicly available, meaning that you have to start streaming the movie before you can download the file. This also means that you are limited to the content included in your Prime subscription, or you need to rent/buy the movies in which you are interested. Nevertheless, I think it is still an interesting source, especially when you consider the alternatives. <strong>Update:</strong> On 8 May 2017, I updated this part of the blog post.</p>
 
 <ol>
   <li>Start Developer Tools: Menu &gt; Tools &gt; Developer Tools</li>
-  <li>Start streaming a video &amp; close the player after a few seconds</li>
+  <li>Open the movie’s product page</li>
   <li>Select the following Developer Tools settings:</li>
 </ol>
 
-<p><a href="/assets/images/movie-character-screen-time/devtools.png"><img src="/assets/images/movie-character-screen-time/devtools.png" alt="DevTools Settings" /></a></p>
+<p><a href="/assets/images/movie-character-screen-time/devtools_2.png"><img src="/assets/images/movie-character-screen-time/devtools_2.png" alt="DevTools Settings" style="max-width: 580px" /></a></p>
 
 <ol>
   <li>Click on the gray record button to capture the network traffic</li>
-  <li>Start streaming the video again</li>
-  <li>Now the following file should appear: <em>data.json?Expires=</em></li>
-  <li>Right-click on the file &gt; Open Link in New Tab &gt; Save Page As…</li>
+  <li>Reload the product page</li>
+  <li>The following file should appear: <em>xray?firmware…</em></li>
+  <li>Right-click on the file &gt; Copy &gt; Copy Link Address</li>
+  <li>Download the file to your computer</li>
 </ol>
 
-<p>Then you can use in R the <a href="https://cran.r-project.org/web/packages/jsonlite/index.html"><em>jsonlite</em></a> package to load the JSON file and then do, for example, something like this:</p>
+<p>Now you can use the following Python code to generate a convenient <em>CSV</em> file from the downloaded <em>.json</em> file (e.g., xray.json).</p>
 
-<pre><code>library(jsonlite)
-library(ggplot2)
+<pre><code>import json
+import re
+import csv
 
-data &lt;- fromJSON("starwars.json", flatten = TRUE)
-e &lt;- data$resource$events
-e$start &lt;- as.numeric(as.data.frame(e$when)[1,])
-e$end &lt;- as.numeric(as.data.frame(e$when)[2,])
-ggplot(e, aes(colour=e$character)) + 
-  geom_segment(aes(x=e$start, xend=e$end, y=e$character, yend=e$character), size=5)
+with open('xray.json') as data:
+    data = json.load(data)
+
+scenes = data['page']['sections']['left']['widgets']['widgetList']
+scenes = scenes[0]['widgets']['widgetList'][1]['partitionedChangeList']
+
+with open('xray.csv', 'wb') as out:
+    w = csv.writer(out)
+    w.writerow(['nconst', 'character', 'start', 'end'])
+    for s in scenes:
+        start = s['timeRange']['startTime']
+        end = s['timeRange']['endTime']
+        for init in s['initialItemIds']:
+            rd = re.search('/name/(nm.+)/(.+)', init)
+            if rd is not None:
+                w.writerow([rd.group(1), rd.group(2), start, end])
+        for item in s['changesCollection']:
+            rd = re.search('/name/(nm.+)/(.+)', item['itemId'])
+            if rd is not None:
+                iStart = item['timePosition']
+                w.writerow([rd.group(1), rd.group(2), iStart, end])
 </code></pre>
 
 	  ]]></description>

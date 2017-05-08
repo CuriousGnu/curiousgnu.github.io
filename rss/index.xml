@@ -117,7 +117,7 @@
   &lt;li&gt;Done!&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;If you have any questions or concerns about this post, feel free to write me an &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#097;&amp;#099;&amp;#116;&amp;#064;&amp;#099;&amp;#117;&amp;#114;&amp;#105;&amp;#111;&amp;#117;&amp;#115;&amp;#103;&amp;#110;&amp;#117;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you have any questions or concerns about this post, feel free to write me an &lt;a href=&quot;mailto:contact@curiousgnu.com&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
 
 
           </description>
@@ -192,7 +192,7 @@
 &lt;h4 id=&quot;summary&quot;&gt;Summary&lt;/h4&gt;
 &lt;p&gt;Overall, the analysis of over 350,000 comments shows that their style and content differs substantially across certain YouTube categories. While the average comments on videos about news and politics are longer than comments on other types of content, they also contain significantly more profanity and negativity. Compared to this category, science channels attract comments that are roughly as long, but contain much less profanity. Surprisingly, the comments in the TV category are largely family-friendly and positive. One explanation might be that these channels moderate the comments more strictly than the average news or comedy YouTubers.&lt;/p&gt;
 
-&lt;p&gt;If you have any questions or concerns about this post, feel free to write me an &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#097;&amp;#099;&amp;#116;&amp;#064;&amp;#099;&amp;#117;&amp;#114;&amp;#105;&amp;#111;&amp;#117;&amp;#115;&amp;#103;&amp;#110;&amp;#117;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you have any questions or concerns about this post, feel free to write me an &lt;a href=&quot;mailto:contact@curiousgnu.com&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
 
 
           </description>
@@ -220,10 +220,10 @@
 &lt;p&gt;If you are also interested in this subject or just want to explore what killed Londoners between the years 1657 and 1758, you can download the complete dataset here &lt;cite&gt;&lt;a href=&quot;https://s3.amazonaws.com/cgcdn-misc/yearly_bills_of_mortality_1657_1758.zip&quot;&gt;CSV file&lt;/a&gt;&lt;/cite&gt;. Additionally, I uploaded the data to &lt;cite&gt;&lt;a href=&quot;https://public.tableau.com/profile/curious.gnu#!/vizhome/YearlyBillsofMortality1657-1758/Dashboard1&quot;&gt;Tableau Public&lt;/a&gt;&lt;/cite&gt;; you can try it out in the interactive graph below. Please note that I of course cannot guarantee the accuracy of the dataset.&lt;/p&gt;
 
 &lt;div class=&quot;tableauPlaceholder&quot; id=&quot;viz1487713662489&quot; style=&quot;position: relative&quot;&gt;&lt;noscript&gt;&lt;a href=&quot;https:&amp;#47;&amp;#47;www.curiousgnu.com&quot;&gt;&lt;img alt=&quot;Dashboard 1 &quot; src=&quot;https:&amp;#47;&amp;#47;public.tableau.com&amp;#47;static&amp;#47;images&amp;#47;Ye&amp;#47;YearlyBillsofMortality1657-1758&amp;#47;Dashboard1&amp;#47;1_rss.png&quot; style=&quot;border: none&quot; /&gt;&lt;/a&gt;&lt;/noscript&gt;&lt;object class=&quot;tableauViz&quot; style=&quot;display:none;&quot;&gt;&lt;param name=&quot;host_url&quot; value=&quot;https%3A%2F%2Fpublic.tableau.com%2F&quot; /&gt; &lt;param name=&quot;site_root&quot; value=&quot;&quot; /&gt;&lt;param name=&quot;name&quot; value=&quot;YearlyBillsofMortality1657-1758&amp;#47;Dashboard1&quot; /&gt;&lt;param name=&quot;tabs&quot; value=&quot;no&quot; /&gt;&lt;param name=&quot;toolbar&quot; value=&quot;no&quot; /&gt;&lt;param name=&quot;static_image&quot; value=&quot;https:&amp;#47;&amp;#47;public.tableau.com&amp;#47;static&amp;#47;images&amp;#47;Ye&amp;#47;YearlyBillsofMortality1657-1758&amp;#47;Dashboard1&amp;#47;1.png&quot; /&gt; &lt;param name=&quot;animate_transition&quot; value=&quot;yes&quot; /&gt;&lt;param name=&quot;display_static_image&quot; value=&quot;yes&quot; /&gt;&lt;param name=&quot;display_spinner&quot; value=&quot;yes&quot; /&gt;&lt;param name=&quot;display_overlay&quot; value=&quot;yes&quot; /&gt;&lt;param name=&quot;display_count&quot; value=&quot;yes&quot; /&gt;&lt;/object&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt; var divElement = document.getElementById(&#39;viz1487713662489&#39;); var vizElement = divElement.getElementsByTagName(&#39;object&#39;)[0]; vizElement.style.width=&#39;100%&#39;;vizElement.style.height=(divElement.offsetWidth*0.75)+&#39;px&#39;; var scriptElement = document.createElement(&#39;script&#39;); scriptElement.src = &#39;https://public.tableau.com/javascripts/api/viz_v1.js&#39;; vizElement.parentNode.insertBefore(scriptElement, vizElement); &lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt; var divElement = document.getElementById('viz1487713662489'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement); &lt;/script&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;In case the graph does not work in your browser, please use this direct link &lt;cite&gt;&lt;a href=&quot;https://public.tableau.com/profile/curious.gnu#!/vizhome/YearlyBillsofMortality1657-1758/Dashboard1&quot;&gt;public.tableau.com&lt;/a&gt;&lt;/cite&gt;. If you have questions or concerns, feel free to write me an &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#097;&amp;#099;&amp;#116;&amp;#064;&amp;#099;&amp;#117;&amp;#114;&amp;#105;&amp;#111;&amp;#117;&amp;#115;&amp;#103;&amp;#110;&amp;#117;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In case the graph does not work in your browser, please use this direct link &lt;cite&gt;&lt;a href=&quot;https://public.tableau.com/profile/curious.gnu#!/vizhome/YearlyBillsofMortality1657-1758/Dashboard1&quot;&gt;public.tableau.com&lt;/a&gt;&lt;/cite&gt;. If you have questions or concerns, feel free to write me an &lt;a href=&quot;mailto:contact@curiousgnu.com&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
 
 
           </description>
@@ -248,7 +248,7 @@
 
 &lt;p&gt;&lt;a href=&quot;/assets/images/manhattan-traffic-collisions/line_charts.png&quot;&gt;&lt;img src=&quot;/assets/images/manhattan-traffic-collisions/line_charts.png&quot; alt=&quot;Traffic Collitions in 2016 in Mannhattan&quot; style=&quot;max-width: 550px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;In addition to these simple visualizations, it could be interesting to check how the weather affects the number of accidents (&lt;a href=&quot;https://www.ncdc.noaa.gov/data-access/land-based-station-data/land-based-datasets&quot;&gt;climatological data&lt;/a&gt;). If you have questions, feel free to write me an &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#097;&amp;#099;&amp;#116;&amp;#064;&amp;#099;&amp;#117;&amp;#114;&amp;#105;&amp;#111;&amp;#117;&amp;#115;&amp;#103;&amp;#110;&amp;#117;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In addition to these simple visualizations, it could be interesting to check how the weather affects the number of accidents (&lt;a href=&quot;https://www.ncdc.noaa.gov/data-access/land-based-station-data/land-based-datasets&quot;&gt;climatological data&lt;/a&gt;). If you have questions, feel free to write me an &lt;a href=&quot;mailto:contact@curiousgnu.com&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
 
 
           </description>
@@ -335,7 +335,7 @@
 
 &lt;p&gt;&lt;a href=&quot;/assets/images/age-differences-celebrity-couples/regression.png&quot;&gt;&lt;img src=&quot;/assets/images/age-differences-celebrity-couples/regression.png&quot; alt=&quot;Couples - Pirate Regression&quot; style=&quot;max-width:600px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Overall, the data shows that the often criticized age difference among movie couples may not be too far from reality, or at least the reality of some celebrities. If you have questions or concerns, feel free to write me an &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#097;&amp;#099;&amp;#116;&amp;#064;&amp;#099;&amp;#117;&amp;#114;&amp;#105;&amp;#111;&amp;#117;&amp;#115;&amp;#103;&amp;#110;&amp;#117;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Overall, the data shows that the often criticized age difference among movie couples may not be too far from reality, or at least the reality of some celebrities. If you have questions or concerns, feel free to write me an &lt;a href=&quot;mailto:contact@curiousgnu.com&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
 
 
           </description>
@@ -386,7 +386,7 @@
   &lt;li&gt;Follow the Beautiful Soup &lt;a href=&quot;https://www.crummy.com/software/BeautifulSoup/bs4/doc/&quot;&gt;documentation&lt;/a&gt; to extract the need information from the saved HTML files.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;If you have questions or concerns, feel free to write me an &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#097;&amp;#099;&amp;#116;&amp;#064;&amp;#099;&amp;#117;&amp;#114;&amp;#105;&amp;#111;&amp;#117;&amp;#115;&amp;#103;&amp;#110;&amp;#117;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you have questions or concerns, feel free to write me an &lt;a href=&quot;mailto:contact@curiousgnu.com&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
 
 
           </description>
@@ -536,7 +536,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;If you have questions or concerns, feel free to write me an &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#097;&amp;#099;&amp;#116;&amp;#064;&amp;#099;&amp;#117;&amp;#114;&amp;#105;&amp;#111;&amp;#117;&amp;#115;&amp;#103;&amp;#110;&amp;#117;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you have questions or concerns, feel free to write me an &lt;a href=&quot;mailto:contact@curiousgnu.com&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;small&gt;*R packages used: &lt;a href=&quot;https://cran.r-project.org/web/packages/ggmap/index.html&quot;&gt;ggmap&lt;/a&gt;, &lt;a href=&quot;https://cran.r-project.org/web/packages/GISTools/index.html&quot;&gt;GISTools&lt;/a&gt;, &lt;a href=&quot;https://cran.r-project.org/web/packages/rgeos/index.html&quot;&gt;rgeos&lt;/a&gt;, &lt;a href=&quot;https://cran.r-project.org/web/packages/maptools/index.html&quot;&gt;maptools&lt;/a&gt; | Photo: “back at work” by &lt;a href=&quot;https://flic.kr/p/9ze8bf&quot;&gt;Michael Cory&lt;/a&gt; is licensed under CC BY-NC 2.0&lt;/small&gt;&lt;/p&gt;
 
@@ -603,7 +603,7 @@
 
 &lt;p&gt;In conclusion, it’s true that the gender pay gap exists, and that on average, women make less money than men. However, the claims that it proves gender inequality are false because women are simply doing different kinds of jobs.&lt;/p&gt;
 
-&lt;p&gt;If you have questions or concerns, feel free to write me an  &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#097;&amp;#099;&amp;#116;&amp;#064;&amp;#099;&amp;#117;&amp;#114;&amp;#105;&amp;#111;&amp;#117;&amp;#115;&amp;#103;&amp;#110;&amp;#117;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you have questions or concerns, feel free to write me an  &lt;a href=&quot;mailto:contact@curiousgnu.com&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;small&gt;Photo: “Chicago” by &lt;a href=&quot;https://flic.kr/p/62vAsR&quot;&gt;Tony Webster&lt;/a&gt; is licensed under CC BY 2.0&lt;/small&gt;&lt;/p&gt;
 
@@ -616,7 +616,7 @@
     
       
       <item>
-        <title>Using Amazon&#39;s X-Ray to Visualize Characters&#39; Screen Time</title>
+        <title>Using Amazon's X-Ray to Visualize Characters' Screen Time</title>
           <description>
             &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;https://www.curiousgnu.com/assets/images/movie-character-screen-time/cover.jpg&quot;  alt=&quot;Cover Image&quot; /&gt;
             &lt;p&gt;Today’s blog post is once again about the visualization of movie data. As I already experimented with the IMDb dataset to &lt;a href=&quot;http://www.curiousgnu.com/imdb-age-gap&quot;&gt;compare the average age&lt;/a&gt; of actors and actresses, I wanted to try something a bit different. One thing that I have always found cool is the visualization of movie plots (e.g. &lt;a href=&quot;https://xkcd.com/657/&quot;&gt;xkcd&lt;/a&gt;). The reason why I never attempted to do something like this myself was that I had no idea from where I could get the required data. Of course, there is always the possibility to generate the data manually, but that is usually a tedious task that I try to avoid. Fortunately, I found a much more convenient data source, while I was watching a movie on the &lt;a href=&quot;https://www.amazon.com/video&quot;&gt;Amazon Video&lt;/a&gt; app.&lt;/p&gt;
@@ -644,34 +644,51 @@
 
 &lt;h4 id=&quot;how-to-get-x-ray-data&quot;&gt;How to Get X-Ray Data?&lt;/h4&gt;
 
-&lt;p&gt;The X-Ray feature is based on an unencrypted JSON file which can be downloaded with the Chrome browser. Unfortunately, those files are not publicly available (signed CloudFront URL), meaning that you have to start streaming the movie before you can download the file. This also means that you are limited to the content included in your Prime subscription, or you need to rent/buy the movies in which you are interested. Nevertheless, I think it is still an interesting source, especially when you consider the alternatives.&lt;/p&gt;
+&lt;p&gt;The X-Ray feature is based on an unencrypted JSON file that can be downloaded with the Chrome browser. Unfortunately, those files are not publicly available, meaning that you have to start streaming the movie before you can download the file. This also means that you are limited to the content included in your Prime subscription, or you need to rent/buy the movies in which you are interested. Nevertheless, I think it is still an interesting source, especially when you consider the alternatives. &lt;strong&gt;Update:&lt;/strong&gt; On 8 May 2017, I updated this part of the blog post.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Start Developer Tools: Menu &amp;gt; Tools &amp;gt; Developer Tools&lt;/li&gt;
-  &lt;li&gt;Start streaming a video &amp;amp; close the player after a few seconds&lt;/li&gt;
+  &lt;li&gt;Open the movie’s product page&lt;/li&gt;
   &lt;li&gt;Select the following Developer Tools settings:&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;a href=&quot;/assets/images/movie-character-screen-time/devtools.png&quot;&gt;&lt;img src=&quot;/assets/images/movie-character-screen-time/devtools.png&quot; alt=&quot;DevTools Settings&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/images/movie-character-screen-time/devtools_2.png&quot;&gt;&lt;img src=&quot;/assets/images/movie-character-screen-time/devtools_2.png&quot; alt=&quot;DevTools Settings&quot; style=&quot;max-width: 580px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Click on the gray record button to capture the network traffic&lt;/li&gt;
-  &lt;li&gt;Start streaming the video again&lt;/li&gt;
-  &lt;li&gt;Now the following file should appear: &lt;em&gt;data.json?Expires=&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;Right-click on the file &amp;gt; Open Link in New Tab &amp;gt; Save Page As…&lt;/li&gt;
+  &lt;li&gt;Reload the product page&lt;/li&gt;
+  &lt;li&gt;The following file should appear: &lt;em&gt;xray?firmware…&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Right-click on the file &amp;gt; Copy &amp;gt; Copy Link Address&lt;/li&gt;
+  &lt;li&gt;Download the file to your computer&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Then you can use in R the &lt;a href=&quot;https://cran.r-project.org/web/packages/jsonlite/index.html&quot;&gt;&lt;em&gt;jsonlite&lt;/em&gt;&lt;/a&gt; package to load the JSON file and then do, for example, something like this:&lt;/p&gt;
+&lt;p&gt;Now you can use the following Python code to generate a convenient &lt;em&gt;CSV&lt;/em&gt; file from the downloaded &lt;em&gt;.json&lt;/em&gt; file (e.g., xray.json).&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;library(jsonlite)
-library(ggplot2)
+&lt;pre&gt;&lt;code&gt;import json
+import re
+import csv
 
-data &amp;lt;- fromJSON(&quot;starwars.json&quot;, flatten = TRUE)
-e &amp;lt;- data$resource$events
-e$start &amp;lt;- as.numeric(as.data.frame(e$when)[1,])
-e$end &amp;lt;- as.numeric(as.data.frame(e$when)[2,])
-ggplot(e, aes(colour=e$character)) + 
-  geom_segment(aes(x=e$start, xend=e$end, y=e$character, yend=e$character), size=5)
+with open('xray.json') as data:
+    data = json.load(data)
+
+scenes = data['page']['sections']['left']['widgets']['widgetList']
+scenes = scenes[0]['widgets']['widgetList'][1]['partitionedChangeList']
+
+with open('xray.csv', 'wb') as out:
+    w = csv.writer(out)
+    w.writerow(['nconst', 'character', 'start', 'end'])
+    for s in scenes:
+        start = s['timeRange']['startTime']
+        end = s['timeRange']['endTime']
+        for init in s['initialItemIds']:
+            rd = re.search('/name/(nm.+)/(.+)', init)
+            if rd is not None:
+                w.writerow([rd.group(1), rd.group(2), start, end])
+        for item in s['changesCollection']:
+            rd = re.search('/name/(nm.+)/(.+)', item['itemId'])
+            if rd is not None:
+                iStart = item['timePosition']
+                w.writerow([rd.group(1), rd.group(2), iStart, end])
 &lt;/code&gt;&lt;/pre&gt;
 
           </description>
@@ -710,7 +727,7 @@ ggplot(e, aes(colour=e$character)) +
 
 &lt;p&gt;&lt;a href=&quot;/assets/images/chicago-drugs/regression_table.png&quot;&gt;&lt;img src=&quot;/assets/images/chicago-drugs/regression_table.png&quot; alt=&quot;Regression Results&quot; style=&quot;max-width: 640px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;If you have any suggestion or tips for future articles, please feel free to contact me by &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#097;&amp;#099;&amp;#116;&amp;#064;&amp;#099;&amp;#117;&amp;#114;&amp;#105;&amp;#111;&amp;#117;&amp;#115;&amp;#103;&amp;#110;&amp;#117;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;email&lt;/a&gt; or &lt;a href=&quot;https://www.reddit.com/user/CuriousGnu/&quot;&gt;Reddit message&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you have any suggestion or tips for future articles, please feel free to contact me by &lt;a href=&quot;mailto:contact@curiousgnu.com&quot;&gt;email&lt;/a&gt; or &lt;a href=&quot;https://www.reddit.com/user/CuriousGnu/&quot;&gt;Reddit message&lt;/a&gt;.&lt;/p&gt;
 
           </description>
         <pubDate>Fri, 27 May 2016 03:00:00 +0200</pubDate>
@@ -776,18 +793,18 @@ ggplot(e, aes(colour=e$character)) +
 FROM (SELECT 
   cc.CountryHumanName country
   ,CASE WHEN 
-  	LOWER(gkg.AllNames) LIKE &#39;%donald%trump%donald%trump%&#39;
+  	LOWER(gkg.AllNames) LIKE '%donald%trump%donald%trump%'
   	THEN 1 ELSE 0 END trump
   ,CASE WHEN
-  	LOWER(gkg.AllNames) LIKE &#39;%hillary%clinton%hillary%clinton%&#39;
+  	LOWER(gkg.AllNames) LIKE '%hillary%clinton%hillary%clinton%'
   	THEN 1 ELSE 0 END hillary
-  ,FIRST(SPLIT(gkg.V2Tone, &#39;,&#39;)) tone
+  ,FIRST(SPLIT(gkg.V2Tone, ',')) tone
 FROM [gdelt-bq:gdeltv2.gkg] gkg
 INNER JOIN [gdelt-bq:gdeltv2.domainsbycountry_alllangs_april2015] cc
   ON cc.Domain = gkg.SourceCommonName
 WHERE (
-  	LOWER(gkg.AllNames) LIKE &#39;%donald%trump%donald%trump%&#39;
-  	OR LOWER(gkg.AllNames) LIKE &#39;%hillary%clinton%hillary%clinton%&#39;
+  	LOWER(gkg.AllNames) LIKE '%donald%trump%donald%trump%'
+  	OR LOWER(gkg.AllNames) LIKE '%hillary%clinton%hillary%clinton%'
   ) AND gkg.DATE &amp;gt;= 20150801000000
 ) a
 GROUP BY a.country
@@ -799,7 +816,7 @@ HAVING	SUM(a.trump) &amp;gt;= 100
 
 &lt;p&gt;From my experience, &lt;a href=&quot;https://cartodb.com/&quot;&gt;CartoDB&lt;/a&gt; is a great tool if you want to create interactive and highly customizable maps. If you only need a basic set of features, you ought to try out &lt;a href=&quot;https://www.google.com/sheets/about/&quot;&gt;Google Sheets&lt;/a&gt;. &lt;a href=&quot;http://www.tableau.com/&quot;&gt;Tableau&lt;/a&gt; is another good alternative that I frequently use, which is also available in the free version &lt;a href=&quot;https://public.tableau.com/s/&quot;&gt;Tableau Public&lt;/a&gt;. I didn’t use Tableau in this project because CartoDB offers much better embedding options for blogs or websites.&lt;/p&gt;
 
-&lt;p&gt;If you have any questions about this blog post, feel free to contact me by &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#097;&amp;#099;&amp;#116;&amp;#064;&amp;#099;&amp;#117;&amp;#114;&amp;#105;&amp;#111;&amp;#117;&amp;#115;&amp;#103;&amp;#110;&amp;#117;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;email&lt;/a&gt; or write me a PM on Reddit.&lt;/p&gt;
+&lt;p&gt;If you have any questions about this blog post, feel free to contact me by &lt;a href=&quot;mailto:contact@curiousgnu.com&quot;&gt;email&lt;/a&gt; or write me a PM on Reddit.&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
@@ -879,7 +896,7 @@ HAVING	SUM(a.trump) &amp;gt;= 100
 &lt;h4 id=&quot;arent-penny-auctions-unregulated-gambling&quot;&gt;Aren’t penny auctions unregulated gambling?&lt;/h4&gt;
 &lt;p&gt;One of the most important parts of the business models of penny auction sites is that what they are doing is not considered gambling. I am not a lawyer, so I will not attempt to question the legality of their operations. Their central argument is that penny auctions require skill and are therefore exempt from the &lt;a href=&quot;https://en.wikipedia.org/wiki/Unlawful_Internet_Gambling_Enforcement_Act_of_2006&quot;&gt;Unlawful Internet Gambling Enforcement Act&lt;/a&gt;, which is the same legal loophole daily fantasy sports sites like &lt;a href=&quot;https://en.wikipedia.org/wiki/FanDuel&quot;&gt;FanDuel&lt;/a&gt; or &lt;a href=&quot;https://en.wikipedia.org/wiki/DraftKings&quot;&gt;DraftKings&lt;/a&gt; use. Personally, I cannot see how any skill could increase your chances of winning an auction. The data clearly shows that you are bidding against an unknown number of users who sometimes act extremely irrational. Even if you had a comprehensive database of previous auctions, you probably would not be able to predict how far a specific user will go. If someone has already spent over $3,000 on a $180 tablet, what could stop them aside from his or her credit card limit? It would be really interesting to hear an official explanation of how skill is even a factor in this game.&lt;/p&gt;
 
-&lt;p&gt;If you have any questions about this blog post, feel free to contact me by &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#097;&amp;#099;&amp;#116;&amp;#064;&amp;#099;&amp;#117;&amp;#114;&amp;#105;&amp;#111;&amp;#117;&amp;#115;&amp;#103;&amp;#110;&amp;#117;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you have any questions about this blog post, feel free to contact me by &lt;a href=&quot;mailto:contact@curiousgnu.com&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
 
           </description>
         <pubDate>Mon, 04 Apr 2016 20:00:00 +0200</pubDate>
@@ -903,7 +920,7 @@ HAVING	SUM(a.trump) &amp;gt;= 100
 
 &lt;p&gt;Admintingly this approach has its weakness and is not as sophisticated as many other methods classification technique out there. For example, it can not understand the context of a tweet and how a specific word (e.g., &lt;em&gt;sick&lt;/em&gt;) is used. I experimented more complex Python libraries for text analysis, but unfortunately they did not run well on the Google App Engine platform if you plan to analyse thousands of tweets but only have a limited budget. I am sure that it can be done without a problem but since I never used it before and did not want to spend too much time on it, I decided to use the simple solution which I believe is still sufficient for such a task.&lt;/p&gt;
 
-&lt;p&gt;To determine how vulgar a tweet is, the software uses a similar word list based method. If a tweet contains a word which is in this list, it will be marked as &lt;em&gt;vulgar&lt;/em&gt;. The lack of content-awareness will, of course, lead to some mistakes. For example, news articles about &lt;em&gt;sex trafficking&lt;/em&gt; or &lt;em&gt;rape&lt;/em&gt; will be falsely classified as &lt;em&gt;vulgar&lt;/em&gt;. So please do not take the results too seriously and rather tweet something positive about it! Feel free to &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#097;&amp;#099;&amp;#116;&amp;#064;&amp;#099;&amp;#117;&amp;#114;&amp;#105;&amp;#111;&amp;#117;&amp;#115;&amp;#103;&amp;#110;&amp;#117;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;contact me&lt;/a&gt; if you suggestions or questions.&lt;/p&gt;
+&lt;p&gt;To determine how vulgar a tweet is, the software uses a similar word list based method. If a tweet contains a word which is in this list, it will be marked as &lt;em&gt;vulgar&lt;/em&gt;. The lack of content-awareness will, of course, lead to some mistakes. For example, news articles about &lt;em&gt;sex trafficking&lt;/em&gt; or &lt;em&gt;rape&lt;/em&gt; will be falsely classified as &lt;em&gt;vulgar&lt;/em&gt;. So please do not take the results too seriously and rather tweet something positive about it! Feel free to &lt;a href=&quot;mailto:contact@curiousgnu.com&quot;&gt;contact me&lt;/a&gt; if you suggestions or questions.&lt;/p&gt;
 
 &lt;p&gt;You can find the project here: &lt;a href=&quot;https://tweetanalyzer.net&quot;&gt;https://tweetanalyzer.net&lt;/a&gt;&lt;/p&gt;
 
@@ -986,7 +1003,7 @@ HAVING	SUM(a.trump) &amp;gt;= 100
     
       
       <item>
-        <title>What&#39;s the age difference in movies?</title>
+        <title>What's the age difference in movies?</title>
           <description>
             &lt;img class=&quot;webfeedsFeaturedVisual&quot; src=&quot;https://www.curiousgnu.com/assets/images/age-gap/cover.jpg&quot;  alt=&quot;Cover Image&quot; /&gt;
             &lt;p&gt;In response to my &lt;a href=&quot;/imdb-age-distribution&quot;&gt;last post&lt;/a&gt; about the distribution of ages of actresses and actors, a Reddit user suggested investigating further the age difference between female and male movie stars. In my first simple analysis, I only compared the average ages of both groups in the overall sample. Now, the next step is to check on a movie basis if there is an age difference between the leading actress and her co-star.&lt;/p&gt;
